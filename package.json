@@ -27,8 +27,9 @@
   "scripts": {
     "server": "./node_modules/.bin/http-server -p 9999 -o",
     "lint": "./node_modules/.bin/eslint lib/*.js",
-    "dev": "./node_modules/.bin/watchify ./lib/js/main.js -t ./node_modules/.bin/babelify ./lib/js/repl.js -o ./lib/js/bundle.js -v",
-    "build": "./node_modules/.bin/browserify ./lib/js/main.js -t ./node_modules/.bin/babelify ./lib/js/repl.js -o ./lib/js/bundle.js"
+    "dev": "./node_modules/.bin/watchify ./lib/js/main.js -t babelify ./lib/js/repl.js -o ./lib/js/bundle.js -v",
+    "build": "./node_modules/.bin/browserify ./lib/js/main.js -t babelify ./lib/js/repl.js -o ./lib/js/bundle.js",
+    "image": "npm run build && docker build -t koleok/repl ."
   },
   "devDependencies": {
     "eslint": "^3.5.0",
