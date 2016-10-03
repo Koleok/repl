@@ -47092,7 +47092,7 @@ var path = require('path');
 var commentRx = /^\s*\/(?:\/|\*)[@#]\s+sourceMappingURL=data:(?:application|text)\/json;(?:charset[:=]\S+;)?base64,(.*)$/mg;
 var mapFileCommentRx =
   //Example (Extra space between slashes added to solve Safari bug. Exclude space in production):
-  //     / /# sourceMappingURL=foo.js.map
+  //     / /# sourceMappingURL=foo.js.map           
   /(?:\/\/[@#][ \t]+sourceMappingURL=([^\s'"]+?)[ \t]*$)|(?:\/\*[@#][ \t]+sourceMappingURL=([^\*]+?)[ \t]*(?:\*\/){1}[ \t]*$)/mg
 
 function decodeBase64(base64) {
@@ -47879,7 +47879,7 @@ $export.P = 8;   // proto
 $export.B = 16;  // bind
 $export.W = 32;  // wrap
 $export.U = 64;  // safe
-$export.R = 128; // real proto method for `library`
+$export.R = 128; // real proto method for `library` 
 module.exports = $export;
 },{"./_core":259,"./_ctx":260,"./_global":269,"./_hide":271}],267:[function(require,module,exports){
 module.exports = function(exec){
@@ -53220,7 +53220,7 @@ JSON5.parse = (function () {
             } else {
                 number = +string;
             }
-
+            
             if (!isFinite(number)) {
                 error("Bad number");
             } else {
@@ -84010,29 +84010,29 @@ module.exports = _curry1(function type(val) {
 (function (global){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.rdom = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 module.exports = [
-  'div',
-  'p',
-  'table',
-  'tr',
-  'td',
-  'th',
-  'tbody',
-  'thead',
-  'tfoot',
-  'span',
-  'ul',
-  'ol',
+  'div', 
+  'p', 
+  'table', 
+  'tr', 
+  'td', 
+  'th', 
+  'tbody', 
+  'thead', 
+  'tfoot', 
+  'span', 
+  'ul', 
+  'ol', 
   'li',
-  'a',
-  'select',
-  'option',
-  'input',
-  'button',
-  'h1',
-  'h2',
-  'h3',
-  'h4',
-  'textarea',
+  'a', 
+  'select', 
+  'option', 
+  'input', 
+  'button', 
+  'h1', 
+  'h2', 
+  'h3', 
+  'h4', 
+  'textarea', 
   'label'
 ];
 
@@ -84082,7 +84082,7 @@ function rdom(tag, config, children) {
         var elem = document.createElement(tag);
         return mkChildren(cfgElem(elem, conf), ks);
       };
-      default:
+      default: 
         var elem = document.createElement(tag);
         return mkChildren(cfgElem(elem, conf), kids);
       }

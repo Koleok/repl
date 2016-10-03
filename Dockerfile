@@ -4,8 +4,7 @@ WORKDIR /app
 COPY ./node_modules node_modules
 COPY ./package.json package.json
 COPY ./index.html index.html
-COPY ./lib/js/bundle.js lib/js/bundle.js
-COPY ./lib/css lib/css
+COPY ./dist dist
 
 EXPOSE 9999
 

@@ -31,6 +31,8 @@
     "dev": "./node_modules/.bin/watchify ./lib/js/main.js -t babelify ./lib/js/repl.js -o ./dist/bundle.js -v",
     "build": "./node_modules/.bin/browserify ./lib/js/main.js -t babelify ./lib/js/repl.js -o ./dist/bundle.js",
     "style": "./node_modules/.bin/postcss -u postcss-import -u cssnano -u autoprefixer 'last 2 versions' -o ./dist/bundle.css ./lib/css/repl.css",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "bundle": "npm run clean && npm run build && npm run style",
     "image": "npm install & npm run build && docker build -t koleok/repl ."
   },
   "devDependencies": {
