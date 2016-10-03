@@ -1,6 +1,9 @@
-# repl
+Ramda Repl
+==========
 
-(read-eval-print-loop)
+A repl (read-eval-print-loop) for [Ramda](http://ramdajs.com/)
+
+[![Build Status](https://travis-ci.org/ramda/repl.svg?branch=master)](https://travis-ci.org/ramda/repl)
 
 ### Development
 
@@ -17,6 +20,14 @@ To build the JavaScript bundle:
 To build the JavaScript bundle _when files change_:
 
 `npm run dev`
+
+to build the CSS bundle:
+
+`npm run style`
+
+To run tests:
+
+`npm test`
 
 To lint the JavaScript:
 
