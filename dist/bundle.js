@@ -335,7 +335,6 @@ reporter.main = function (options) {
 exports.default = reporter;
 
 },{"ramda":617}],8:[function(require,module,exports){
-(function (global){
 'use strict';
 
 var _sanctuaryDef = require('sanctuary-def');
@@ -360,8 +359,8 @@ var _ramdaFantasy2 = _interopRequireDefault(_ramdaFantasy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-global.$ = _sanctuaryDef2.default;
-global.L = _ramdaLens2.default;
+window.$ = _sanctuaryDef2.default;
+window.L = _ramdaLens2.default;
 window.S = _sanctuary2.default;
 window.Future = _fluture2.default;
 window.Either = _ramdaFantasy2.default.Either;
@@ -383,7 +382,6 @@ R.forEach(function (x) {
   return window[x] = R[x];
 }, R.keys(R));
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"fluture":347,"ramda-fantasy":594,"ramda-lens":606,"sanctuary":680,"sanctuary-def":679}],9:[function(require,module,exports){
 'use strict';
 
