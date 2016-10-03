@@ -29,7 +29,7 @@
     "lint": "./node_modules/.bin/eslint lib/*.js",
     "dev": "./node_modules/.bin/watchify ./lib/js/main.js -t babelify ./lib/js/repl.js -o ./lib/js/bundle.js -v",
     "build": "./node_modules/.bin/browserify ./lib/js/main.js -t babelify ./lib/js/repl.js -o ./lib/js/bundle.js",
-    "image": "npm run build && docker build -t koleok/repl ."
+    "image": "npm install & npm run build && docker build -t koleok/repl ."
   },
   "devDependencies": {
     "eslint": "^3.5.0",
