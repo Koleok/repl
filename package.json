@@ -33,7 +33,7 @@
     "style": "./node_modules/.bin/postcss -u postcss-import -u cssnano -u autoprefixer 'last 2 versions' -o ./dist/bundle.css ./lib/css/repl.css",
     "clean": "rm -rf ./dist && mkdir dist",
     "bundle": "npm run clean && npm run build && npm run style",
-    "image": "npm install & npm run build && docker build -t koleok/repl ."
+    "image": "npm run bundle && docker build -t koleok/repl ."
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",
