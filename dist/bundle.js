@@ -337,14 +337,6 @@ exports.default = reporter;
 },{"ramda":617}],8:[function(require,module,exports){
 'use strict';
 
-var _sanctuaryDef = require('sanctuary-def');
-
-var _sanctuaryDef2 = _interopRequireDefault(_sanctuaryDef);
-
-var _ramdaLens = require('ramda-lens');
-
-var _ramdaLens2 = _interopRequireDefault(_ramdaLens);
-
 var _fluture = require('fluture');
 
 var _fluture2 = _interopRequireDefault(_fluture);
@@ -353,15 +345,28 @@ var _sanctuary = require('sanctuary');
 
 var _sanctuary2 = _interopRequireDefault(_sanctuary);
 
+var _ramdaLens = require('ramda-lens');
+
+var _ramdaLens2 = _interopRequireDefault(_ramdaLens);
+
+var _sanctuaryDef = require('sanctuary-def');
+
+var _sanctuaryDef2 = _interopRequireDefault(_sanctuaryDef);
+
 var _ramdaFantasy = require('ramda-fantasy');
 
 var _ramdaFantasy2 = _interopRequireDefault(_ramdaFantasy);
+
+var _seamlessImmutable = require('seamless-immutable');
+
+var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _sanctuaryDef2.default;
 window.L = _ramdaLens2.default;
 window.S = _sanctuary2.default;
+window.I = _seamlessImmutable2.default;
 window.Future = _fluture2.default;
 window.Either = _ramdaFantasy2.default.Either;
 window.Identity = _ramdaFantasy2.default.Identity;
@@ -382,7 +387,7 @@ R.forEach(function (x) {
   return window[x] = R[x];
 }, R.keys(R));
 
-},{"fluture":347,"ramda-fantasy":594,"ramda-lens":606,"sanctuary":680,"sanctuary-def":679}],9:[function(require,module,exports){
+},{"fluture":347,"ramda-fantasy":594,"ramda-lens":606,"sanctuary":680,"sanctuary-def":679,"seamless-immutable":682}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -992,7 +997,7 @@ var objectKeys = Object.keys || function (obj) {
   return keys;
 };
 
-},{"util/":701}],16:[function(require,module,exports){
+},{"util/":702}],16:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -2308,7 +2313,7 @@ var File = function (_Store) {
 exports.default = File;
 exports.File = File;
 }).call(this,require('_process'))
-},{"../../helpers/resolve":21,"../../store":22,"../../util":38,"../internal-plugins/block-hoist":33,"../internal-plugins/shadow-functions":34,"../plugin-pass":36,"./logger":25,"./metadata":26,"./options/option-manager":30,"_process":593,"babel-code-frame":16,"babel-generator":51,"babel-helpers":73,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/assign":140,"babel-runtime/core-js/object/create":141,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"babel-runtime/helpers/typeof":153,"babel-traverse":158,"babel-types":191,"babylon":195,"convert-source-map":229,"lodash/defaults":531,"path":588,"shebang-regex":682,"source-map":694}],25:[function(require,module,exports){
+},{"../../helpers/resolve":21,"../../store":22,"../../util":38,"../internal-plugins/block-hoist":33,"../internal-plugins/shadow-functions":34,"../plugin-pass":36,"./logger":25,"./metadata":26,"./options/option-manager":30,"_process":593,"babel-code-frame":16,"babel-generator":51,"babel-helpers":73,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/assign":140,"babel-runtime/core-js/object/create":141,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"babel-runtime/helpers/typeof":153,"babel-traverse":158,"babel-types":191,"babylon":195,"convert-source-map":229,"lodash/defaults":531,"path":588,"shebang-regex":683,"source-map":695}],25:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -3444,7 +3449,7 @@ function booleanString(val) {
 function list(val) {
   return util.list(val);
 }
-},{"../../../util":38,"slash":683}],32:[function(require,module,exports){
+},{"../../../util":38,"slash":684}],32:[function(require,module,exports){
 "use strict";
 
 module.exports = {
@@ -4179,7 +4184,7 @@ function _shouldIgnore(pattern, filename) {
     return pattern.test(filename);
   }
 }
-},{"babel-runtime/core-js/get-iterator":136,"lodash/escapeRegExp":534,"lodash/includes":545,"lodash/isBoolean":550,"lodash/isRegExp":559,"lodash/isString":560,"lodash/startsWith":574,"minimatch":585,"path":588,"slash":683,"util":701}],39:[function(require,module,exports){
+},{"babel-runtime/core-js/get-iterator":136,"lodash/escapeRegExp":534,"lodash/includes":545,"lodash/isBoolean":550,"lodash/isRegExp":559,"lodash/isString":560,"lodash/startsWith":574,"minimatch":585,"path":588,"slash":684,"util":702}],39:[function(require,module,exports){
 module.exports={
   "_args": [
     [
@@ -7540,7 +7545,7 @@ var SourceMap = function () {
 
 exports.default = SourceMap;
 module.exports = exports["default"];
-},{"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/typeof":153,"source-map":694}],57:[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/typeof":153,"source-map":695}],57:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -9227,7 +9232,7 @@ function parseArgs(args) {
     }
   });
 }
-},{"babel-runtime/core-js/json/stringify":137,"util":701}],75:[function(require,module,exports){
+},{"babel-runtime/core-js/json/stringify":137,"util":702}],75:[function(require,module,exports){
 /*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
@@ -16157,7 +16162,7 @@ LMp.getBreakLoc = function (label) {
 LMp.getContinueLoc = function (label) {
   return this._findLeapLocation("continueLoc", label);
 };
-},{"./emit":123,"assert":15,"babel-types":191,"util":701}],127:[function(require,module,exports){
+},{"./emit":123,"assert":15,"babel-types":191,"util":702}],127:[function(require,module,exports){
 "use strict";
 
 var _assert = require("assert");
@@ -25520,7 +25525,7 @@ function removePropertiesDeep(tree, opts) {
   traverseFast(tree, removeProperties, opts);
   return tree;
 }
-},{"./constants":180,"./converters":181,"./definitions":186,"./definitions/init":187,"./flow":190,"./react":192,"./retrievers":193,"./validators":194,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/get-own-property-symbols":142,"babel-runtime/core-js/object/keys":143,"lodash/clone":526,"lodash/compact":529,"lodash/each":532,"lodash/uniq":583,"to-fast-properties":697}],192:[function(require,module,exports){
+},{"./constants":180,"./converters":181,"./definitions":186,"./definitions/init":187,"./flow":190,"./react":192,"./retrievers":193,"./validators":194,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/get-own-property-symbols":142,"babel-runtime/core-js/object/keys":143,"lodash/clone":526,"lodash/compact":529,"lodash/each":532,"lodash/uniq":583,"to-fast-properties":698}],192:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -34687,7 +34692,7 @@ module.exports.stripColor = stripAnsi;
 module.exports.supportsColor = supportsColor;
 
 }).call(this,require('_process'))
-},{"_process":593,"ansi-styles":14,"escape-string-regexp":342,"has-ansi":350,"strip-ansi":695,"supports-color":696}],221:[function(require,module,exports){
+},{"_process":593,"ansi-styles":14,"escape-string-regexp":342,"has-ansi":350,"strip-ansi":696,"supports-color":697}],221:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -47090,7 +47095,7 @@ var path = require('path');
 var commentRx = /^\s*\/(?:\/|\*)[@#]\s+sourceMappingURL=data:(?:application|text)\/json;(?:charset[:=]\S+;)?base64,(.*)$/mg;
 var mapFileCommentRx =
   //Example (Extra space between slashes added to solve Safari bug. Exclude space in production):
-  //     / /# sourceMappingURL=foo.js.map           
+  //     / /# sourceMappingURL=foo.js.map
   /(?:\/\/[@#][ \t]+sourceMappingURL=([^\s'"]+?)[ \t]*$)|(?:\/\*[@#][ \t]+sourceMappingURL=([^\*]+?)[ \t]*(?:\*\/){1}[ \t]*$)/mg
 
 function decodeBase64(base64) {
@@ -47877,7 +47882,7 @@ $export.P = 8;   // proto
 $export.B = 16;  // bind
 $export.W = 32;  // wrap
 $export.U = 64;  // safe
-$export.R = 128; // real proto method for `library` 
+$export.R = 128; // real proto method for `library`
 module.exports = $export;
 },{"./_core":259,"./_ctx":260,"./_global":269,"./_hide":271}],267:[function(require,module,exports){
 module.exports = function(exec){
@@ -49611,7 +49616,7 @@ function createWritableStdioStream (fd) {
 exports.enable(load());
 
 }).call(this,require('_process'))
-},{"./debug":339,"_process":593,"fs":218,"net":218,"tty":698,"util":701}],341:[function(require,module,exports){
+},{"./debug":339,"_process":593,"fs":218,"net":218,"tty":699,"util":702}],341:[function(require,module,exports){
 'use strict';
 var repeating = require('repeating');
 
@@ -53217,7 +53222,7 @@ JSON5.parse = (function () {
             } else {
                 number = +string;
             }
-            
+
             if (!isFinite(number)) {
                 error("Bad number");
             } else {
@@ -84007,29 +84012,29 @@ module.exports = _curry1(function type(val) {
 (function (global){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.rdom = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 module.exports = [
-  'div', 
-  'p', 
-  'table', 
-  'tr', 
-  'td', 
-  'th', 
-  'tbody', 
-  'thead', 
-  'tfoot', 
-  'span', 
-  'ul', 
-  'ol', 
+  'div',
+  'p',
+  'table',
+  'tr',
+  'td',
+  'th',
+  'tbody',
+  'thead',
+  'tfoot',
+  'span',
+  'ul',
+  'ol',
   'li',
-  'a', 
-  'select', 
-  'option', 
-  'input', 
-  'button', 
-  'h1', 
-  'h2', 
-  'h3', 
-  'h4', 
-  'textarea', 
+  'a',
+  'select',
+  'option',
+  'input',
+  'button',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'textarea',
   'label'
 ];
 
@@ -84079,7 +84084,7 @@ function rdom(tag, config, children) {
         var elem = document.createElement(tag);
         return mkChildren(cfgElem(elem, conf), ks);
       };
-      default: 
+      default:
         var elem = document.createElement(tag);
         return mkChildren(cfgElem(elem, conf), kids);
       }
@@ -101131,10 +101136,596 @@ module.exports = function (str, n) {
 }.call(this));
 
 },{}],682:[function(require,module,exports){
+(function (process,global){
+(function() {
+  "use strict";
+
+  // https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L21
+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');
+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;
+
+  function addPropertyTo(target, methodName, value) {
+    Object.defineProperty(target, methodName, {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: value
+    });
+  }
+
+  function banProperty(target, methodName) {
+    addPropertyTo(target, methodName, function() {
+      throw new ImmutableError("The " + methodName +
+        " method cannot be invoked on an Immutable data structure.");
+    });
+  }
+
+  var immutabilityTag = "__immutable_invariants_hold";
+
+  function addImmutabilityTag(target) {
+    addPropertyTo(target, immutabilityTag, true);
+  }
+
+  function isImmutable(target) {
+    if (typeof target === "object") {
+      return target === null || Boolean(
+        Object.getOwnPropertyDescriptor(target, immutabilityTag)
+      );
+    } else {
+      // In JavaScript, only objects are even potentially mutable.
+      // strings, numbers, null, and undefined are all naturally immutable.
+      return true;
+    }
+  }
+
+  function isMergableObject(target) {
+    return target !== null && typeof target === "object" && !(Array.isArray(target)) && !(target instanceof Date);
+  }
+
+  var mutatingObjectMethods = [
+    "setPrototypeOf"
+  ];
+
+  var nonMutatingObjectMethods = [
+    "keys"
+  ];
+
+  var mutatingArrayMethods = mutatingObjectMethods.concat([
+    "push", "pop", "sort", "splice", "shift", "unshift", "reverse"
+  ]);
+
+  var nonMutatingArrayMethods = nonMutatingObjectMethods.concat([
+    "map", "filter", "slice", "concat", "reduce", "reduceRight"
+  ]);
+
+  var mutatingDateMethods = mutatingObjectMethods.concat([
+    "setDate", "setFullYear", "setHours", "setMilliseconds", "setMinutes", "setMonth", "setSeconds",
+    "setTime", "setUTCDate", "setUTCFullYear", "setUTCHours", "setUTCMilliseconds", "setUTCMinutes",
+    "setUTCMonth", "setUTCSeconds", "setYear"
+  ]);
+
+  function ImmutableError(message) {
+    var err       = new Error(message);
+    // TODO: Consider `Object.setPrototypeOf(err, ImmutableError);`
+    err.__proto__ = ImmutableError;
+
+    return err;
+  }
+  ImmutableError.prototype = Error.prototype;
+
+  function makeImmutable(obj, bannedMethods) {
+    // Tag it so we can quickly tell it's immutable later.
+    addImmutabilityTag(obj);
+
+    if (process.env.NODE_ENV !== "production") {
+      // Make all mutating methods throw exceptions.
+      for (var index in bannedMethods) {
+        if (bannedMethods.hasOwnProperty(index)) {
+          banProperty(obj, bannedMethods[index]);
+        }
+      }
+
+      // Freeze it and return it.
+      Object.freeze(obj);
+    }
+
+    return obj;
+  }
+
+  function makeMethodReturnImmutable(obj, methodName) {
+    var currentMethod = obj[methodName];
+
+    addPropertyTo(obj, methodName, function() {
+      return Immutable(currentMethod.apply(obj, arguments));
+    });
+  }
+
+  function arraySet(idx, value) {
+    if (idx in this && this[idx] === value) {
+      return this;
+    }
+
+    var mutable = asMutableArray.call(this);
+    mutable[idx] = Immutable(value);
+    return makeImmutableArray(mutable);
+  }
+
+  var immutableEmptyArray = Immutable([]);
+
+  function arraySetIn(pth, value) {
+    var head = pth[0];
+
+    if (pth.length === 1) {
+      return arraySet.call(this, head, value);
+    } else {
+      var tail = pth.slice(1);
+      var thisHead = this[head];
+      var newValue;
+
+      if (typeof(thisHead) === "object" && thisHead !== null && typeof(thisHead.setIn) === "function") {
+        // Might (validly) be object or array
+        newValue = thisHead.setIn(tail, value);
+      } else {
+        var nextHead = tail[0];
+        // If the next path part is a number, then we are setting into an array, else an object.
+        if (nextHead !== '' && isFinite(nextHead)) {
+          newValue = arraySetIn.call(immutableEmptyArray, tail, value);
+        } else {
+          newValue = objectSetIn.call(immutableEmptyObject, tail, value);
+        }
+      }
+
+      if (head in this && thisHead === newValue) {
+        return this;
+      }
+
+      var mutable = asMutableArray.call(this);
+      mutable[head] = newValue;
+      return makeImmutableArray(mutable);
+    }
+  }
+
+  function makeImmutableArray(array) {
+    // Don't change their implementations, but wrap these functions to make sure
+    // they always return an immutable value.
+    for (var index in nonMutatingArrayMethods) {
+      if (nonMutatingArrayMethods.hasOwnProperty(index)) {
+        var methodName = nonMutatingArrayMethods[index];
+        makeMethodReturnImmutable(array, methodName);
+      }
+    }
+
+    addPropertyTo(array, "flatMap",  flatMap);
+    addPropertyTo(array, "asObject", asObject);
+    addPropertyTo(array, "asMutable", asMutableArray);
+    addPropertyTo(array, "set", arraySet);
+    addPropertyTo(array, "setIn", arraySetIn);
+    addPropertyTo(array, "update", update);
+    addPropertyTo(array, "updateIn", updateIn);
+
+    for(var i = 0, length = array.length; i < length; i++) {
+      array[i] = Immutable(array[i]);
+    }
+
+    return makeImmutable(array, mutatingArrayMethods);
+  }
+
+  function makeImmutableDate(date) {
+    addPropertyTo(date, "asMutable", asMutableDate);
+
+    return makeImmutable(date, mutatingDateMethods);
+  }
+
+  function asMutableDate() {
+    return new Date(this.getTime());
+  }
+
+  /**
+   * Effectively performs a map() over the elements in the array, using the
+   * provided iterator, except that whenever the iterator returns an array, that
+   * array's elements are added to the final result instead of the array itself.
+   *
+   * @param {function} iterator - The iterator function that will be invoked on each element in the array. It will receive three arguments: the current value, the current index, and the current object.
+   */
+  function flatMap(iterator) {
+    // Calling .flatMap() with no arguments is a no-op. Don't bother cloning.
+    if (arguments.length === 0) {
+      return this;
+    }
+
+    var result = [],
+        length = this.length,
+        index;
+
+    for (index = 0; index < length; index++) {
+      var iteratorResult = iterator(this[index], index, this);
+
+      if (Array.isArray(iteratorResult)) {
+        // Concatenate Array results into the return value we're building up.
+        result.push.apply(result, iteratorResult);
+      } else {
+        // Handle non-Array results the same way map() does.
+        result.push(iteratorResult);
+      }
+    }
+
+    return makeImmutableArray(result);
+  }
+
+  /**
+   * Returns an Immutable copy of the object without the given keys included.
+   *
+   * @param {array} keysToRemove - A list of strings representing the keys to exclude in the return value. Instead of providing a single array, this method can also be called by passing multiple strings as separate arguments.
+   */
+  function without(remove) {
+    // Calling .without() with no arguments is a no-op. Don't bother cloning.
+    if (typeof remove === "undefined" && arguments.length === 0) {
+      return this;
+    }
+
+    if (typeof remove !== "function") {
+      // If we weren't given an array, use the arguments list.
+      var keysToRemoveArray = (Array.isArray(remove)) ?
+         remove.slice() : Array.prototype.slice.call(arguments);
+
+      // Convert numeric keys to strings since that's how they'll
+      // come from the enumeration of the object.
+      keysToRemoveArray.forEach(function(el, idx, arr) {
+        if(typeof(el) === "number") {
+          arr[idx] = el.toString();
+        }
+      });
+
+      remove = function(val, key) {
+        return keysToRemoveArray.indexOf(key) !== -1;
+      };
+    }
+
+    var result = this.instantiateEmptyObject();
+
+    for (var key in this) {
+      if (this.hasOwnProperty(key) && remove(this[key], key) === false) {
+        result[key] = this[key];
+      }
+    }
+
+    return makeImmutableObject(result,
+      {instantiateEmptyObject: this.instantiateEmptyObject});
+  }
+
+  function asMutableArray(opts) {
+    var result = [], i, length;
+
+    if(opts && opts.deep) {
+      for(i = 0, length = this.length; i < length; i++) {
+        result.push(asDeepMutable(this[i]));
+      }
+    } else {
+      for(i = 0, length = this.length; i < length; i++) {
+        result.push(this[i]);
+      }
+    }
+
+    return result;
+  }
+
+  /**
+   * Effectively performs a [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) over the elements in the array, expecting that the iterator function
+   * will return an array of two elements - the first representing a key, the other
+   * a value. Then returns an Immutable Object constructed of those keys and values.
+   *
+   * @param {function} iterator - A function which should return an array of two elements - the first representing the desired key, the other the desired value.
+   */
+  function asObject(iterator) {
+    // If no iterator was provided, assume the identity function
+    // (suggesting this array is already a list of key/value pairs.)
+    if (typeof iterator !== "function") {
+      iterator = function(value) { return value; };
+    }
+
+    var result = {},
+        length = this.length,
+        index;
+
+    for (index = 0; index < length; index++) {
+      var pair  = iterator(this[index], index, this),
+          key   = pair[0],
+          value = pair[1];
+
+      result[key] = value;
+    }
+
+    return makeImmutableObject(result);
+  }
+
+  function asDeepMutable(obj) {
+    if (
+      (!obj) ||
+      (typeof obj !== 'object') ||
+      (!Object.getOwnPropertyDescriptor(obj, immutabilityTag)) ||
+      (obj instanceof Date)
+    ) { return obj; }
+    return obj.asMutable({deep: true});
+  }
+
+  function quickCopy(src, dest) {
+    for (var key in src) {
+      if (Object.getOwnPropertyDescriptor(src, key)) {
+        dest[key] = src[key];
+      }
+    }
+
+    return dest;
+  }
+
+  /**
+   * Returns an Immutable Object containing the properties and values of both
+   * this object and the provided object, prioritizing the provided object's
+   * values whenever the same key is present in both objects.
+   *
+   * @param {object} other - The other object to merge. Multiple objects can be passed as an array. In such a case, the later an object appears in that list, the higher its priority.
+   * @param {object} config - Optional config object that contains settings. Supported settings are: {deep: true} for deep merge and {merger: mergerFunc} where mergerFunc is a function
+   *                          that takes a property from both objects. If anything is returned it overrides the normal merge behaviour.
+   */
+  function merge(other, config) {
+    // Calling .merge() with no arguments is a no-op. Don't bother cloning.
+    if (arguments.length === 0) {
+      return this;
+    }
+
+    if (other === null || (typeof other !== "object")) {
+      throw new TypeError("Immutable#merge can only be invoked with objects or arrays, not " + JSON.stringify(other));
+    }
+
+    var receivedArray = (Array.isArray(other)),
+        deep          = config && config.deep,
+        merger        = config && config.merger,
+        result;
+
+    // Use the given key to extract a value from the given object, then place
+    // that value in the result object under the same key. If that resulted
+    // in a change from this object's value at that key, set anyChanges = true.
+    function addToResult(currentObj, otherObj, key) {
+      var immutableValue = Immutable(otherObj[key]);
+      var mergerResult = merger && merger(currentObj[key], immutableValue, config);
+      var currentValue = currentObj[key];
+
+      if ((result !== undefined) ||
+        (mergerResult !== undefined) ||
+        (!currentObj.hasOwnProperty(key) ||
+        ((immutableValue !== currentValue) &&
+          // Avoid false positives due to (NaN !== NaN) evaluating to true
+          (immutableValue === immutableValue)))) {
+
+        var newValue;
+
+        if (mergerResult) {
+          newValue = mergerResult;
+        } else if (deep && isMergableObject(currentValue) && isMergableObject(immutableValue)) {
+          newValue = currentValue.merge(immutableValue, config);
+        } else {
+          newValue = immutableValue;
+        }
+
+        // We check (newValue === newValue) because (NaN !== NaN) in JS
+        if (((currentValue !== newValue) && (newValue === newValue)) ||
+            !currentObj.hasOwnProperty(key)) {
+          if (result === undefined) {
+            // Make a shallow clone of the current object.
+            result = quickCopy(currentObj, currentObj.instantiateEmptyObject());
+          }
+
+          result[key] = newValue;
+        }
+      }
+    }
+
+    var key;
+
+    // Achieve prioritization by overriding previous values that get in the way.
+    if (!receivedArray) {
+      // The most common use case: just merge one object into the existing one.
+      for (key in other) {
+        if (Object.getOwnPropertyDescriptor(other, key)) {
+          addToResult(this, other, key);
+        }
+      }
+    } else {
+      // We also accept an Array
+      for (var index=0; index < other.length; index++) {
+        var otherFromArray = other[index];
+
+        for (key in otherFromArray) {
+          if (otherFromArray.hasOwnProperty(key)) {
+            addToResult(this, otherFromArray, key);
+          }
+        }
+      }
+    }
+
+    if (result === undefined) {
+      return this;
+    } else {
+      return makeImmutableObject(result,
+        {instantiateEmptyObject: this.instantiateEmptyObject});
+    }
+  }
+
+  var immutableEmptyObject = Immutable({});
+
+  function objectSetIn(path, value) {
+    var head = path[0];
+    if (path.length === 1) {
+      return objectSet.call(this, head, value);
+    }
+
+    var tail = path.slice(1);
+    var newValue;
+    var thisHead = this[head];
+
+    if (this.hasOwnProperty(head) && typeof(thisHead) === "object" && thisHead !== null && typeof(thisHead.setIn) === "function") {
+      // Might (validly) be object or array
+      newValue = thisHead.setIn(tail, value);
+    } else {
+      newValue = objectSetIn.call(immutableEmptyObject, tail, value);
+    }
+
+    if (this.hasOwnProperty(head) && thisHead === newValue) {
+      return this;
+    }
+
+    var mutable = quickCopy(this, this.instantiateEmptyObject());
+    mutable[head] = newValue;
+    return makeImmutableObject(mutable, this);
+  }
+
+  function objectSet(property, value) {
+    if (this.hasOwnProperty(property) && this[property] === value) {
+      return this;
+    }
+
+    var mutable = quickCopy(this, this.instantiateEmptyObject());
+    mutable[property] = Immutable(value);
+    return makeImmutableObject(mutable, this);
+  }
+
+  function update(property, updater) {
+    var restArgs = Array.prototype.slice.call(arguments, 2);
+    var initialVal = this[property];
+    return this.set(property, updater.apply(initialVal, [initialVal].concat(restArgs)));
+  }
+
+  function getInPath(obj, path) {
+    /*jshint eqnull:true */
+    for (var i = 0, l = path.length; obj != null && i < l; i++) {
+      obj = obj[path[i]];
+    }
+
+    return (i && i == l) ? obj : undefined;
+  }
+
+  function updateIn(path, updater) {
+    var restArgs = Array.prototype.slice.call(arguments, 2);
+    var initialVal = getInPath(this, path);
+
+    return this.setIn(path, updater.apply(initialVal, [initialVal].concat(restArgs)));
+  }
+
+  function asMutableObject(opts) {
+    var result = this.instantiateEmptyObject(), key;
+
+    if(opts && opts.deep) {
+      for (key in this) {
+        if (this.hasOwnProperty(key)) {
+          result[key] = asDeepMutable(this[key]);
+        }
+      }
+    } else {
+      for (key in this) {
+        if (this.hasOwnProperty(key)) {
+          result[key] = this[key];
+        }
+      }
+    }
+
+    return result;
+  }
+
+  // Creates plain object to be used for cloning
+  function instantiatePlainObject() {
+    return {};
+  }
+
+  // Finalizes an object with immutable methods, freezes it, and returns it.
+  function makeImmutableObject(obj, options) {
+    var instantiateEmptyObject =
+      (options && options.instantiateEmptyObject) ?
+        options.instantiateEmptyObject : instantiatePlainObject;
+
+    addPropertyTo(obj, "merge", merge);
+    addPropertyTo(obj, "without", without);
+    addPropertyTo(obj, "asMutable", asMutableObject);
+    addPropertyTo(obj, "instantiateEmptyObject", instantiateEmptyObject);
+    addPropertyTo(obj, "set", objectSet);
+    addPropertyTo(obj, "setIn", objectSetIn);
+    addPropertyTo(obj, "update", update);
+    addPropertyTo(obj, "updateIn", updateIn);
+
+    return makeImmutable(obj, mutatingObjectMethods);
+  }
+
+  // Returns true if object is a valid react element
+  // https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L326
+  function isReactElement(obj) {
+    return typeof obj === 'object' &&
+           obj !== null &&
+           (obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE);
+  }
+
+  function Immutable(obj, options, stackRemaining) {
+    if (isImmutable(obj) || isReactElement(obj)) {
+      return obj;
+    } else if (Array.isArray(obj)) {
+      return makeImmutableArray(obj.slice());
+    } else if (obj instanceof Date) {
+      return makeImmutableDate(new Date(obj.getTime()));
+    } else {
+      // Don't freeze the object we were given; make a clone and use that.
+      var prototype = options && options.prototype;
+      var instantiateEmptyObject =
+        (!prototype || prototype === Object.prototype) ?
+          instantiatePlainObject : (function() { return Object.create(prototype); });
+      var clone = instantiateEmptyObject();
+
+      if (process.env.NODE_ENV !== "production") {
+        /*jshint eqnull:true */
+        if (stackRemaining == null) {
+          stackRemaining = 64;
+        }
+        if (stackRemaining <= 0) {
+          throw new ImmutableError("Attempt to construct Immutable from a deeply nested object was detected." +
+            " Have you tried to wrap an object with circular references (e.g. React element)?" +
+            " See https://github.com/rtfeldman/seamless-immutable/wiki/Deeply-nested-object-was-detected for details.");
+        }
+        stackRemaining -= 1;
+      }
+
+      for (var key in obj) {
+        if (Object.getOwnPropertyDescriptor(obj, key)) {
+          clone[key] = Immutable(obj[key], undefined, stackRemaining);
+        }
+      }
+
+      return makeImmutableObject(clone,
+        {instantiateEmptyObject: instantiateEmptyObject});
+    }
+  }
+
+  // Export the library
+  Immutable.from           = Immutable;
+  Immutable.isImmutable    = isImmutable;
+  Immutable.ImmutableError = ImmutableError;
+
+  Object.freeze(Immutable);
+
+  /* istanbul ignore if */
+  if (typeof module === "object") {
+    module.exports = Immutable;
+  } else if (typeof exports === "object") {
+    exports.Immutable = Immutable;
+  } else if (typeof window === "object") {
+    window.Immutable = Immutable;
+  } else if (typeof global === "object") {
+    global.Immutable = Immutable;
+  }
+})();
+
+}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"_process":593}],683:[function(require,module,exports){
 'use strict';
 module.exports = /^#!.*/;
 
-},{}],683:[function(require,module,exports){
+},{}],684:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	var isExtendedLengthPath = /^\\\\\?\\/.test(str);
@@ -101147,7 +101738,7 @@ module.exports = function (str) {
 	return str.replace(/\\/g, '/');
 };
 
-},{}],684:[function(require,module,exports){
+},{}],685:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -101253,7 +101844,7 @@ ArraySet.prototype.toArray = function ArraySet_toArray() {
 
 exports.ArraySet = ArraySet;
 
-},{"./util":693}],685:[function(require,module,exports){
+},{"./util":694}],686:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -101395,7 +101986,7 @@ exports.decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
   aOutParam.rest = aIndex;
 };
 
-},{"./base64":686}],686:[function(require,module,exports){
+},{"./base64":687}],687:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -101464,7 +102055,7 @@ exports.decode = function (charCode) {
   return -1;
 };
 
-},{}],687:[function(require,module,exports){
+},{}],688:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -101577,7 +102168,7 @@ exports.search = function search(aNeedle, aHaystack, aCompare, aBias) {
   return index;
 };
 
-},{}],688:[function(require,module,exports){
+},{}],689:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2014 Mozilla Foundation and contributors
@@ -101658,7 +102249,7 @@ MappingList.prototype.toArray = function MappingList_toArray() {
 
 exports.MappingList = MappingList;
 
-},{"./util":693}],689:[function(require,module,exports){
+},{"./util":694}],690:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -101774,7 +102365,7 @@ exports.quickSort = function (ary, comparator) {
   doQuickSort(ary, comparator, 0, ary.length - 1);
 };
 
-},{}],690:[function(require,module,exports){
+},{}],691:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -102858,7 +103449,7 @@ IndexedSourceMapConsumer.prototype._parseMappings =
 
 exports.IndexedSourceMapConsumer = IndexedSourceMapConsumer;
 
-},{"./array-set":684,"./base64-vlq":685,"./binary-search":687,"./quick-sort":689,"./util":693}],691:[function(require,module,exports){
+},{"./array-set":685,"./base64-vlq":686,"./binary-search":688,"./quick-sort":690,"./util":694}],692:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -103264,7 +103855,7 @@ SourceMapGenerator.prototype.toString =
 
 exports.SourceMapGenerator = SourceMapGenerator;
 
-},{"./array-set":684,"./base64-vlq":685,"./mapping-list":688,"./util":693}],692:[function(require,module,exports){
+},{"./array-set":685,"./base64-vlq":686,"./mapping-list":689,"./util":694}],693:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -103673,7 +104264,7 @@ SourceNode.prototype.toStringWithSourceMap = function SourceNode_toStringWithSou
 
 exports.SourceNode = SourceNode;
 
-},{"./source-map-generator":691,"./util":693}],693:[function(require,module,exports){
+},{"./source-map-generator":692,"./util":694}],694:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -104092,7 +104683,7 @@ function compareByGeneratedPositionsInflated(mappingA, mappingB) {
 }
 exports.compareByGeneratedPositionsInflated = compareByGeneratedPositionsInflated;
 
-},{}],694:[function(require,module,exports){
+},{}],695:[function(require,module,exports){
 /*
  * Copyright 2009-2011 Mozilla Foundation and contributors
  * Licensed under the New BSD license. See LICENSE.txt or:
@@ -104102,7 +104693,7 @@ exports.SourceMapGenerator = require('./lib/source-map-generator').SourceMapGene
 exports.SourceMapConsumer = require('./lib/source-map-consumer').SourceMapConsumer;
 exports.SourceNode = require('./lib/source-node').SourceNode;
 
-},{"./lib/source-map-consumer":690,"./lib/source-map-generator":691,"./lib/source-node":692}],695:[function(require,module,exports){
+},{"./lib/source-map-consumer":691,"./lib/source-map-generator":692,"./lib/source-node":693}],696:[function(require,module,exports){
 'use strict';
 var ansiRegex = require('ansi-regex')();
 
@@ -104110,7 +104701,7 @@ module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
 };
 
-},{"ansi-regex":13}],696:[function(require,module,exports){
+},{"ansi-regex":13}],697:[function(require,module,exports){
 (function (process){
 'use strict';
 var argv = process.argv;
@@ -104164,7 +104755,7 @@ module.exports = (function () {
 })();
 
 }).call(this,require('_process'))
-},{"_process":593}],697:[function(require,module,exports){
+},{"_process":593}],698:[function(require,module,exports){
 'use strict';
 module.exports = function toFastProperties(obj) {
 	function f() {}
@@ -104174,7 +104765,7 @@ module.exports = function toFastProperties(obj) {
 	eval(obj);
 };
 
-},{}],698:[function(require,module,exports){
+},{}],699:[function(require,module,exports){
 exports.isatty = function () { return false; };
 
 function ReadStream() {
@@ -104187,7 +104778,7 @@ function WriteStream() {
 }
 exports.WriteStream = WriteStream;
 
-},{}],699:[function(require,module,exports){
+},{}],700:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -104212,14 +104803,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],700:[function(require,module,exports){
+},{}],701:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],701:[function(require,module,exports){
+},{}],702:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -104809,4 +105400,4 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":700,"_process":593,"inherits":699}]},{},[8,11]);
+},{"./support/isBuffer":701,"_process":593,"inherits":700}]},{},[8,11]);
