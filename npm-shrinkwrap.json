@@ -3943,8 +3943,8 @@
     },
     "sanctuary-def": {
       "version": "0.6.0",
-      "from": "sanctuary-def@latest",
-      "resolved": "https://registry.npmjs.org/sanctuary-def/-/sanctuary-def-0.6.0.tgz"
+      "from": "sanctuary-js/sanctuary-def",
+      "resolved": "git://github.com/sanctuary-js/sanctuary-def.git#b53369637d99e670309e8fa14488d785b2f9fb5a"
     },
     "sane": {
       "version": "1.4.1",
