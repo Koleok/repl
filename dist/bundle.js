@@ -94,7 +94,7 @@ exports.default = div({ className: 'repl' }, [
 // The vertical line that splits the two panels
 div({ className: 'repl-midline' }, []), div({}, [btnReset, btnShortUrl, urlOut]), div({ className: 'repl-panels' }, [inputPanel, outputPanel])]);
 
-},{"rdom":714}],5:[function(require,module,exports){
+},{"rdom":872}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -162,7 +162,7 @@ function bindShortUrlButton(options) {
   });
 }
 
-},{"ramda":659,"ramda-fantasy":636,"sanctuary":730}],6:[function(require,module,exports){
+},{"ramda":817,"ramda-fantasy":794,"sanctuary":888}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -267,7 +267,7 @@ function bindInputPanel(options) {
   return input;
 }
 
-},{"./codemirror/code-mirror-config.json":2,"./codemirror/codemirror":3,"babel-core":17,"babel-preset-es2015":131,"babel-preset-stage-0":132,"debounce":341,"ramda":659}],7:[function(require,module,exports){
+},{"./codemirror/code-mirror-config.json":2,"./codemirror/codemirror":3,"babel-core":17,"babel-preset-es2015":131,"babel-preset-stage-0":132,"debounce":499,"ramda":817}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -334,7 +334,7 @@ reporter.main = function (options) {
 
 exports.default = reporter;
 
-},{"ramda":659}],8:[function(require,module,exports){
+},{"ramda":817}],8:[function(require,module,exports){
 'use strict';
 
 var _monoid = require('monoid');
@@ -344,6 +344,10 @@ var _monoid2 = _interopRequireDefault(_monoid);
 var _fluture = require('fluture');
 
 var _fluture2 = _interopRequireDefault(_fluture);
+
+var _dateFns = require('date-fns');
+
+var _dateFns2 = _interopRequireDefault(_dateFns);
 
 var _jsverify = require('jsverify');
 
@@ -380,6 +384,7 @@ window.L = _ramdaLens2.default;
 window.S = _sanctuary2.default;
 window.M = _monoid2.default;
 
+window.D = _dateFns2.default;
 window.I = _seamlessImmutable2.default;
 window.Map = _immutableExt2.default.Map;
 window.List = _immutableExt2.default.List;
@@ -408,7 +413,7 @@ R.forEach(function (x) {
   return window[x] = R[x];
 }, R.keys(R));
 
-},{"fluture":348,"immutable-ext":353,"jsverify":376,"monoid":628,"ramda-fantasy":636,"ramda-lens":648,"sanctuary":730,"sanctuary-def":729,"seamless-immutable":733}],9:[function(require,module,exports){
+},{"date-fns":407,"fluture":506,"immutable-ext":511,"jsverify":534,"monoid":786,"ramda-fantasy":794,"ramda-lens":806,"sanctuary":888,"sanctuary-def":887,"seamless-immutable":891}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -438,7 +443,7 @@ function bindOutputPanel(options) {
   return _codemirror2.default.fromTextArea(options.outputEl, outputConfig);
 }
 
-},{"./codemirror/code-mirror-config.json":2,"./codemirror/codemirror":3,"ramda":659}],10:[function(require,module,exports){
+},{"./codemirror/code-mirror-config.json":2,"./codemirror/codemirror":3,"ramda":817}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -458,7 +463,7 @@ function bindPrettyButton(options) {
   });
 }
 
-},{"pretty-js":633}],11:[function(require,module,exports){
+},{"pretty-js":791}],11:[function(require,module,exports){
 'use strict';
 
 var _logger = require('./logger');
@@ -1018,7 +1023,7 @@ var objectKeys = Object.keys || function (obj) {
   return keys;
 };
 
-},{"util/":754}],16:[function(require,module,exports){
+},{"util/":912}],16:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1160,7 +1165,7 @@ function highlight(defs, text) {
 }
 
 module.exports = exports["default"];
-},{"chalk":223,"esutils":347,"js-tokens":359}],17:[function(require,module,exports){
+},{"chalk":223,"esutils":505,"js-tokens":517}],17:[function(require,module,exports){
 module.exports = require("./lib/api/node.js");
 
 },{"./lib/api/node.js":18}],18:[function(require,module,exports){
@@ -1303,7 +1308,7 @@ function transformFileSync(filename) {
   opts.filename = filename;
   return transform(_fs2.default.readFileSync(filename, "utf8"), opts);
 }
-},{"../../package":42,"../tools/build-external-helpers":23,"../transformation/file":24,"../transformation/file/options/config":28,"../transformation/file/options/option-manager":30,"../transformation/pipeline":35,"../util":38,"babel-messages":77,"babel-template":154,"babel-traverse":158,"babel-types":194,"fs":221,"lodash/isFunction":592}],19:[function(require,module,exports){
+},{"../../package":42,"../tools/build-external-helpers":23,"../transformation/file":24,"../transformation/file/options/config":28,"../transformation/file/options/option-manager":30,"../transformation/pipeline":35,"../util":38,"babel-messages":77,"babel-template":154,"babel-traverse":158,"babel-types":194,"fs":221,"lodash/isFunction":750}],19:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1350,7 +1355,7 @@ var _mergeWith2 = _interopRequireDefault(_mergeWith);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = exports["default"];
-},{"babel-runtime/core-js/get-iterator":136,"lodash/mergeWith":607}],20:[function(require,module,exports){
+},{"babel-runtime/core-js/get-iterator":136,"lodash/mergeWith":765}],20:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1423,7 +1428,7 @@ var relativeModules = {};
 
 module.exports = exports["default"];
 }).call(this,require('_process'))
-},{"_process":635,"babel-runtime/helpers/typeof":153,"module":221,"path":630}],22:[function(require,module,exports){
+},{"_process":793,"babel-runtime/helpers/typeof":153,"module":221,"path":788}],22:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1585,7 +1590,7 @@ function buildHelpers(body, namespace, whitelist) {
   });
 }
 module.exports = exports["default"];
-},{"babel-generator":54,"babel-helpers":76,"babel-messages":77,"babel-template":154,"babel-types":194,"lodash/each":572}],24:[function(require,module,exports){
+},{"babel-generator":54,"babel-helpers":76,"babel-messages":77,"babel-template":154,"babel-types":194,"lodash/each":730}],24:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -2340,7 +2345,7 @@ var File = function (_Store) {
 exports.default = File;
 exports.File = File;
 }).call(this,require('_process'))
-},{"../../helpers/resolve":21,"../../store":22,"../../util":38,"../internal-plugins/block-hoist":33,"../internal-plugins/shadow-functions":34,"../plugin-pass":36,"./logger":25,"./metadata":26,"./options/option-manager":30,"_process":635,"babel-code-frame":16,"babel-generator":54,"babel-helpers":76,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/assign":140,"babel-runtime/core-js/object/create":141,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"babel-runtime/helpers/typeof":153,"babel-traverse":158,"babel-types":194,"babylon":198,"convert-source-map":233,"lodash/defaults":571,"path":630,"shebang-regex":734,"source-map":746}],25:[function(require,module,exports){
+},{"../../helpers/resolve":21,"../../store":22,"../../util":38,"../internal-plugins/block-hoist":33,"../internal-plugins/shadow-functions":34,"../plugin-pass":36,"./logger":25,"./metadata":26,"./options/option-manager":30,"_process":793,"babel-code-frame":16,"babel-generator":54,"babel-helpers":76,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/assign":140,"babel-runtime/core-js/object/create":141,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"babel-runtime/helpers/typeof":153,"babel-traverse":158,"babel-types":194,"babylon":198,"convert-source-map":233,"lodash/defaults":729,"path":788,"shebang-regex":892,"source-map":904}],25:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -2814,7 +2819,7 @@ var ConfigChainBuilder = function () {
 
 module.exports = exports["default"];
 }).call(this,require('_process'))
-},{"../../../helpers/resolve":21,"_process":635,"babel-runtime/core-js/object/assign":140,"babel-runtime/helpers/classCallCheck":150,"fs":221,"json5":361,"path":630,"path-exists":631,"path-is-absolute":632}],28:[function(require,module,exports){
+},{"../../../helpers/resolve":21,"_process":793,"babel-runtime/core-js/object/assign":140,"babel-runtime/helpers/classCallCheck":150,"fs":221,"json5":519,"path":788,"path-exists":789,"path-is-absolute":790}],28:[function(require,module,exports){
 "use strict";
 
 module.exports = {
@@ -3442,7 +3447,7 @@ exports.default = OptionManager;
 OptionManager.memoisedPlugins = [];
 module.exports = exports["default"];
 }).call(this,require('_process'))
-},{"../../../api/node":18,"../../../helpers/merge":19,"../../../helpers/resolve":21,"../../plugin":37,"./build-config-chain":27,"./config":28,"./index":29,"./removed":32,"_process":635,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/assign":140,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/typeof":153,"lodash/clone":566,"lodash/cloneDeepWith":568,"path":630}],31:[function(require,module,exports){
+},{"../../../api/node":18,"../../../helpers/merge":19,"../../../helpers/resolve":21,"../../plugin":37,"./build-config-chain":27,"./config":28,"./index":29,"./removed":32,"_process":793,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/assign":140,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/typeof":153,"lodash/clone":724,"lodash/cloneDeepWith":726,"path":788}],31:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -3476,7 +3481,7 @@ function booleanString(val) {
 function list(val) {
   return util.list(val);
 }
-},{"../../../util":38,"slash":735}],32:[function(require,module,exports){
+},{"../../../util":38,"slash":893}],32:[function(require,module,exports){
 "use strict";
 
 module.exports = {
@@ -3573,7 +3578,7 @@ exports.default = new _plugin2.default({
   }
 });
 module.exports = exports["default"];
-},{"../plugin":37,"lodash/sortBy":613}],34:[function(require,module,exports){
+},{"../plugin":37,"lodash/sortBy":771}],34:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -4018,7 +4023,7 @@ var Plugin = function (_Store) {
 
 exports.default = Plugin;
 module.exports = exports["default"];
-},{"../store":22,"./file/options/option-manager":30,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"babel-traverse":158,"lodash/assign":563,"lodash/clone":566}],38:[function(require,module,exports){
+},{"../store":22,"./file/options/option-manager":30,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"babel-traverse":158,"lodash/assign":721,"lodash/clone":724}],38:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -4211,7 +4216,7 @@ function _shouldIgnore(pattern, filename) {
     return pattern.test(filename);
   }
 }
-},{"babel-runtime/core-js/get-iterator":136,"lodash/escapeRegExp":574,"lodash/includes":585,"lodash/isBoolean":590,"lodash/isRegExp":599,"lodash/isString":600,"lodash/startsWith":614,"minimatch":625,"path":630,"slash":735,"util":754}],39:[function(require,module,exports){
+},{"babel-runtime/core-js/get-iterator":136,"lodash/escapeRegExp":732,"lodash/includes":743,"lodash/isBoolean":748,"lodash/isRegExp":757,"lodash/isString":758,"lodash/startsWith":772,"minimatch":783,"path":788,"slash":893,"util":912}],39:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -4630,7 +4635,7 @@ function createWritableStdioStream (fd) {
 exports.enable(load());
 
 }).call(this,require('_process'))
-},{"./debug":39,"_process":635,"fs":221,"net":221,"tty":750,"util":754}],41:[function(require,module,exports){
+},{"./debug":39,"_process":793,"fs":221,"net":221,"tty":908,"util":912}],41:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -5023,7 +5028,7 @@ var Buffer = function () {
 
 exports.default = Buffer;
 module.exports = exports["default"];
-},{"babel-runtime/helpers/classCallCheck":150,"lodash/trimEnd":622}],44:[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":150,"lodash/trimEnd":780}],44:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -5426,7 +5431,7 @@ function MetaProperty(node) {
   this.token(".");
   this.print(node.property, node);
 }
-},{"../node":55,"babel-types":194,"lodash/isNumber":595}],47:[function(require,module,exports){
+},{"../node":55,"babel-types":194,"lodash/isNumber":753}],47:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -6767,7 +6772,7 @@ function StringLiteral(node, parent) {
 
   return this.token(val);
 }
-},{"babel-types":194,"jsesc":360}],54:[function(require,module,exports){
+},{"babel-types":194,"jsesc":518}],54:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -6936,7 +6941,7 @@ var CodeGenerator = exports.CodeGenerator = function () {
 
   return CodeGenerator;
 }();
-},{"./printer":58,"./source-map":59,"babel-messages":77,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"detect-indent":342}],55:[function(require,module,exports){
+},{"./printer":58,"./source-map":59,"babel-messages":77,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/inherits":151,"babel-runtime/helpers/possibleConstructorReturn":152,"detect-indent":500}],55:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -7499,7 +7504,7 @@ exports.list = {
     };
   });
 });
-},{"babel-types":194,"lodash/each":572,"lodash/isBoolean":590,"lodash/map":605}],58:[function(require,module,exports){
+},{"babel-types":194,"lodash/each":730,"lodash/isBoolean":748,"lodash/map":763}],58:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -8055,7 +8060,7 @@ for (var _i2 = 0; _i2 < _arr.length; _i2++) {
   (0, _assign2.default)(Printer.prototype, generator);
 }
 module.exports = exports["default"];
-},{"./buffer":43,"./generators/base":44,"./generators/classes":45,"./generators/expressions":46,"./generators/flow":47,"./generators/jsx":48,"./generators/methods":49,"./generators/modules":50,"./generators/statements":51,"./generators/template-literals":52,"./generators/types":53,"./node":55,"./whitespace":60,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/assign":140,"babel-runtime/core-js/weak-set":149,"babel-runtime/helpers/classCallCheck":150,"babel-types":194,"lodash/find":576,"lodash/findLast":578,"lodash/isInteger":593,"lodash/repeat":612}],59:[function(require,module,exports){
+},{"./buffer":43,"./generators/base":44,"./generators/classes":45,"./generators/expressions":46,"./generators/flow":47,"./generators/jsx":48,"./generators/methods":49,"./generators/modules":50,"./generators/statements":51,"./generators/template-literals":52,"./generators/types":53,"./node":55,"./whitespace":60,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/assign":140,"babel-runtime/core-js/weak-set":149,"babel-runtime/helpers/classCallCheck":150,"babel-types":194,"lodash/find":734,"lodash/findLast":736,"lodash/isInteger":751,"lodash/repeat":770}],59:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -8133,7 +8138,7 @@ var SourceMap = function () {
 
 exports.default = SourceMap;
 module.exports = exports["default"];
-},{"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/typeof":153,"source-map":746}],60:[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/classCallCheck":150,"babel-runtime/helpers/typeof":153,"source-map":904}],60:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -8584,7 +8589,7 @@ function toDefineObject(mutatorMap) {
 
   return toClassObject(mutatorMap);
 }
-},{"babel-helper-function-name":67,"babel-types":194,"lodash/each":572,"lodash/has":582}],65:[function(require,module,exports){
+},{"babel-helper-function-name":67,"babel-types":194,"lodash/each":730,"lodash/has":740}],65:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -9029,7 +9034,7 @@ function pullFlag(node, flag) {
   (0, _pull2.default)(flags, flag);
   node.flags = flags.join("");
 }
-},{"babel-types":194,"lodash/pull":610}],72:[function(require,module,exports){
+},{"babel-types":194,"lodash/pull":768}],72:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -9739,7 +9744,7 @@ function parseArgs(args) {
     }
   });
 }
-},{"babel-runtime/core-js/json/stringify":137,"util":754}],78:[function(require,module,exports){
+},{"babel-runtime/core-js/json/stringify":137,"util":912}],78:[function(require,module,exports){
 /*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
@@ -11321,7 +11326,7 @@ var BlockScoping = function () {
 }();
 
 module.exports = exports["default"];
-},{"./tdz":100,"babel-runtime/core-js/object/create":141,"babel-runtime/core-js/symbol":145,"babel-runtime/helpers/classCallCheck":150,"babel-template":154,"babel-traverse":158,"babel-types":194,"lodash/extend":575,"lodash/values":624}],100:[function(require,module,exports){
+},{"./tdz":100,"babel-runtime/core-js/object/create":141,"babel-runtime/core-js/symbol":145,"babel-runtime/helpers/classCallCheck":150,"babel-template":154,"babel-traverse":158,"babel-types":194,"lodash/extend":733,"lodash/values":782}],100:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -13914,7 +13919,7 @@ var buildExportAll = (0, _babelTemplate2.default)("\n  Object.keys(OBJECT).forEa
 var THIS_BREAK_KEYS = ["FunctionExpression", "FunctionDeclaration", "ClassProperty", "ClassMethod", "ObjectMethod"];
 
 module.exports = exports["default"];
-},{"babel-plugin-transform-strict-mode":130,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/create":141,"babel-runtime/core-js/object/keys":143,"babel-runtime/core-js/symbol":145,"babel-template":154,"babel-types":194,"path":630}],112:[function(require,module,exports){
+},{"babel-plugin-transform-strict-mode":130,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/create":141,"babel-runtime/core-js/object/keys":143,"babel-runtime/core-js/symbol":145,"babel-template":154,"babel-types":194,"path":788}],112:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -14438,7 +14443,7 @@ var buildGlobalExport = (0, _babelTemplate2.default)("\n  var mod = { exports: {
 var buildWrapper = (0, _babelTemplate2.default)("\n  (function (global, factory) {\n    if (typeof define === \"function\" && define.amd) {\n      define(MODULE_NAME, AMD_ARGUMENTS, factory);\n    } else if (typeof exports !== \"undefined\") {\n      factory(COMMON_ARGUMENTS);\n    } else {\n      GLOBAL_EXPORT\n    }\n  })(this, FUNC);\n");
 
 module.exports = exports["default"];
-},{"babel-plugin-transform-es2015-modules-amd":110,"babel-template":154,"path":630}],114:[function(require,module,exports){
+},{"babel-plugin-transform-es2015-modules-amd":110,"babel-template":154,"path":788}],114:[function(require,module,exports){
 /*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
@@ -15499,7 +15504,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = exports["default"];
-},{"babel-helper-regex":71,"regexpu-core":725}],125:[function(require,module,exports){
+},{"babel-helper-regex":71,"regexpu-core":883}],125:[function(require,module,exports){
 /*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
@@ -15914,7 +15919,7 @@ module.exports = exports["default"];
 exports.__esModule = true;
 exports.default = require("regenerator-transform");
 module.exports = exports["default"];
-},{"regenerator-transform":718}],130:[function(require,module,exports){
+},{"regenerator-transform":876}],130:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -16468,7 +16473,7 @@ var templateVisitor = {
   }
 };
 module.exports = exports["default"];
-},{"babel-runtime/core-js/symbol":145,"babel-traverse":158,"babel-types":194,"babylon":198,"lodash/assign":563,"lodash/cloneDeep":567,"lodash/has":582}],155:[function(require,module,exports){
+},{"babel-runtime/core-js/symbol":145,"babel-traverse":158,"babel-types":194,"babylon":198,"lodash/assign":721,"lodash/cloneDeep":725,"lodash/has":740}],155:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -16702,7 +16707,7 @@ var TraversalContext = function () {
 exports.default = TraversalContext;
 module.exports = exports["default"];
 }).call(this,require('_process'))
-},{"./path":165,"_process":635,"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/classCallCheck":150,"babel-types":194}],157:[function(require,module,exports){
+},{"./path":165,"_process":793,"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/classCallCheck":150,"babel-types":194}],157:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -16888,7 +16893,7 @@ traverse.copyCache = function (source, destination) {
     cache.path.set(destination, cache.path.get(source));
   }
 };
-},{"./cache":155,"./context":156,"./hub":157,"./path":165,"./scope":177,"./visitors":179,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-types":194,"lodash/includes":585}],159:[function(require,module,exports){
+},{"./cache":155,"./context":156,"./hub":157,"./path":165,"./scope":177,"./visitors":179,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-types":194,"lodash/includes":743}],159:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -18380,7 +18385,7 @@ for (var type in virtualTypes) {
   if (_ret === "continue") continue;
 }
 module.exports = exports["default"];
-},{"../cache":155,"../index":158,"../scope":177,"./ancestry":159,"./comments":160,"./context":161,"./conversion":162,"./evaluation":163,"./family":164,"./inference":166,"./introspection":169,"./lib/virtual-types":172,"./modification":173,"./removal":174,"./replacement":175,"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/classCallCheck":150,"babel-types":194,"debug":180,"invariant":356,"lodash/assign":563}],166:[function(require,module,exports){
+},{"../cache":155,"../index":158,"../scope":177,"./ancestry":159,"./comments":160,"./context":161,"./conversion":162,"./evaluation":163,"./family":164,"./inference":166,"./introspection":169,"./lib/virtual-types":172,"./modification":173,"./removal":174,"./replacement":175,"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/classCallCheck":150,"babel-types":194,"debug":180,"invariant":514,"lodash/assign":721}],166:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -19308,7 +19313,7 @@ function _resolve(dangerous, resolved) {
     }
   }
 }
-},{"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/typeof":153,"babel-types":194,"lodash/includes":585}],170:[function(require,module,exports){
+},{"babel-runtime/core-js/get-iterator":136,"babel-runtime/helpers/typeof":153,"babel-types":194,"lodash/includes":743}],170:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -21461,7 +21466,7 @@ Scope.globals = (0, _keys2.default)(_globals2.default.builtin);
 Scope.contextVariables = ["arguments", "undefined", "Infinity", "NaN"];
 exports.default = Scope;
 module.exports = exports["default"];
-},{"../cache":155,"../index":158,"./binding":176,"./lib/renamer":178,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/map":138,"babel-runtime/core-js/object/create":141,"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/classCallCheck":150,"babel-types":194,"globals":350,"lodash/defaults":571,"lodash/includes":585,"lodash/repeat":612}],178:[function(require,module,exports){
+},{"../cache":155,"../index":158,"./binding":176,"./lib/renamer":178,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/map":138,"babel-runtime/core-js/object/create":141,"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/classCallCheck":150,"babel-types":194,"globals":508,"lodash/defaults":729,"lodash/includes":743,"lodash/repeat":770}],178:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -21949,7 +21954,7 @@ function mergePair(dest, src) {
     dest[key] = [].concat(dest[key] || [], src[key]);
   }
 }
-},{"./path/lib/virtual-types":172,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/typeof":153,"babel-types":194,"lodash/clone":566}],180:[function(require,module,exports){
+},{"./path/lib/virtual-types":172,"babel-messages":77,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/typeof":153,"babel-types":194,"lodash/clone":724}],180:[function(require,module,exports){
 (function (process){
 
 /**
@@ -22130,7 +22135,7 @@ function localstorage(){
 }
 
 }).call(this,require('_process'))
-},{"./debug":181,"_process":635}],181:[function(require,module,exports){
+},{"./debug":181,"_process":793}],181:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
 },{"dup":39,"ms":182}],182:[function(require,module,exports){
 arguments[4][41][0].apply(exports,arguments)
@@ -22520,7 +22525,7 @@ function valueToNode(value) {
 
   throw new Error("don't know how to turn this value into a node");
 }
-},{"./index":194,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/number/max-safe-integer":139,"lodash/isNumber":595,"lodash/isPlainObject":598,"lodash/isRegExp":599,"lodash/isString":600}],185:[function(require,module,exports){
+},{"./index":194,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/number/max-safe-integer":139,"lodash/isNumber":753,"lodash/isPlainObject":756,"lodash/isRegExp":757,"lodash/isString":758}],185:[function(require,module,exports){
 "use strict";
 
 var _index = require("../index");
@@ -25317,7 +25322,7 @@ function removePropertiesDeep(tree, opts) {
   traverseFast(tree, removeProperties, opts);
   return tree;
 }
-},{"./constants":183,"./converters":184,"./definitions":189,"./definitions/init":190,"./flow":193,"./react":195,"./retrievers":196,"./validators":197,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/get-own-property-symbols":142,"babel-runtime/core-js/object/keys":143,"lodash/clone":566,"lodash/compact":569,"lodash/each":572,"lodash/uniq":623,"to-fast-properties":748}],195:[function(require,module,exports){
+},{"./constants":183,"./converters":184,"./definitions":189,"./definitions/init":190,"./flow":193,"./react":195,"./retrievers":196,"./validators":197,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/json/stringify":137,"babel-runtime/core-js/object/get-own-property-symbols":142,"babel-runtime/core-js/object/keys":143,"lodash/clone":724,"lodash/compact":727,"lodash/each":730,"lodash/uniq":781,"to-fast-properties":906}],195:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25778,7 +25783,7 @@ function isNodesEquivalent(a, b) {
 
   return true;
 }
-},{"./constants":183,"./index":194,"./retrievers":196,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/typeof":153,"esutils":347}],198:[function(require,module,exports){
+},{"./constants":183,"./index":194,"./retrievers":196,"babel-runtime/core-js/get-iterator":136,"babel-runtime/core-js/object/keys":143,"babel-runtime/helpers/typeof":153,"esutils":505}],198:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -34426,7 +34431,7 @@ function isnan (val) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":219,"ieee754":352,"isarray":358}],223:[function(require,module,exports){
+},{"base64-js":219,"ieee754":510,"isarray":516}],223:[function(require,module,exports){
 (function (process){
 'use strict';
 var escapeStringRegexp = require('escape-string-regexp');
@@ -34546,7 +34551,7 @@ module.exports.stripColor = stripAnsi;
 module.exports.supportsColor = supportsColor;
 
 }).call(this,require('_process'))
-},{"_process":635,"ansi-styles":14,"escape-string-regexp":343,"has-ansi":351,"strip-ansi":747,"supports-color":224}],224:[function(require,module,exports){
+},{"_process":793,"ansi-styles":14,"escape-string-regexp":501,"has-ansi":509,"strip-ansi":905,"supports-color":224}],224:[function(require,module,exports){
 (function (process){
 'use strict';
 var argv = process.argv;
@@ -34600,7 +34605,7 @@ module.exports = (function () {
 })();
 
 }).call(this,require('_process'))
-},{"_process":635}],225:[function(require,module,exports){
+},{"_process":793}],225:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -47318,7 +47323,7 @@ Object.defineProperty(exports, 'mapFileCommentRegex', {
 });
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":222,"fs":221,"path":630}],234:[function(require,module,exports){
+},{"buffer":222,"fs":221,"path":788}],234:[function(require,module,exports){
 require('../modules/web.dom.iterable');
 require('../modules/es6.string.iterator');
 module.exports = require('../modules/core.get-iterator');
@@ -49040,13 +49045,6047 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
   Iterators[NAME] = Iterators.Array;
 }
 },{"./_global":273,"./_hide":275,"./_iterators":286,"./_wks":321,"./es6.array.iterator":324}],340:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Add the specified number of days to the given date.
+ *
+ * @description
+ * Add the specified number of days to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be added
+ * @returns {Date} the new date with the days added
+ *
+ * @example
+ * // Add 10 days to 1 September 2014:
+ * var result = addDays(new Date(2014, 8, 1), 10)
+ * //=> Thu Sep 11 2014 00:00:00
+ */
+function addDays (dirtyDate, amount) {
+  var date = parse(dirtyDate)
+  date.setDate(date.getDate() + amount)
+  return date
+}
+
+module.exports = addDays
+
+},{"../parse/index.js":461}],341:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Add the specified number of hours to the given date.
+ *
+ * @description
+ * Add the specified number of hours to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of hours to be added
+ * @returns {Date} the new date with the hours added
+ *
+ * @example
+ * // Add 2 hours to 10 July 2014 23:00:00:
+ * var result = addHours(new Date(2014, 6, 10, 23, 0), 2)
+ * //=> Fri Jul 11 2014 01:00:00
+ */
+function addHours (dirtyDate, amount) {
+  var date = parse(dirtyDate)
+  date.setHours(date.getHours() + amount)
+  return date
+}
+
+module.exports = addHours
+
+},{"../parse/index.js":461}],342:[function(require,module,exports){
+var getISOYear = require('../get_iso_year/index.js')
+var setISOYear = require('../set_iso_year/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Add the specified number of ISO week-numbering years to the given date.
+ *
+ * @description
+ * Add the specified number of ISO week-numbering years to the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of ISO week-numbering years to be added
+ * @returns {Date} the new date with the ISO week-numbering years added
+ *
+ * @example
+ * // Add 5 ISO week-numbering years to 2 July 2010:
+ * var result = addISOYears(new Date(2010, 6, 2), 5)
+ * //=> Fri Jun 26 2015 00:00:00
+ */
+function addISOYears (dirtyDate, amount) {
+  return setISOYear(dirtyDate, getISOYear(dirtyDate) + amount)
+}
+
+module.exports = addISOYears
+
+},{"../get_iso_year/index.js":399,"../set_iso_year/index.js":468}],343:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Millisecond Helpers
+ * @summary Add the specified number of milliseconds to the given date.
+ *
+ * @description
+ * Add the specified number of milliseconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be added
+ * @returns {Date} the new date with the milliseconds added
+ *
+ * @example
+ * // Add 750 milliseconds to 10 July 2014 12:45:30.000:
+ * var result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:30.750
+ */
+function addMilliseconds (dirtyDate, amount) {
+  var date = parse(dirtyDate)
+  date.setMilliseconds(date.getMilliseconds() + amount)
+  return date
+}
+
+module.exports = addMilliseconds
+
+},{"../parse/index.js":461}],344:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Add the specified number of minutes to the given date.
+ *
+ * @description
+ * Add the specified number of minutes to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of minutes to be added
+ * @returns {Date} the new date with the minutes added
+ *
+ * @example
+ * // Add 30 minutes to 10 July 2014 12:00:00:
+ * var result = addMinutes(new Date(2014, 6, 10, 12, 0), 30)
+ * //=> Thu Jul 10 2014 12:30:00
+ */
+function addMinutes (dirtyDate, amount) {
+  var date = parse(dirtyDate)
+  date.setMinutes(date.getMinutes() + amount)
+  return date
+}
+
+module.exports = addMinutes
+
+},{"../parse/index.js":461}],345:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var getDaysInMonth = require('../get_days_in_month/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Add the specified number of months to the given date.
+ *
+ * @description
+ * Add the specified number of months to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of months to be added
+ * @returns {Date} the new date with the months added
+ *
+ * @example
+ * // Add 5 months to 1 September 2014:
+ * var result = addMonths(new Date(2014, 8, 1), 5)
+ * //=> Sun Feb 01 2015 00:00:00
+ */
+function addMonths (dirtyDate, amount) {
+  var date = parse(dirtyDate)
+  var desiredMonth = date.getMonth() + amount
+  var dateWithDesiredMonth = new Date(0)
+  dateWithDesiredMonth.setFullYear(date.getFullYear(), desiredMonth, 1)
+  dateWithDesiredMonth.setHours(0, 0, 0, 0)
+  var daysInMonth = getDaysInMonth(dateWithDesiredMonth)
+  // Set the last day of the new month
+  // if the original date was the last day of the longer month
+  date.setMonth(desiredMonth, Math.min(daysInMonth, date.getDate()))
+  return date
+}
+
+module.exports = addMonths
+
+},{"../get_days_in_month/index.js":393,"../parse/index.js":461}],346:[function(require,module,exports){
+var addMonths = require('../add_months/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Add the specified number of year quarters to the given date.
+ *
+ * @description
+ * Add the specified number of year quarters to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of quarters to be added
+ * @returns {Date} the new date with the quarters added
+ *
+ * @example
+ * // Add 1 quarter to 1 September 2014:
+ * var result = addQuarters(new Date(2014, 8, 1), 1)
+ * //=> Mon Dec 01 2014 00:00:00
+ */
+function addQuarters (dirtyDate, amount) {
+  var months = amount * 3
+  return addMonths(dirtyDate, months)
+}
+
+module.exports = addQuarters
+
+},{"../add_months/index.js":345}],347:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Add the specified number of seconds to the given date.
+ *
+ * @description
+ * Add the specified number of seconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of seconds to be added
+ * @returns {Date} the new date with the seconds added
+ *
+ * @example
+ * // Add 30 seconds to 10 July 2014 12:45:00:
+ * var result = addSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
+ * //=> Thu Jul 10 2014 12:45:30
+ */
+function addSeconds (dirtyDate, amount) {
+  var date = parse(dirtyDate)
+  date.setSeconds(date.getSeconds() + amount)
+  return date
+}
+
+module.exports = addSeconds
+
+},{"../parse/index.js":461}],348:[function(require,module,exports){
+var addDays = require('../add_days/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Add the specified number of weeks to the given date.
+ *
+ * @description
+ * Add the specified number of week to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of weeks to be added
+ * @returns {Date} the new date with the weeks added
+ *
+ * @example
+ * // Add 4 weeks to 1 September 2014:
+ * var result = addWeeks(new Date(2014, 8, 1), 4)
+ * //=> Mon Sep 29 2014 00:00:00
+ */
+function addWeeks (dirtyDate, amount) {
+  var days = amount * 7
+  return addDays(dirtyDate, days)
+}
+
+module.exports = addWeeks
+
+},{"../add_days/index.js":340}],349:[function(require,module,exports){
+var addMonths = require('../add_months/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Add the specified number of years to the given date.
+ *
+ * @description
+ * Add the specified number of years to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of years to be added
+ * @returns {Date} the new date with the years added
+ *
+ * @example
+ * // Add 5 years to 1 September 2014:
+ * var result = addYears(new Date(2014, 8, 1), 5)
+ * //=> Sun Sep 01 2019 00:00:00
+ */
+function addYears (dirtyDate, amount) {
+  return addMonths(dirtyDate, amount * 12)
+}
+
+module.exports = addYears
+
+},{"../add_months/index.js":345}],350:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Range Helpers
+ * @summary Is the given date range overlapping with another date range?
+ *
+ * @description
+ * Is the given date range overlapping with another date range?
+ *
+ * @param {Date|String|Number} dirtyInitialRangeStartDate - the start of the initial range
+ * @param {Date|String|Number} dirtyInitialRangeEndDate - the end of the initial range
+ * @param {Date|String|Number} dirtyComparedRangeStartDate - the start of the range to compare it with
+ * @param {Date|String|Number} dirtyComparedRangeEndDate - the end of the range to compare it with
+ * @returns {Boolean} whether the date ranges are overlapping
+ * @throws {Error} startDate of a date range cannot be after its endDate
+ *
+ * @example
+ * // For overlapping date ranges:
+ * isOverlappingRange(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 17), new Date(2014, 0, 21)
+ * )
+ * //=> true
+ *
+ * @example
+ * // For non-overlapping date ranges:
+ * isOverlappingRange(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 21), new Date(2014, 0, 22)
+ * )
+ * //=> false
+ */
+function areRangesOverlapping (dirtyInitialRangeStartDate, dirtyInitialRangeEndDate, dirtyComparedRangeStartDate, dirtyComparedRangeEndDate) {
+  var initialStartTime = parse(dirtyInitialRangeStartDate).getTime()
+  var initialEndTime = parse(dirtyInitialRangeEndDate).getTime()
+  var comparedStartTime = parse(dirtyComparedRangeStartDate).getTime()
+  var comparedEndTime = parse(dirtyComparedRangeEndDate).getTime()
+
+  if (initialStartTime > initialEndTime || comparedStartTime > comparedEndTime) {
+    throw new Error('The start of the range cannot be after the end of the range')
+  }
+
+  return initialStartTime < comparedEndTime && comparedStartTime < initialEndTime
+}
+
+module.exports = areRangesOverlapping
+
+},{"../parse/index.js":461}],351:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Return an index of the closest date from the array comparing to the given date.
+ *
+ * @description
+ * Return an index of the closest date from the array comparing to the given date.
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date[]|String[]|Number[]} datesArray - the array to search
+ * @returns {Number} an index of the date closest to the given date
+ * @throws {TypeError} the second argument must be an instance of Array
+ *
+ * @example
+ * // Which date is closer to 6 September 2015?
+ * var dateToCompare = new Date(2015, 8, 6)
+ * var datesArray = [
+ *   new Date(2015, 0, 1),
+ *   new Date(2016, 0, 1),
+ *   new Date(2017, 0, 1)
+ * ]
+ * var result = closestIndexTo(dateToCompare, datesArray)
+ * //=> 1
+ */
+function closestIndexTo (dirtyDateToCompare, dirtyDatesArray) {
+  if (!(dirtyDatesArray instanceof Array)) {
+    throw new TypeError(toString.call(dirtyDatesArray) + ' is not an instance of Array')
+  }
+
+  var dateToCompare = parse(dirtyDateToCompare)
+  var timeToCompare = dateToCompare.getTime()
+
+  var result
+  var minDistance
+
+  dirtyDatesArray.forEach(function (dirtyDate, index) {
+    var currentDate = parse(dirtyDate)
+    var distance = Math.abs(timeToCompare - currentDate.getTime())
+    if (result === undefined || distance < minDistance) {
+      result = index
+      minDistance = distance
+    }
+  })
+
+  return result
+}
+
+module.exports = closestIndexTo
+
+},{"../parse/index.js":461}],352:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Return a date from the array closest to the given date.
+ *
+ * @description
+ * Return a date from the array closest to the given date.
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date[]|String[]|Number[]} datesArray - the array to search
+ * @returns {Date} the date from the array closest to the given date
+ * @throws {TypeError} the second argument must be an instance of Array
+ *
+ * @example
+ * // Which date is closer to 6 September 2015: 1 January 2000 or 1 January 2030?
+ * var dateToCompare = new Date(2015, 8, 6)
+ * var result = closestTo(dateToCompare, [
+ *   new Date(2000, 0, 1),
+ *   new Date(2030, 0, 1)
+ * ])
+ * //=> Tue Jan 01 2030 00:00:00
+ */
+function closestTo (dirtyDateToCompare, dirtyDatesArray) {
+  if (!(dirtyDatesArray instanceof Array)) {
+    throw new TypeError(toString.call(dirtyDatesArray) + ' is not an instance of Array')
+  }
+
+  var dateToCompare = parse(dirtyDateToCompare)
+  var timeToCompare = dateToCompare.getTime()
+
+  var result
+  var minDistance
+
+  dirtyDatesArray.forEach(function (dirtyDate) {
+    var currentDate = parse(dirtyDate)
+    var distance = Math.abs(timeToCompare - currentDate.getTime())
+    if (result === undefined || distance < minDistance) {
+      result = currentDate
+      minDistance = distance
+    }
+  })
+
+  return result
+}
+
+module.exports = closestTo
+
+},{"../parse/index.js":461}],353:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return 1 if the first date is after the second,
+ * -1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989:
+ * var result = compareAsc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> -1
+ *
+ * @example
+ * // Sort the array of dates:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareAsc)
+ * //=> [
+ * //   Wed Feb 11 1987 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00
+ * // ]
+ */
+function compareAsc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft < timeRight) {
+    return -1
+  } else if (timeLeft > timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareAsc
+
+},{"../parse/index.js":461}],354:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates reverse chronologically and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return -1 if the first date is after the second,
+ * 1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989 reverse chronologically:
+ * var result = compareDesc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> 1
+ *
+ * @example
+ * // Sort the array of dates in reverse chronological order:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareDesc)
+ * //=> [
+ * //   Sun Jul 02 1995 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Wed Feb 11 1987 00:00:00
+ * // ]
+ */
+function compareDesc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft > timeRight) {
+    return -1
+  } else if (timeLeft < timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareDesc
+
+},{"../parse/index.js":461}],355:[function(require,module,exports){
+var startOfDay = require('../start_of_day/index.js')
+
+var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_DAY = 86400000
+
+/**
+ * @category Day Helpers
+ * @summary Get the number of calendar days between the given dates.
+ *
+ * @description
+ * Get the number of calendar days between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar days
+ *
+ * @example
+ * // How many calendar days are between
+ * // 2 July 2011 23:00:00 and 2 July 2012 00:00:00?
+ * var result = differenceInCalendarDays(
+ *   new Date(2012, 6, 2, 0, 0),
+ *   new Date(2011, 6, 2, 23, 0)
+ * )
+ * //=> 366
+ */
+function differenceInCalendarDays (dirtyDateLeft, dirtyDateRight) {
+  var startOfDayLeft = startOfDay(dirtyDateLeft)
+  var startOfDayRight = startOfDay(dirtyDateRight)
+
+  var timestampLeft = startOfDayLeft.getTime() -
+    startOfDayLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+  var timestampRight = startOfDayRight.getTime() -
+    startOfDayRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a day is not constant
+  // (e.g. it's different in the day of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_DAY)
+}
+
+module.exports = differenceInCalendarDays
+
+},{"../start_of_day/index.js":475}],356:[function(require,module,exports){
+var startOfISOWeek = require('../start_of_iso_week/index.js')
+
+var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category ISO Week Helpers
+ * @summary Get the number of calendar ISO weeks between the given dates.
+ *
+ * @description
+ * Get the number of calendar ISO weeks between the given dates.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar ISO weeks
+ *
+ * @example
+ * // How many calendar ISO weeks are between 6 July 2014 and 21 July 2014?
+ * var result = differenceInCalendarISOWeeks(
+ *   new Date(2014, 6, 21),
+ *   new Date(2014, 6, 6)
+ * )
+ * //=> 3
+ */
+function differenceInCalendarISOWeeks (dirtyDateLeft, dirtyDateRight) {
+  var startOfISOWeekLeft = startOfISOWeek(dirtyDateLeft)
+  var startOfISOWeekRight = startOfISOWeek(dirtyDateRight)
+
+  var timestampLeft = startOfISOWeekLeft.getTime() -
+    startOfISOWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+  var timestampRight = startOfISOWeekRight.getTime() -
+    startOfISOWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK)
+}
+
+module.exports = differenceInCalendarISOWeeks
+
+},{"../start_of_iso_week/index.js":477}],357:[function(require,module,exports){
+var getISOYear = require('../get_iso_year/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the number of calendar ISO week-numbering years between the given dates.
+ *
+ * @description
+ * Get the number of calendar ISO week-numbering years between the given dates.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar ISO week-numbering years
+ *
+ * @example
+ * // How many calendar ISO week-numbering years are 1 January 2010 and 1 January 2012?
+ * var result = differenceInCalendarISOYears(
+ *   new Date(2012, 0, 1),
+ *   new Date(2010, 0, 1)
+ * )
+ * //=> 2
+ */
+function differenceInCalendarISOYears (dirtyDateLeft, dirtyDateRight) {
+  return getISOYear(dirtyDateLeft) - getISOYear(dirtyDateRight)
+}
+
+module.exports = differenceInCalendarISOYears
+
+},{"../get_iso_year/index.js":399}],358:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of calendar months between the given dates.
+ *
+ * @description
+ * Get the number of calendar months between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar months
+ *
+ * @example
+ * // How many calendar months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInCalendarMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 8
+ */
+function differenceInCalendarMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth()
+
+  return yearDiff * 12 + monthDiff
+}
+
+module.exports = differenceInCalendarMonths
+
+},{"../parse/index.js":461}],359:[function(require,module,exports){
+var getQuarter = require('../get_quarter/index.js')
+var parse = require('../parse/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Get the number of calendar quarters between the given dates.
+ *
+ * @description
+ * Get the number of calendar quarters between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar quarters
+ *
+ * @example
+ * // How many calendar quarters are between 31 December 2013 and 2 July 2014?
+ * var result = differenceInCalendarQuarters(
+ *   new Date(2014, 6, 2),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 3
+ */
+function differenceInCalendarQuarters (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
+  var quarterDiff = getQuarter(dateLeft) - getQuarter(dateRight)
+
+  return yearDiff * 4 + quarterDiff
+}
+
+module.exports = differenceInCalendarQuarters
+
+},{"../get_quarter/index.js":404,"../parse/index.js":461}],360:[function(require,module,exports){
+var startOfWeek = require('../start_of_week/index.js')
+
+var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category Week Helpers
+ * @summary Get the number of calendar weeks between the given dates.
+ *
+ * @description
+ * Get the number of calendar weeks between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Number} the number of calendar weeks
+ *
+ * @example
+ * // How many calendar weeks are between 5 July 2014 and 20 July 2014?
+ * var result = differenceInCalendarWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5)
+ * )
+ * //=> 3
+ *
+ * @example
+ * // If the week starts on Monday,
+ * // how many calendar weeks are between 5 July 2014 and 20 July 2014?
+ * var result = differenceInCalendarWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5),
+ *   {weekStartsOn: 1}
+ * )
+ * //=> 2
+ */
+function differenceInCalendarWeeks (dirtyDateLeft, dirtyDateRight, options) {
+  var startOfWeekLeft = startOfWeek(dirtyDateLeft, options)
+  var startOfWeekRight = startOfWeek(dirtyDateRight, options)
+
+  var timestampLeft = startOfWeekLeft.getTime() -
+    startOfWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+  var timestampRight = startOfWeekRight.getTime() -
+    startOfWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK)
+}
+
+module.exports = differenceInCalendarWeeks
+
+},{"../start_of_week/index.js":485}],361:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Get the number of calendar years between the given dates.
+ *
+ * @description
+ * Get the number of calendar years between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar years
+ *
+ * @example
+ * // How many calendar years are between 31 December 2013 and 11 February 2015?
+ * var result = differenceInCalendarYears(
+ *   new Date(2015, 1, 11),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 2
+ */
+function differenceInCalendarYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  return dateLeft.getFullYear() - dateRight.getFullYear()
+}
+
+module.exports = differenceInCalendarYears
+
+},{"../parse/index.js":461}],362:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var differenceInCalendarDays = require('../difference_in_calendar_days/index.js')
+var compareAsc = require('../compare_asc/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Get the number of full days between the given dates.
+ *
+ * @description
+ * Get the number of full days between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full days
+ *
+ * @example
+ * // How many full days are between
+ * // 2 July 2011 23:00:00 and 2 July 2012 00:00:00?
+ * var result = differenceInDays(
+ *   new Date(2012, 6, 2, 0, 0),
+ *   new Date(2011, 6, 2, 23, 0)
+ * )
+ * //=> 365
+ */
+function differenceInDays (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarDays(dateLeft, dateRight))
+  dateLeft.setDate(dateLeft.getDate() - sign * difference)
+
+  // Math.abs(diff in full days - diff in calendar days) === 1 if last calendar day is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastDayNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastDayNotFull)
+}
+
+module.exports = differenceInDays
+
+},{"../compare_asc/index.js":353,"../difference_in_calendar_days/index.js":355,"../parse/index.js":461}],363:[function(require,module,exports){
+var differenceInMilliseconds = require('../difference_in_milliseconds/index.js')
+
+var MILLISECONDS_IN_HOUR = 3600000
+
+/**
+ * @category Hour Helpers
+ * @summary Get the number of hours between the given dates.
+ *
+ * @description
+ * Get the number of hours between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of hours
+ *
+ * @example
+ * // How many hours are between 2 July 2014 06:50:00 and 2 July 2014 19:00:00?
+ * var result = differenceInHours(
+ *   new Date(2014, 6, 2, 19, 0),
+ *   new Date(2014, 6, 2, 6, 50)
+ * )
+ * //=> 12
+ */
+function differenceInHours (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_HOUR
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInHours
+
+},{"../difference_in_milliseconds/index.js":365}],364:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var differenceInCalendarISOYears = require('../difference_in_calendar_iso_years/index.js')
+var compareAsc = require('../compare_asc/index.js')
+var subISOYears = require('../sub_iso_years/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the number of full ISO week-numbering years between the given dates.
+ *
+ * @description
+ * Get the number of full ISO week-numbering years between the given dates.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full ISO week-numbering years
+ *
+ * @example
+ * // How many full ISO week-numbering years are between 1 January 2010 and 1 January 2012?
+ * var result = differenceInISOYears(
+ *   new Date(2012, 0, 1),
+ *   new Date(2010, 0, 1)
+ * )
+ * //=> 1
+ */
+function differenceInISOYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarISOYears(dateLeft, dateRight))
+  dateLeft = subISOYears(dateLeft, sign * difference)
+
+  // Math.abs(diff in full ISO years - diff in calendar ISO years) === 1
+  // if last calendar ISO year is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastISOYearNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastISOYearNotFull)
+}
+
+module.exports = differenceInISOYears
+
+},{"../compare_asc/index.js":353,"../difference_in_calendar_iso_years/index.js":357,"../parse/index.js":461,"../sub_iso_years/index.js":490}],365:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Millisecond Helpers
+ * @summary Get the number of milliseconds between the given dates.
+ *
+ * @description
+ * Get the number of milliseconds between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of milliseconds
+ *
+ * @example
+ * // How many milliseconds are between
+ * // 2 July 2014 12:30:20.600 and 2 July 2014 12:30:21.700?
+ * var result = differenceInMilliseconds(
+ *   new Date(2014, 6, 2, 12, 30, 21, 700),
+ *   new Date(2014, 6, 2, 12, 30, 20, 600)
+ * )
+ * //=> 1100
+ */
+function differenceInMilliseconds (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getTime() - dateRight.getTime()
+}
+
+module.exports = differenceInMilliseconds
+
+},{"../parse/index.js":461}],366:[function(require,module,exports){
+var differenceInMilliseconds = require('../difference_in_milliseconds/index.js')
+
+var MILLISECONDS_IN_MINUTE = 60000
+
+/**
+ * @category Minute Helpers
+ * @summary Get the number of minutes between the given dates.
+ *
+ * @description
+ * Get the number of minutes between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of minutes
+ *
+ * @example
+ * // How many minutes are between 2 July 2014 12:07:59 and 2 July 2014 12:20:00?
+ * var result = differenceInMinutes(
+ *   new Date(2014, 6, 2, 12, 20, 0),
+ *   new Date(2014, 6, 2, 12, 7, 59)
+ * )
+ * //=> 12
+ */
+function differenceInMinutes (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_MINUTE
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInMinutes
+
+},{"../difference_in_milliseconds/index.js":365}],367:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var differenceInCalendarMonths = require('../difference_in_calendar_months/index.js')
+var compareAsc = require('../compare_asc/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of full months between the given dates.
+ *
+ * @description
+ * Get the number of full months between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full months
+ *
+ * @example
+ * // How many full months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 7
+ */
+function differenceInMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight))
+  dateLeft.setMonth(dateLeft.getMonth() - sign * difference)
+
+  // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastMonthNotFull)
+}
+
+module.exports = differenceInMonths
+
+},{"../compare_asc/index.js":353,"../difference_in_calendar_months/index.js":358,"../parse/index.js":461}],368:[function(require,module,exports){
+var differenceInMonths = require('../difference_in_months/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Get the number of full quarters between the given dates.
+ *
+ * @description
+ * Get the number of full quarters between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full quarters
+ *
+ * @example
+ * // How many full quarters are between 31 December 2013 and 2 July 2014?
+ * var result = differenceInQuarters(
+ *   new Date(2014, 6, 2),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 2
+ */
+function differenceInQuarters (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMonths(dirtyDateLeft, dirtyDateRight) / 3
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInQuarters
+
+},{"../difference_in_months/index.js":367}],369:[function(require,module,exports){
+var differenceInMilliseconds = require('../difference_in_milliseconds/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Get the number of seconds between the given dates.
+ *
+ * @description
+ * Get the number of seconds between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of seconds
+ *
+ * @example
+ * // How many seconds are between
+ * // 2 July 2014 12:30:07.999 and 2 July 2014 12:30:20.000?
+ * var result = differenceInSeconds(
+ *   new Date(2014, 6, 2, 12, 30, 20, 0),
+ *   new Date(2014, 6, 2, 12, 30, 7, 999)
+ * )
+ * //=> 12
+ */
+function differenceInSeconds (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInSeconds
+
+},{"../difference_in_milliseconds/index.js":365}],370:[function(require,module,exports){
+var differenceInDays = require('../difference_in_days/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Get the number of full weeks between the given dates.
+ *
+ * @description
+ * Get the number of full weeks between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full weeks
+ *
+ * @example
+ * // How many full weeks are between 5 July 2014 and 20 July 2014?
+ * var result = differenceInWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5)
+ * )
+ * //=> 2
+ */
+function differenceInWeeks (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInDays(dirtyDateLeft, dirtyDateRight) / 7
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInWeeks
+
+},{"../difference_in_days/index.js":362}],371:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var differenceInCalendarYears = require('../difference_in_calendar_years/index.js')
+var compareAsc = require('../compare_asc/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Get the number of full years between the given dates.
+ *
+ * @description
+ * Get the number of full years between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full years
+ *
+ * @example
+ * // How many full years are between 31 December 2013 and 11 February 2015?
+ * var result = differenceInYears(
+ *   new Date(2015, 1, 11),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 1
+ */
+function differenceInYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarYears(dateLeft, dateRight))
+  dateLeft.setFullYear(dateLeft.getFullYear() - sign * difference)
+
+  // Math.abs(diff in full years - diff in calendar years) === 1 if last calendar year is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastYearNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastYearNotFull)
+}
+
+module.exports = differenceInYears
+
+},{"../compare_asc/index.js":353,"../difference_in_calendar_years/index.js":361,"../parse/index.js":461}],372:[function(require,module,exports){
+var compareDesc = require('../compare_desc/index.js')
+var parse = require('../parse/index.js')
+var differenceInSeconds = require('../difference_in_seconds/index.js')
+var differenceInMonths = require('../difference_in_months/index.js')
+var enLocale = require('../locale/en/index.js')
+
+var MINUTES_IN_DAY = 1440
+var MINUTES_IN_ALMOST_TWO_DAYS = 2520
+var MINUTES_IN_MONTH = 43200
+var MINUTES_IN_TWO_MONTHS = 86400
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given dates in words.
+ *
+ * @description
+ * Return the distance between the given dates in words.
+ *
+ * | Distance between dates                                            | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance between dates | Result               |
+ * |------------------------|----------------------|
+ * | 0 secs ... 5 secs      | less than 5 seconds  |
+ * | 5 secs ... 10 secs     | less than 10 seconds |
+ * | 10 secs ... 20 secs    | less than 20 seconds |
+ * | 20 secs ... 40 secs    | half a minute        |
+ * | 40 secs ... 60 secs    | less than a minute   |
+ * | 60 secs ... 90 secs    | 1 minute             |
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date|String|Number} date - the other date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // What is the distance between 2 July 2014 and 1 January 2015?
+ * var result = distanceInWords(
+ *   new Date(2014, 6, 2),
+ *   new Date(2015, 0, 1)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // What is the distance between 1 January 2015 00:00:15
+ * // and 1 January 2015 00:00:00, including seconds?
+ * var result = distanceInWords(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ *   {includeSeconds: true}
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, with a suffix?
+ * var result = distanceInWords(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> 'about 1 year ago'
+ *
+ * @example
+ * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWords(
+ *   new Date(2016, 7, 1),
+ *   new Date(2015, 0, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> 'pli ol 1 jaro'
+ */
+function distanceInWords (dirtyDateToCompare, dirtyDate, options) {
+  options = options || {}
+
+  var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
+
+  var locale = options.locale
+  var localize = enLocale.distanceInWords.localize
+  if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
+    localize = locale.distanceInWords.localize
+  }
+
+  var localizeOptions = {
+    addSuffix: options.addSuffix,
+    comparison: comparison
+  }
+
+  var dateLeft, dateRight
+  if (comparison > 0) {
+    dateLeft = parse(dirtyDateToCompare)
+    dateRight = parse(dirtyDate)
+  } else {
+    dateLeft = parse(dirtyDate)
+    dateRight = parse(dirtyDateToCompare)
+  }
+
+  var seconds = differenceInSeconds(dateRight, dateLeft)
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
+  var minutes = Math.round(seconds / 60) - offset
+  var months
+
+  // 0 up to 2 mins
+  if (minutes < 2) {
+    if (options.includeSeconds) {
+      if (seconds < 5) {
+        return localize('lessThanXSeconds', 5, localizeOptions)
+      } else if (seconds < 10) {
+        return localize('lessThanXSeconds', 10, localizeOptions)
+      } else if (seconds < 20) {
+        return localize('lessThanXSeconds', 20, localizeOptions)
+      } else if (seconds < 40) {
+        return localize('halfAMinute', null, localizeOptions)
+      } else if (seconds < 60) {
+        return localize('lessThanXMinutes', 1, localizeOptions)
+      } else {
+        return localize('xMinutes', 1, localizeOptions)
+      }
+    } else {
+      if (minutes === 0) {
+        return localize('lessThanXMinutes', 1, localizeOptions)
+      } else {
+        return localize('xMinutes', minutes, localizeOptions)
+      }
+    }
+
+  // 2 mins up to 0.75 hrs
+  } else if (minutes < 45) {
+    return localize('xMinutes', minutes, localizeOptions)
+
+  // 0.75 hrs up to 1.5 hrs
+  } else if (minutes < 90) {
+    return localize('aboutXHours', 1, localizeOptions)
+
+  // 1.5 hrs up to 24 hrs
+  } else if (minutes < MINUTES_IN_DAY) {
+    var hours = Math.round(minutes / 60)
+    return localize('aboutXHours', hours, localizeOptions)
+
+  // 1 day up to 1.75 days
+  } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
+    return localize('xDays', 1, localizeOptions)
+
+  // 1.75 days up to 30 days
+  } else if (minutes < MINUTES_IN_MONTH) {
+    var days = Math.round(minutes / MINUTES_IN_DAY)
+    return localize('xDays', days, localizeOptions)
+
+  // 1 month up to 2 months
+  } else if (minutes < MINUTES_IN_TWO_MONTHS) {
+    months = Math.round(minutes / MINUTES_IN_MONTH)
+    return localize('aboutXMonths', months, localizeOptions)
+  }
+
+  months = differenceInMonths(dateRight, dateLeft)
+
+  // 2 months up to 12 months
+  if (months < 12) {
+    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH)
+    return localize('xMonths', nearestMonth, localizeOptions)
+
+  // 1 year up to max Date
+  } else {
+    var monthsSinceStartOfYear = months % 12
+    var years = Math.floor(months / 12)
+
+    // N years up to 1 years 3 months
+    if (monthsSinceStartOfYear < 3) {
+      return localize('aboutXYears', years, localizeOptions)
+
+    // N years 3 months up to N years 9 months
+    } else if (monthsSinceStartOfYear < 9) {
+      return localize('overXYears', years, localizeOptions)
+
+    // N years 9 months up to N year 12 months
+    } else {
+      return localize('almostXYears', years + 1, localizeOptions)
+    }
+  }
+}
+
+module.exports = distanceInWords
+
+},{"../compare_desc/index.js":354,"../difference_in_months/index.js":367,"../difference_in_seconds/index.js":369,"../locale/en/index.js":458,"../parse/index.js":461}],373:[function(require,module,exports){
+var compareDesc = require('../compare_desc/index.js')
+var parse = require('../parse/index.js')
+var differenceInSeconds = require('../difference_in_seconds/index.js')
+var enLocale = require('../locale/en/index.js')
+
+var MINUTES_IN_DAY = 1440
+var MINUTES_IN_MONTH = 43200
+var MINUTES_IN_YEAR = 525600
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given dates in words.
+ *
+ * @description
+ * Return the distance between the given dates in words, using strict units.
+ * This is like `distanceInWords`, but does not use helpers like 'almost', 'over',
+ * 'less than' and the like.
+ *
+ * | Distance between dates | Result              |
+ * |------------------------|---------------------|
+ * | 0 ... 59 secs          | [0..59] seconds     |
+ * | 1 ... 59 mins          | [1..59] minutes     |
+ * | 1 ... 23 hrs           | [1..23] hours       |
+ * | 1 ... 29 days          | [1..29] days        |
+ * | 1 ... 11 months        | [1..11] months      |
+ * | 1 ... N years          | [1..N]  years       |
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date|String|Number} date - the other date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+ * @param {String} [options.unit] - if specified, will force a unit. Options: 's', 'm', 'h', 'd', 'M', 'Y'
+ * @param {String} [options.partialMethod='floor'] - which way to round partial units. Options: 'floor', 'ceil', 'round'
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // What is the distance between 2 July 2014 and 1 January 2015?
+ * var result = distanceInWordsStrict(
+ *   new Date(2014, 6, 2),
+ *   new Date(2015, 0, 2)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // What is the distance between 1 January 2015 00:00:15
+ * // and 1 January 2015 00:00:00?
+ * var result = distanceInWordsStrict(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ * )
+ * //=> '15 seconds'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, with a suffix?
+ * var result = distanceInWordsStrict(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> '1 year ago'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, in minutes?
+ * var result = distanceInWordsStrict(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {unit: 'm'}
+ * )
+ * //=> '525600 minutes'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 28 January 2015, in months, rounded up?
+ * var result = distanceInWordsStrict(
+ *   new Date(2015, 0, 28),
+ *   new Date(2015, 0, 1),
+ *   {unit: 'M', partialMethod: 'ceil'}
+ * )
+ * //=> '1 month'
+ *
+ * @example
+ * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWordsStrict(
+ *   new Date(2016, 7, 1),
+ *   new Date(2015, 0, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> '1 jaro'
+ */
+function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, options) {
+  options = options || {}
+
+  var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
+
+  var locale = options.locale
+  var localize = enLocale.distanceInWords.localize
+  if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
+    localize = locale.distanceInWords.localize
+  }
+
+  var localizeOptions = {
+    addSuffix: options.addSuffix,
+    comparison: comparison
+  }
+
+  var dateLeft, dateRight
+  if (comparison > 0) {
+    dateLeft = parse(dirtyDateToCompare)
+    dateRight = parse(dirtyDate)
+  } else {
+    dateLeft = parse(dirtyDate)
+    dateRight = parse(dirtyDateToCompare)
+  }
+
+  var unit = options.unit
+  var mathPartial = Math[options.partialMethod || 'floor']
+  var seconds = differenceInSeconds(dateRight, dateLeft)
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
+  var minutes = mathPartial(seconds / 60) - offset
+  var hours, days, months, years
+
+  if (!unit) {
+    if (minutes < 1) {
+      unit = 's'
+    } else if (minutes < 60) {
+      unit = 'm'
+    } else if (minutes < MINUTES_IN_DAY) {
+      unit = 'h'
+    } else if (minutes < MINUTES_IN_MONTH) {
+      unit = 'd'
+    } else if (minutes < MINUTES_IN_YEAR) {
+      unit = 'M'
+    } else {
+      unit = 'Y'
+    }
+  }
+
+  // 0 up to 60 seconds
+  if (unit === 's') {
+    return localize('xSeconds', seconds, localizeOptions)
+
+  // 1 up to 60 mins
+  } else if (unit === 'm') {
+    return localize('xMinutes', minutes, localizeOptions)
+
+  // 1 up to 24 hours
+  } else if (unit === 'h') {
+    hours = mathPartial(minutes / 60)
+    return localize('xHours', hours, localizeOptions)
+
+  // 1 up to 30 days
+  } else if (unit === 'd') {
+    days = mathPartial(minutes / MINUTES_IN_DAY)
+    return localize('xDays', days, localizeOptions)
+
+  // 1 up to 12 months
+  } else if (unit === 'M') {
+    months = mathPartial(minutes / MINUTES_IN_MONTH)
+    return localize('xMonths', months, localizeOptions)
+
+  // 1 year up to max Date
+  } else if (unit === 'Y') {
+    years = mathPartial(minutes / MINUTES_IN_YEAR)
+    return localize('xYears', years, localizeOptions)
+  }
+
+  throw new Error('Unknown unit: ' + unit)
+}
+
+module.exports = distanceInWordsStrict
+
+},{"../compare_desc/index.js":354,"../difference_in_seconds/index.js":369,"../locale/en/index.js":458,"../parse/index.js":461}],374:[function(require,module,exports){
+var distanceInWords = require('../distance_in_words/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given date and now in words.
+ *
+ * @description
+ * Return the distance between the given date and now in words.
+ *
+ * | Distance to now                                                   | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance to now     | Result               |
+ * |---------------------|----------------------|
+ * | 0 secs ... 5 secs   | less than 5 seconds  |
+ * | 5 secs ... 10 secs  | less than 10 seconds |
+ * | 10 secs ... 20 secs | less than 20 seconds |
+ * | 20 secs ... 40 secs | half a minute        |
+ * | 40 secs ... 60 secs | less than a minute   |
+ * | 60 secs ... 90 secs | 1 minute             |
+ *
+ * @param {Date|String|Number} date - the given date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result specifies if the second date is earlier or later than the first
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // If today is 1 January 2015, what is the distance to 2 July 2014?
+ * var result = distanceInWordsToNow(
+ *   new Date(2014, 6, 2)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // If now is 1 January 2015 00:00:00,
+ * // what is the distance to 1 January 2015 00:00:15, including seconds?
+ * var result = distanceInWordsToNow(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   {includeSeconds: true}
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // If today is 1 January 2015,
+ * // what is the distance to 1 January 2016, with a suffix?
+ * var result = distanceInWordsToNow(
+ *   new Date(2016, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> 'in about 1 year'
+ *
+ * @example
+ * // If today is 1 January 2015,
+ * // what is the distance to 1 August 2016 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWordsToNow(
+ *   new Date(2016, 7, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> 'pli ol 1 jaro'
+ */
+function distanceInWordsToNow (dirtyDate, options) {
+  return distanceInWords(Date.now(), dirtyDate, options)
+}
+
+module.exports = distanceInWordsToNow
+
+},{"../distance_in_words/index.js":372}],375:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Return the array of dates within the specified range.
+ *
+ * @description
+ * Return the array of dates within the specified range.
+ *
+ * @param {Date|String|Number} startDate - the first date
+ * @param {Date|String|Number} endDate - the last date
+ * @returns {Date[]} the array with starts of days from the day of startDate to the day of endDate
+ * @throws {Error} startDate cannot be after endDate
+ *
+ * @example
+ * // Each day between 6 October 2014 and 10 October 2014:
+ * var result = eachDay(
+ *   new Date(2014, 9, 6),
+ *   new Date(2014, 9, 10)
+ * )
+ * //=> [
+ * //   Mon Oct 06 2014 00:00:00,
+ * //   Tue Oct 07 2014 00:00:00,
+ * //   Wed Oct 08 2014 00:00:00,
+ * //   Thu Oct 09 2014 00:00:00,
+ * //   Fri Oct 10 2014 00:00:00
+ * // ]
+ */
+function eachDay (dirtyStartDate, dirtyEndDate) {
+  var startDate = parse(dirtyStartDate)
+  var endDate = parse(dirtyEndDate)
+
+  var endTime = endDate.getTime()
+
+  if (startDate.getTime() > endTime) {
+    throw new Error('The first date cannot be after the second date')
+  }
+
+  var dates = []
+
+  var currentDate = startDate
+  currentDate.setHours(0, 0, 0, 0)
+
+  while (currentDate.getTime() <= endTime) {
+    dates.push(parse(currentDate))
+    currentDate.setDate(currentDate.getDate() + 1)
+  }
+
+  return dates
+}
+
+module.exports = eachDay
+
+},{"../parse/index.js":461}],376:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Return the end of a day for the given date.
+ *
+ * @description
+ * Return the end of a day for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a day
+ *
+ * @example
+ * // The end of a day for 2 September 2014 11:55:00:
+ * var result = endOfDay(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 02 2014 23:59:59.999
+ */
+function endOfDay (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfDay
+
+},{"../parse/index.js":461}],377:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Return the end of an hour for the given date.
+ *
+ * @description
+ * Return the end of an hour for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an hour
+ *
+ * @example
+ * // The end of an hour for 2 September 2014 11:55:00:
+ * var result = endOfHour(new Date(2014, 8, 2, 11, 55))
+ * //=> Tue Sep 02 2014 11:59:59.999
+ */
+function endOfHour (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMinutes(59, 59, 999)
+  return date
+}
+
+module.exports = endOfHour
+
+},{"../parse/index.js":461}],378:[function(require,module,exports){
+var endOfWeek = require('../end_of_week/index.js')
+
+/**
+ * @category ISO Week Helpers
+ * @summary Return the end of an ISO week for the given date.
+ *
+ * @description
+ * Return the end of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an ISO week
+ *
+ * @example
+ * // The end of an ISO week for 2 September 2014 11:55:00:
+ * var result = endOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Sep 07 2014 23:59:59.999
+ */
+function endOfISOWeek (dirtyDate) {
+  return endOfWeek(dirtyDate, {weekStartsOn: 1})
+}
+
+module.exports = endOfISOWeek
+
+},{"../end_of_week/index.js":386}],379:[function(require,module,exports){
+var getISOYear = require('../get_iso_year/index.js')
+var startOfISOWeek = require('../start_of_iso_week/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the end of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the end of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an ISO week-numbering year
+ *
+ * @example
+ * // The end of an ISO week-numbering year for 2 July 2005:
+ * var result = endOfISOYear(new Date(2005, 6, 2))
+ * //=> Sun Jan 01 2006 23:59:59.999
+ */
+function endOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuaryOfNextYear = new Date(0)
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4)
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuaryOfNextYear)
+  date.setMilliseconds(date.getMilliseconds() - 1)
+  return date
+}
+
+module.exports = endOfISOYear
+
+},{"../get_iso_year/index.js":399,"../start_of_iso_week/index.js":477}],380:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Return the end of a minute for the given date.
+ *
+ * @description
+ * Return the end of a minute for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a minute
+ *
+ * @example
+ * // The end of a minute for 1 December 2014 22:15:45.400:
+ * var result = endOfMinute(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:59.999
+ */
+function endOfMinute (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setSeconds(59, 999)
+  return date
+}
+
+module.exports = endOfMinute
+
+},{"../parse/index.js":461}],381:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Return the end of a month for the given date.
+ *
+ * @description
+ * Return the end of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a month
+ *
+ * @example
+ * // The end of a month for 2 September 2014 11:55:00:
+ * var result = endOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 23:59:59.999
+ */
+function endOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var month = date.getMonth()
+  date.setFullYear(date.getFullYear(), month + 1, 0)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfMonth
+
+},{"../parse/index.js":461}],382:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Return the end of a year quarter for the given date.
+ *
+ * @description
+ * Return the end of a year quarter for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a quarter
+ *
+ * @example
+ * // The end of a quarter for 2 September 2014 11:55:00:
+ * var result = endOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 23:59:59.999
+ */
+function endOfQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var currentMonth = date.getMonth()
+  var month = currentMonth - currentMonth % 3 + 3
+  date.setMonth(month, 0)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfQuarter
+
+},{"../parse/index.js":461}],383:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Return the end of a second for the given date.
+ *
+ * @description
+ * Return the end of a second for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a second
+ *
+ * @example
+ * // The end of a second for 1 December 2014 22:15:45.400:
+ * var result = endOfSecond(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:45.999
+ */
+function endOfSecond (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMilliseconds(999)
+  return date
+}
+
+module.exports = endOfSecond
+
+},{"../parse/index.js":461}],384:[function(require,module,exports){
+var endOfDay = require('../end_of_day/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Return the end of today.
+ *
+ * @description
+ * Return the end of today.
+ *
+ * @returns {Date} the end of today
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = endOfToday()
+ * //=> Mon Oct 6 2014 23:59:59.999
+ */
+function endOfToday () {
+  return endOfDay(new Date())
+}
+
+module.exports = endOfToday
+
+},{"../end_of_day/index.js":376}],385:[function(require,module,exports){
+/**
+ * @category Day Helpers
+ * @summary Return the end of tomorrow.
+ *
+ * @description
+ * Return the end of tomorrow.
+ *
+ * @returns {Date} the end of tomorrow
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = endOfTomorrow()
+ * //=> Tue Oct 7 2014 23:59:59.999
+ */
+function endOfTomorrow () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day + 1)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfTomorrow
+
+},{}],386:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Return the end of a week for the given date.
+ *
+ * @description
+ * Return the end of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the end of a week
+ *
+ * @example
+ * // The end of a week for 2 September 2014 11:55:00:
+ * var result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sat Sep 06 2014 23:59:59.999
+ *
+ * @example
+ * // If the week starts on Monday, the end of the week for 2 September 2014 11:55:00:
+ * var result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
+ * //=> Sun Sep 07 2014 23:59:59.999
+ */
+function endOfWeek (dirtyDate, options) {
+  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn)
+
+  date.setDate(date.getDate() + diff)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfWeek
+
+},{"../parse/index.js":461}],387:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Return the end of a year for the given date.
+ *
+ * @description
+ * Return the end of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a year
+ *
+ * @example
+ * // The end of a year for 2 September 2014 11:55:00:
+ * var result = endOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Dec 31 2014 23:59:59.999
+ */
+function endOfYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  date.setFullYear(year + 1, 0, 0)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfYear
+
+},{"../parse/index.js":461}],388:[function(require,module,exports){
+/**
+ * @category Day Helpers
+ * @summary Return the end of yesterday.
+ *
+ * @description
+ * Return the end of yesterday.
+ *
+ * @returns {Date} the end of yesterday
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = endOfYesterday()
+ * //=> Sun Oct 5 2014 23:59:59.999
+ */
+function endOfYesterday () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day - 1)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfYesterday
+
+},{}],389:[function(require,module,exports){
+var getDayOfYear = require('../get_day_of_year/index.js')
+var getISOWeek = require('../get_iso_week/index.js')
+var getISOYear = require('../get_iso_year/index.js')
+var parse = require('../parse/index.js')
+var isValid = require('../is_valid/index.js')
+var enLocale = require('../locale/en/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Format the date.
+ *
+ * @description
+ * Return the formatted date string in the given format.
+ *
+ * Accepted tokens:
+ * | Unit                    | Token | Result examples                  |
+ * |-------------------------|-------|----------------------------------|
+ * | Month                   | M     | 1, 2, ..., 12                    |
+ * |                         | Mo    | 1st, 2nd, ..., 12th              |
+ * |                         | MM    | 01, 02, ..., 12                  |
+ * |                         | MMM   | Jan, Feb, ..., Dec               |
+ * |                         | MMMM  | January, February, ..., December |
+ * | Quarter                 | Q     | 1, 2, 3, 4                       |
+ * |                         | Qo    | 1st, 2nd, 3rd, 4th               |
+ * | Day of month            | D     | 1, 2, ..., 31                    |
+ * |                         | Do    | 1st, 2nd, ..., 31st              |
+ * |                         | DD    | 01, 02, ..., 31                  |
+ * | Day of year             | DDD   | 1, 2, ..., 366                   |
+ * |                         | DDDo  | 1st, 2nd, ..., 366th             |
+ * |                         | DDDD  | 001, 002, ..., 366               |
+ * | Day of week             | d     | 0, 1, ..., 6                     |
+ * |                         | do    | 0th, 1st, ..., 6th               |
+ * |                         | dd    | Su, Mo, ..., Sa                  |
+ * |                         | ddd   | Sun, Mon, ..., Sat               |
+ * |                         | dddd  | Sunday, Monday, ..., Saturday    |
+ * | Day of ISO week         | E     | 1, 2, ..., 7                     |
+ * | ISO week                | W     | 1, 2, ..., 53                    |
+ * |                         | Wo    | 1st, 2nd, ..., 53rd              |
+ * |                         | WW    | 01, 02, ..., 53                  |
+ * | Year                    | YY    | 00, 01, ..., 99                  |
+ * |                         | YYYY  | 1900, 1901, ..., 2099            |
+ * | ISO week-numbering year | GG    | 00, 01, ..., 99                  |
+ * |                         | GGGG  | 1900, 1901, ..., 2099            |
+ * | AM/PM                   | A     | AM, PM                           |
+ * |                         | a     | am, pm                           |
+ * |                         | aa    | a.m., p.m.                       |
+ * | Hour                    | H     | 0, 1, ... 23                     |
+ * |                         | HH    | 00, 01, ... 23                   |
+ * |                         | h     | 1, 2, ..., 12                    |
+ * |                         | hh    | 01, 02, ..., 12                  |
+ * | Minute                  | m     | 0, 1, ..., 59                    |
+ * |                         | mm    | 00, 01, ..., 59                  |
+ * | Second                  | s     | 0, 1, ..., 59                    |
+ * |                         | ss    | 00, 01, ..., 59                  |
+ * | 1/10 of second          | S     | 0, 1, ..., 9                     |
+ * | 1/100 of second         | SS    | 00, 01, ..., 99                  |
+ * | Millisecond             | SSS   | 000, 001, ..., 999               |
+ * | Timezone                | Z     | -01:00, +00:00, ... +12:00       |
+ * |                         | ZZ    | -0100, +0000, ..., +1200         |
+ * | Seconds timestamp       | X     | 512969520                        |
+ * | Milliseconds timestamp  | x     | 512969520900                     |
+ *
+ * The characters wrapped in square brackets are escaped.
+ *
+ * The result may vary by locale.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {String} [format='YYYY-MM-DDTHH:mm:ss.SSSZ'] - the string of tokens
+ * @param {Object} [options] - the object with options
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the formatted date string
+ *
+ * @example
+ * // Represent 11 February 2014 in middle-endian format:
+ * var result = format(
+ *   new Date(2014, 1, 11),
+ *   'MM/DD/YYYY'
+ * )
+ * //=> '02/11/2014'
+ *
+ * @example
+ * // Represent 2 July 2014 in Esperanto:
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = format(
+ *   new Date(2014, 6, 2),
+ *   'Do [de] MMMM YYYY',
+ *   {locale: eoLocale}
+ * )
+ * //=> '2-a de julio 2014'
+ */
+function format (dirtyDate, formatStr, options) {
+  formatStr = formatStr || 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+  options = options || {}
+
+  var locale = options.locale
+  var localeFormatters = enLocale.format.formatters
+  var formattingTokensRegExp = enLocale.format.formattingTokensRegExp
+  if (locale && locale.format && locale.format.formatters) {
+    localeFormatters = locale.format.formatters
+
+    if (locale.format.formattingTokensRegExp) {
+      formattingTokensRegExp = locale.format.formattingTokensRegExp
+    }
+  }
+
+  var date = parse(dirtyDate)
+
+  if (!isValid(date)) {
+    return 'Invalid Date'
+  }
+
+  var formatFn = buildFormatFn(formatStr, localeFormatters, formattingTokensRegExp)
+
+  return formatFn(date)
+}
+
+var formatters = {
+  // Month: 1, 2, ..., 12
+  'M': function (date) {
+    return date.getMonth() + 1
+  },
+
+  // Month: 01, 02, ..., 12
+  'MM': function (date) {
+    return addLeadingZeros(date.getMonth() + 1, 2)
+  },
+
+  // Quarter: 1, 2, 3, 4
+  'Q': function (date) {
+    return Math.ceil((date.getMonth() + 1) / 3)
+  },
+
+  // Day of month: 1, 2, ..., 31
+  'D': function (date) {
+    return date.getDate()
+  },
+
+  // Day of month: 01, 02, ..., 31
+  'DD': function (date) {
+    return addLeadingZeros(date.getDate(), 2)
+  },
+
+  // Day of year: 1, 2, ..., 366
+  'DDD': function (date) {
+    return getDayOfYear(date)
+  },
+
+  // Day of year: 001, 002, ..., 366
+  'DDDD': function (date) {
+    return addLeadingZeros(getDayOfYear(date), 3)
+  },
+
+  // Day of week: 0, 1, ..., 6
+  'd': function (date) {
+    return date.getDay()
+  },
+
+  // Day of ISO week: 1, 2, ..., 7
+  'E': function (date) {
+    return date.getDay() || 7
+  },
+
+  // ISO week: 1, 2, ..., 53
+  'W': function (date) {
+    return getISOWeek(date)
+  },
+
+  // ISO week: 01, 02, ..., 53
+  'WW': function (date) {
+    return addLeadingZeros(getISOWeek(date), 2)
+  },
+
+  // Year: 00, 01, ..., 99
+  'YY': function (date) {
+    return addLeadingZeros(date.getFullYear(), 4).substr(2)
+  },
+
+  // Year: 1900, 1901, ..., 2099
+  'YYYY': function (date) {
+    return addLeadingZeros(date.getFullYear(), 4)
+  },
+
+  // ISO week-numbering year: 00, 01, ..., 99
+  'GG': function (date) {
+    return String(getISOYear(date)).substr(2)
+  },
+
+  // ISO week-numbering year: 1900, 1901, ..., 2099
+  'GGGG': function (date) {
+    return getISOYear(date)
+  },
+
+  // Hour: 0, 1, ... 23
+  'H': function (date) {
+    return date.getHours()
+  },
+
+  // Hour: 00, 01, ..., 23
+  'HH': function (date) {
+    return addLeadingZeros(date.getHours(), 2)
+  },
+
+  // Hour: 1, 2, ..., 12
+  'h': function (date) {
+    var hours = date.getHours()
+    if (hours === 0) {
+      return 12
+    } else if (hours > 12) {
+      return hours % 12
+    } else {
+      return hours
+    }
+  },
+
+  // Hour: 01, 02, ..., 12
+  'hh': function (date) {
+    return addLeadingZeros(formatters['h'](date), 2)
+  },
+
+  // Minute: 0, 1, ..., 59
+  'm': function (date) {
+    return date.getMinutes()
+  },
+
+  // Minute: 00, 01, ..., 59
+  'mm': function (date) {
+    return addLeadingZeros(date.getMinutes(), 2)
+  },
+
+  // Second: 0, 1, ..., 59
+  's': function (date) {
+    return date.getSeconds()
+  },
+
+  // Second: 00, 01, ..., 59
+  'ss': function (date) {
+    return addLeadingZeros(date.getSeconds(), 2)
+  },
+
+  // 1/10 of second: 0, 1, ..., 9
+  'S': function (date) {
+    return Math.floor(date.getMilliseconds() / 100)
+  },
+
+  // 1/100 of second: 00, 01, ..., 99
+  'SS': function (date) {
+    return addLeadingZeros(Math.floor(date.getMilliseconds() / 10), 2)
+  },
+
+  // Millisecond: 000, 001, ..., 999
+  'SSS': function (date) {
+    return addLeadingZeros(date.getMilliseconds(), 3)
+  },
+
+  // Timezone: -01:00, +00:00, ... +12:00
+  'Z': function (date) {
+    return formatTimezone(date.getTimezoneOffset(), ':')
+  },
+
+  // Timezone: -0100, +0000, ... +1200
+  'ZZ': function (date) {
+    return formatTimezone(date.getTimezoneOffset())
+  },
+
+  // Seconds timestamp: 512969520
+  'X': function (date) {
+    return Math.floor(date.getTime() / 1000)
+  },
+
+  // Milliseconds timestamp: 512969520900
+  'x': function (date) {
+    return date.getTime()
+  }
+}
+
+function buildFormatFn (formatStr, localeFormatters, formattingTokensRegExp) {
+  var array = formatStr.match(formattingTokensRegExp)
+  var length = array.length
+
+  var i
+  var formatter
+  for (i = 0; i < length; i++) {
+    formatter = localeFormatters[array[i]] || formatters[array[i]]
+    if (formatter) {
+      array[i] = formatter
+    } else {
+      array[i] = removeFormattingTokens(array[i])
+    }
+  }
+
+  return function (date) {
+    var output = ''
+    for (var i = 0; i < length; i++) {
+      if (array[i] instanceof Function) {
+        output += array[i](date, formatters)
+      } else {
+        output += array[i]
+      }
+    }
+    return output
+  }
+}
+
+function removeFormattingTokens (input) {
+  if (input.match(/\[[\s\S]/)) {
+    return input.replace(/^\[|]$/g, '')
+  }
+  return input.replace(/\\/g, '')
+}
+
+function formatTimezone (offset, delimeter) {
+  delimeter = delimeter || ''
+  var sign = offset > 0 ? '-' : '+'
+  var absOffset = Math.abs(offset)
+  var hours = Math.floor(absOffset / 60)
+  var minutes = absOffset % 60
+  return sign + addLeadingZeros(hours, 2) + delimeter + addLeadingZeros(minutes, 2)
+}
+
+function addLeadingZeros (number, targetLength) {
+  var output = Math.abs(number).toString()
+  while (output.length < targetLength) {
+    output = '0' + output
+  }
+  return output
+}
+
+module.exports = format
+
+},{"../get_day_of_year/index.js":392,"../get_iso_week/index.js":397,"../get_iso_year/index.js":399,"../is_valid/index.js":444,"../locale/en/index.js":458,"../parse/index.js":461}],390:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Get the day of the month of the given date.
+ *
+ * @description
+ * Get the day of the month of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of month
+ *
+ * @example
+ * // Which day of the month is 29 February 2012?
+ * var result = getDate(new Date(2012, 1, 29))
+ * //=> 29
+ */
+function getDate (dirtyDate) {
+  var date = parse(dirtyDate)
+  var dayOfMonth = date.getDate()
+  return dayOfMonth
+}
+
+module.exports = getDate
+
+},{"../parse/index.js":461}],391:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Get the day of the week of the given date.
+ *
+ * @description
+ * Get the day of the week of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of week
+ *
+ * @example
+ * // Which day of the week is 29 February 2012?
+ * var result = getDay(new Date(2012, 1, 29))
+ * //=> 3
+ */
+function getDay (dirtyDate) {
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  return day
+}
+
+module.exports = getDay
+
+},{"../parse/index.js":461}],392:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var startOfYear = require('../start_of_year/index.js')
+var differenceInCalendarDays = require('../difference_in_calendar_days/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Get the day of the year of the given date.
+ *
+ * @description
+ * Get the day of the year of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of year
+ *
+ * @example
+ * // Which day of the year is 2 July 2014?
+ * var result = getDayOfYear(new Date(2014, 6, 2))
+ * //=> 183
+ */
+function getDayOfYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var diff = differenceInCalendarDays(date, startOfYear(date))
+  var dayOfYear = diff + 1
+  return dayOfYear
+}
+
+module.exports = getDayOfYear
+
+},{"../difference_in_calendar_days/index.js":355,"../parse/index.js":461,"../start_of_year/index.js":486}],393:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of days in a month of the given date.
+ *
+ * @description
+ * Get the number of days in a month of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the number of days in a month
+ *
+ * @example
+ * // How many days are in February 2000?
+ * var result = getDaysInMonth(new Date(2000, 1))
+ * //=> 29
+ */
+function getDaysInMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  var monthIndex = date.getMonth()
+  var lastDayOfMonth = new Date(0)
+  lastDayOfMonth.setFullYear(year, monthIndex + 1, 0)
+  lastDayOfMonth.setHours(0, 0, 0, 0)
+  return lastDayOfMonth.getDate()
+}
+
+module.exports = getDaysInMonth
+
+},{"../parse/index.js":461}],394:[function(require,module,exports){
+var isLeapYear = require('../is_leap_year/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Get the number of days in a year of the given date.
+ *
+ * @description
+ * Get the number of days in a year of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the number of days in a year
+ *
+ * @example
+ * // How many days are in 2012?
+ * var result = getDaysInYear(new Date(2012, 0, 1))
+ * //=> 366
+ */
+function getDaysInYear (dirtyDate) {
+  return isLeapYear(dirtyDate) ? 366 : 365
+}
+
+module.exports = getDaysInYear
+
+},{"../is_leap_year/index.js":416}],395:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Get the hours of the given date.
+ *
+ * @description
+ * Get the hours of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the hours
+ *
+ * @example
+ * // Get the hours of 29 February 2012 11:45:00:
+ * var result = getHours(new Date(2012, 1, 29, 11, 45))
+ * //=> 11
+ */
+function getHours (dirtyDate) {
+  var date = parse(dirtyDate)
+  var hours = date.getHours()
+  return hours
+}
+
+module.exports = getHours
+
+},{"../parse/index.js":461}],396:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Get the day of the ISO week of the given date.
+ *
+ * @description
+ * Get the day of the ISO week of the given date,
+ * which is 7 for Sunday, 1 for Monday etc.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of ISO week
+ *
+ * @example
+ * // Which day of the ISO week is 26 February 2012?
+ * var result = getISODay(new Date(2012, 1, 26))
+ * //=> 7
+ */
+function getISODay (dirtyDate) {
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+
+  if (day === 0) {
+    day = 7
+  }
+
+  return day
+}
+
+module.exports = getISODay
+
+},{"../parse/index.js":461}],397:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var startOfISOWeek = require('../start_of_iso_week/index.js')
+var startOfISOYear = require('../start_of_iso_year/index.js')
+
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category ISO Week Helpers
+ * @summary Get the ISO week of the given date.
+ *
+ * @description
+ * Get the ISO week of the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the ISO week
+ *
+ * @example
+ * // Which week of the ISO-week numbering year is 2 January 2005?
+ * var result = getISOWeek(new Date(2005, 0, 2))
+ * //=> 53
+ */
+function getISOWeek (dirtyDate) {
+  var date = parse(dirtyDate)
+  var diff = startOfISOWeek(date).getTime() - startOfISOYear(date).getTime()
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK) + 1
+}
+
+module.exports = getISOWeek
+
+},{"../parse/index.js":461,"../start_of_iso_week/index.js":477,"../start_of_iso_year/index.js":478}],398:[function(require,module,exports){
+var startOfISOYear = require('../start_of_iso_year/index.js')
+var addWeeks = require('../add_weeks/index.js')
+
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the number of weeks in an ISO week-numbering year of the given date.
+ *
+ * @description
+ * Get the number of weeks in an ISO week-numbering year of the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the number of ISO weeks in a year
+ *
+ * @example
+ * // How many weeks are in ISO week-numbering year 2015?
+ * var result = getISOWeeksInYear(new Date(2015, 1, 11))
+ * //=> 53
+ */
+function getISOWeeksInYear (dirtyDate) {
+  var thisYear = startOfISOYear(dirtyDate)
+  var nextYear = startOfISOYear(addWeeks(thisYear, 60))
+  var diff = nextYear.valueOf() - thisYear.valueOf()
+  // Round the number of weeks to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK)
+}
+
+module.exports = getISOWeeksInYear
+
+},{"../add_weeks/index.js":348,"../start_of_iso_year/index.js":478}],399:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var startOfISOWeek = require('../start_of_iso_week/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the ISO week-numbering year of the given date.
+ *
+ * @description
+ * Get the ISO week-numbering year of the given date,
+ * which always starts 3 days before the year's first Thursday.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the ISO week-numbering year
+ *
+ * @example
+ * // Which ISO-week numbering year is 2 January 2005?
+ * var result = getISOYear(new Date(2005, 0, 2))
+ * //=> 2004
+ */
+function getISOYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+
+  var fourthOfJanuaryOfNextYear = new Date(0)
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4)
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0)
+  var startOfNextYear = startOfISOWeek(fourthOfJanuaryOfNextYear)
+
+  var fourthOfJanuaryOfThisYear = new Date(0)
+  fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4)
+  fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0)
+  var startOfThisYear = startOfISOWeek(fourthOfJanuaryOfThisYear)
+
+  if (date.getTime() >= startOfNextYear.getTime()) {
+    return year + 1
+  } else if (date.getTime() >= startOfThisYear.getTime()) {
+    return year
+  } else {
+    return year - 1
+  }
+}
+
+module.exports = getISOYear
+
+},{"../parse/index.js":461,"../start_of_iso_week/index.js":477}],400:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Millisecond Helpers
+ * @summary Get the milliseconds of the given date.
+ *
+ * @description
+ * Get the milliseconds of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the milliseconds
+ *
+ * @example
+ * // Get the milliseconds of 29 February 2012 11:45:05.123:
+ * var result = getMilliseconds(new Date(2012, 1, 29, 11, 45, 5, 123))
+ * //=> 123
+ */
+function getMilliseconds (dirtyDate) {
+  var date = parse(dirtyDate)
+  var milliseconds = date.getMilliseconds()
+  return milliseconds
+}
+
+module.exports = getMilliseconds
+
+},{"../parse/index.js":461}],401:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Get the minutes of the given date.
+ *
+ * @description
+ * Get the minutes of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the minutes
+ *
+ * @example
+ * // Get the minutes of 29 February 2012 11:45:05:
+ * var result = getMinutes(new Date(2012, 1, 29, 11, 45, 5))
+ * //=> 45
+ */
+function getMinutes (dirtyDate) {
+  var date = parse(dirtyDate)
+  var minutes = date.getMinutes()
+  return minutes
+}
+
+module.exports = getMinutes
+
+},{"../parse/index.js":461}],402:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Get the month of the given date.
+ *
+ * @description
+ * Get the month of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the month
+ *
+ * @example
+ * // Which month is 29 February 2012?
+ * var result = getMonth(new Date(2012, 1, 29))
+ * //=> 1
+ */
+function getMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var month = date.getMonth()
+  return month
+}
+
+module.exports = getMonth
+
+},{"../parse/index.js":461}],403:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+var MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000
+
+/**
+ * @category Range Helpers
+ * @summary Get the number of days that overlap in two date ranges
+ *
+ * @description
+ * Get the number of days that overlap in two date ranges
+ *
+ * @param {Date|String|Number} dirtyInitialRangeStartDate - the start of the initial range
+ * @param {Date|String|Number} dirtyInitialRangeEndDate - the end of the initial range
+ * @param {Date|String|Number} dirtyComparedRangeStartDate - the start of the range to compare it with
+ * @param {Date|String|Number} dirtyComparedRangeEndDate - the end of the range to compare it with
+ * @returns {Number} the number of days that overlap in two date ranges
+ * @throws {Error} startDate of a date range cannot be after its endDate
+ *
+ * @example
+ * // For overlapping date ranges adds 1 for each started overlapping day:
+ * getNumOverlappingDays(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 17), new Date(2014, 0, 21)
+ * )
+ * //=> 3
+ *
+ * @example
+ * // For non-overlapping date ranges returns 0:
+ * getNumOverlappingDays(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 21), new Date(2014, 0, 22)
+ * )
+ * //=> 0
+ */
+function getOverlappingDaysInRanges (dirtyInitialRangeStartDate, dirtyInitialRangeEndDate, dirtyComparedRangeStartDate, dirtyComparedRangeEndDate) {
+  var initialStartTime = parse(dirtyInitialRangeStartDate).getTime()
+  var initialEndTime = parse(dirtyInitialRangeEndDate).getTime()
+  var comparedStartTime = parse(dirtyComparedRangeStartDate).getTime()
+  var comparedEndTime = parse(dirtyComparedRangeEndDate).getTime()
+
+  if (initialStartTime > initialEndTime || comparedStartTime > comparedEndTime) {
+    throw new Error('The start of the range cannot be after the end of the range')
+  }
+
+  var isOverlapping = initialStartTime < comparedEndTime && comparedStartTime < initialEndTime
+
+  if (!isOverlapping) {
+    return 0
+  }
+
+  var overlapStartDate = comparedStartTime < initialStartTime
+    ? initialStartTime
+    : comparedStartTime
+
+  var overlapEndDate = comparedEndTime > initialEndTime
+    ? initialEndTime
+    : comparedEndTime
+
+  var differenceInMs = overlapEndDate - overlapStartDate
+
+  return Math.ceil(differenceInMs / MILLISECONDS_IN_DAY)
+}
+
+module.exports = getOverlappingDaysInRanges
+
+},{"../parse/index.js":461}],404:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Get the year quarter of the given date.
+ *
+ * @description
+ * Get the year quarter of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the quarter
+ *
+ * @example
+ * // Which quarter is 2 July 2014?
+ * var result = getQuarter(new Date(2014, 6, 2))
+ * //=> 3
+ */
+function getQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var quarter = Math.floor(date.getMonth() / 3) + 1
+  return quarter
+}
+
+module.exports = getQuarter
+
+},{"../parse/index.js":461}],405:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Get the seconds of the given date.
+ *
+ * @description
+ * Get the seconds of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the seconds
+ *
+ * @example
+ * // Get the seconds of 29 February 2012 11:45:05.123:
+ * var result = getSeconds(new Date(2012, 1, 29, 11, 45, 5, 123))
+ * //=> 5
+ */
+function getSeconds (dirtyDate) {
+  var date = parse(dirtyDate)
+  var seconds = date.getSeconds()
+  return seconds
+}
+
+module.exports = getSeconds
+
+},{"../parse/index.js":461}],406:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Get the year of the given date.
+ *
+ * @description
+ * Get the year of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the year
+ *
+ * @example
+ * // Which year is 2 July 2014?
+ * var result = getYear(new Date(2014, 6, 2))
+ * //=> 2014
+ */
+function getYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  return year
+}
+
+module.exports = getYear
+
+},{"../parse/index.js":461}],407:[function(require,module,exports){
+module.exports = {
+  addDays: require('./add_days/index.js'),
+  addHours: require('./add_hours/index.js'),
+  addISOYears: require('./add_iso_years/index.js'),
+  addMilliseconds: require('./add_milliseconds/index.js'),
+  addMinutes: require('./add_minutes/index.js'),
+  addMonths: require('./add_months/index.js'),
+  addQuarters: require('./add_quarters/index.js'),
+  addSeconds: require('./add_seconds/index.js'),
+  addWeeks: require('./add_weeks/index.js'),
+  addYears: require('./add_years/index.js'),
+  areRangesOverlapping: require('./are_ranges_overlapping/index.js'),
+  closestIndexTo: require('./closest_index_to/index.js'),
+  closestTo: require('./closest_to/index.js'),
+  compareAsc: require('./compare_asc/index.js'),
+  compareDesc: require('./compare_desc/index.js'),
+  differenceInCalendarDays: require('./difference_in_calendar_days/index.js'),
+  differenceInCalendarISOWeeks: require('./difference_in_calendar_iso_weeks/index.js'),
+  differenceInCalendarISOYears: require('./difference_in_calendar_iso_years/index.js'),
+  differenceInCalendarMonths: require('./difference_in_calendar_months/index.js'),
+  differenceInCalendarQuarters: require('./difference_in_calendar_quarters/index.js'),
+  differenceInCalendarWeeks: require('./difference_in_calendar_weeks/index.js'),
+  differenceInCalendarYears: require('./difference_in_calendar_years/index.js'),
+  differenceInDays: require('./difference_in_days/index.js'),
+  differenceInHours: require('./difference_in_hours/index.js'),
+  differenceInISOYears: require('./difference_in_iso_years/index.js'),
+  differenceInMilliseconds: require('./difference_in_milliseconds/index.js'),
+  differenceInMinutes: require('./difference_in_minutes/index.js'),
+  differenceInMonths: require('./difference_in_months/index.js'),
+  differenceInQuarters: require('./difference_in_quarters/index.js'),
+  differenceInSeconds: require('./difference_in_seconds/index.js'),
+  differenceInWeeks: require('./difference_in_weeks/index.js'),
+  differenceInYears: require('./difference_in_years/index.js'),
+  distanceInWords: require('./distance_in_words/index.js'),
+  distanceInWordsStrict: require('./distance_in_words_strict/index.js'),
+  distanceInWordsToNow: require('./distance_in_words_to_now/index.js'),
+  eachDay: require('./each_day/index.js'),
+  endOfDay: require('./end_of_day/index.js'),
+  endOfHour: require('./end_of_hour/index.js'),
+  endOfISOWeek: require('./end_of_iso_week/index.js'),
+  endOfISOYear: require('./end_of_iso_year/index.js'),
+  endOfMinute: require('./end_of_minute/index.js'),
+  endOfMonth: require('./end_of_month/index.js'),
+  endOfQuarter: require('./end_of_quarter/index.js'),
+  endOfSecond: require('./end_of_second/index.js'),
+  endOfToday: require('./end_of_today/index.js'),
+  endOfTomorrow: require('./end_of_tomorrow/index.js'),
+  endOfWeek: require('./end_of_week/index.js'),
+  endOfYear: require('./end_of_year/index.js'),
+  endOfYesterday: require('./end_of_yesterday/index.js'),
+  format: require('./format/index.js'),
+  getDate: require('./get_date/index.js'),
+  getDay: require('./get_day/index.js'),
+  getDayOfYear: require('./get_day_of_year/index.js'),
+  getDaysInMonth: require('./get_days_in_month/index.js'),
+  getDaysInYear: require('./get_days_in_year/index.js'),
+  getHours: require('./get_hours/index.js'),
+  getISODay: require('./get_iso_day/index.js'),
+  getISOWeek: require('./get_iso_week/index.js'),
+  getISOWeeksInYear: require('./get_iso_weeks_in_year/index.js'),
+  getISOYear: require('./get_iso_year/index.js'),
+  getMilliseconds: require('./get_milliseconds/index.js'),
+  getMinutes: require('./get_minutes/index.js'),
+  getMonth: require('./get_month/index.js'),
+  getOverlappingDaysInRanges: require('./get_overlapping_days_in_ranges/index.js'),
+  getQuarter: require('./get_quarter/index.js'),
+  getSeconds: require('./get_seconds/index.js'),
+  getYear: require('./get_year/index.js'),
+  isAfter: require('./is_after/index.js'),
+  isBefore: require('./is_before/index.js'),
+  isDate: require('./is_date/index.js'),
+  isEqual: require('./is_equal/index.js'),
+  isFirstDayOfMonth: require('./is_first_day_of_month/index.js'),
+  isFriday: require('./is_friday/index.js'),
+  isFuture: require('./is_future/index.js'),
+  isLastDayOfMonth: require('./is_last_day_of_month/index.js'),
+  isLeapYear: require('./is_leap_year/index.js'),
+  isMonday: require('./is_monday/index.js'),
+  isPast: require('./is_past/index.js'),
+  isSameDay: require('./is_same_day/index.js'),
+  isSameHour: require('./is_same_hour/index.js'),
+  isSameISOWeek: require('./is_same_iso_week/index.js'),
+  isSameISOYear: require('./is_same_iso_year/index.js'),
+  isSameMinute: require('./is_same_minute/index.js'),
+  isSameMonth: require('./is_same_month/index.js'),
+  isSameQuarter: require('./is_same_quarter/index.js'),
+  isSameSecond: require('./is_same_second/index.js'),
+  isSameWeek: require('./is_same_week/index.js'),
+  isSameYear: require('./is_same_year/index.js'),
+  isSaturday: require('./is_saturday/index.js'),
+  isSunday: require('./is_sunday/index.js'),
+  isThisHour: require('./is_this_hour/index.js'),
+  isThisISOWeek: require('./is_this_iso_week/index.js'),
+  isThisISOYear: require('./is_this_iso_year/index.js'),
+  isThisMinute: require('./is_this_minute/index.js'),
+  isThisMonth: require('./is_this_month/index.js'),
+  isThisQuarter: require('./is_this_quarter/index.js'),
+  isThisSecond: require('./is_this_second/index.js'),
+  isThisWeek: require('./is_this_week/index.js'),
+  isThisYear: require('./is_this_year/index.js'),
+  isThursday: require('./is_thursday/index.js'),
+  isToday: require('./is_today/index.js'),
+  isTomorrow: require('./is_tomorrow/index.js'),
+  isTuesday: require('./is_tuesday/index.js'),
+  isValid: require('./is_valid/index.js'),
+  isWednesday: require('./is_wednesday/index.js'),
+  isWeekend: require('./is_weekend/index.js'),
+  isWithinRange: require('./is_within_range/index.js'),
+  isYesterday: require('./is_yesterday/index.js'),
+  lastDayOfISOWeek: require('./last_day_of_iso_week/index.js'),
+  lastDayOfISOYear: require('./last_day_of_iso_year/index.js'),
+  lastDayOfMonth: require('./last_day_of_month/index.js'),
+  lastDayOfQuarter: require('./last_day_of_quarter/index.js'),
+  lastDayOfWeek: require('./last_day_of_week/index.js'),
+  lastDayOfYear: require('./last_day_of_year/index.js'),
+  max: require('./max/index.js'),
+  min: require('./min/index.js'),
+  parse: require('./parse/index.js'),
+  setDate: require('./set_date/index.js'),
+  setDay: require('./set_day/index.js'),
+  setDayOfYear: require('./set_day_of_year/index.js'),
+  setHours: require('./set_hours/index.js'),
+  setISODay: require('./set_iso_day/index.js'),
+  setISOWeek: require('./set_iso_week/index.js'),
+  setISOYear: require('./set_iso_year/index.js'),
+  setMilliseconds: require('./set_milliseconds/index.js'),
+  setMinutes: require('./set_minutes/index.js'),
+  setMonth: require('./set_month/index.js'),
+  setQuarter: require('./set_quarter/index.js'),
+  setSeconds: require('./set_seconds/index.js'),
+  setYear: require('./set_year/index.js'),
+  startOfDay: require('./start_of_day/index.js'),
+  startOfHour: require('./start_of_hour/index.js'),
+  startOfISOWeek: require('./start_of_iso_week/index.js'),
+  startOfISOYear: require('./start_of_iso_year/index.js'),
+  startOfMinute: require('./start_of_minute/index.js'),
+  startOfMonth: require('./start_of_month/index.js'),
+  startOfQuarter: require('./start_of_quarter/index.js'),
+  startOfSecond: require('./start_of_second/index.js'),
+  startOfToday: require('./start_of_today/index.js'),
+  startOfTomorrow: require('./start_of_tomorrow/index.js'),
+  startOfWeek: require('./start_of_week/index.js'),
+  startOfYear: require('./start_of_year/index.js'),
+  startOfYesterday: require('./start_of_yesterday/index.js'),
+  subDays: require('./sub_days/index.js'),
+  subHours: require('./sub_hours/index.js'),
+  subISOYears: require('./sub_iso_years/index.js'),
+  subMilliseconds: require('./sub_milliseconds/index.js'),
+  subMinutes: require('./sub_minutes/index.js'),
+  subMonths: require('./sub_months/index.js'),
+  subQuarters: require('./sub_quarters/index.js'),
+  subSeconds: require('./sub_seconds/index.js'),
+  subWeeks: require('./sub_weeks/index.js'),
+  subYears: require('./sub_years/index.js')
+}
+
+},{"./add_days/index.js":340,"./add_hours/index.js":341,"./add_iso_years/index.js":342,"./add_milliseconds/index.js":343,"./add_minutes/index.js":344,"./add_months/index.js":345,"./add_quarters/index.js":346,"./add_seconds/index.js":347,"./add_weeks/index.js":348,"./add_years/index.js":349,"./are_ranges_overlapping/index.js":350,"./closest_index_to/index.js":351,"./closest_to/index.js":352,"./compare_asc/index.js":353,"./compare_desc/index.js":354,"./difference_in_calendar_days/index.js":355,"./difference_in_calendar_iso_weeks/index.js":356,"./difference_in_calendar_iso_years/index.js":357,"./difference_in_calendar_months/index.js":358,"./difference_in_calendar_quarters/index.js":359,"./difference_in_calendar_weeks/index.js":360,"./difference_in_calendar_years/index.js":361,"./difference_in_days/index.js":362,"./difference_in_hours/index.js":363,"./difference_in_iso_years/index.js":364,"./difference_in_milliseconds/index.js":365,"./difference_in_minutes/index.js":366,"./difference_in_months/index.js":367,"./difference_in_quarters/index.js":368,"./difference_in_seconds/index.js":369,"./difference_in_weeks/index.js":370,"./difference_in_years/index.js":371,"./distance_in_words/index.js":372,"./distance_in_words_strict/index.js":373,"./distance_in_words_to_now/index.js":374,"./each_day/index.js":375,"./end_of_day/index.js":376,"./end_of_hour/index.js":377,"./end_of_iso_week/index.js":378,"./end_of_iso_year/index.js":379,"./end_of_minute/index.js":380,"./end_of_month/index.js":381,"./end_of_quarter/index.js":382,"./end_of_second/index.js":383,"./end_of_today/index.js":384,"./end_of_tomorrow/index.js":385,"./end_of_week/index.js":386,"./end_of_year/index.js":387,"./end_of_yesterday/index.js":388,"./format/index.js":389,"./get_date/index.js":390,"./get_day/index.js":391,"./get_day_of_year/index.js":392,"./get_days_in_month/index.js":393,"./get_days_in_year/index.js":394,"./get_hours/index.js":395,"./get_iso_day/index.js":396,"./get_iso_week/index.js":397,"./get_iso_weeks_in_year/index.js":398,"./get_iso_year/index.js":399,"./get_milliseconds/index.js":400,"./get_minutes/index.js":401,"./get_month/index.js":402,"./get_overlapping_days_in_ranges/index.js":403,"./get_quarter/index.js":404,"./get_seconds/index.js":405,"./get_year/index.js":406,"./is_after/index.js":408,"./is_before/index.js":409,"./is_date/index.js":410,"./is_equal/index.js":411,"./is_first_day_of_month/index.js":412,"./is_friday/index.js":413,"./is_future/index.js":414,"./is_last_day_of_month/index.js":415,"./is_leap_year/index.js":416,"./is_monday/index.js":417,"./is_past/index.js":418,"./is_same_day/index.js":419,"./is_same_hour/index.js":420,"./is_same_iso_week/index.js":421,"./is_same_iso_year/index.js":422,"./is_same_minute/index.js":423,"./is_same_month/index.js":424,"./is_same_quarter/index.js":425,"./is_same_second/index.js":426,"./is_same_week/index.js":427,"./is_same_year/index.js":428,"./is_saturday/index.js":429,"./is_sunday/index.js":430,"./is_this_hour/index.js":431,"./is_this_iso_week/index.js":432,"./is_this_iso_year/index.js":433,"./is_this_minute/index.js":434,"./is_this_month/index.js":435,"./is_this_quarter/index.js":436,"./is_this_second/index.js":437,"./is_this_week/index.js":438,"./is_this_year/index.js":439,"./is_thursday/index.js":440,"./is_today/index.js":441,"./is_tomorrow/index.js":442,"./is_tuesday/index.js":443,"./is_valid/index.js":444,"./is_wednesday/index.js":445,"./is_weekend/index.js":446,"./is_within_range/index.js":447,"./is_yesterday/index.js":448,"./last_day_of_iso_week/index.js":449,"./last_day_of_iso_year/index.js":450,"./last_day_of_month/index.js":451,"./last_day_of_quarter/index.js":452,"./last_day_of_week/index.js":453,"./last_day_of_year/index.js":454,"./max/index.js":459,"./min/index.js":460,"./parse/index.js":461,"./set_date/index.js":462,"./set_day/index.js":463,"./set_day_of_year/index.js":464,"./set_hours/index.js":465,"./set_iso_day/index.js":466,"./set_iso_week/index.js":467,"./set_iso_year/index.js":468,"./set_milliseconds/index.js":469,"./set_minutes/index.js":470,"./set_month/index.js":471,"./set_quarter/index.js":472,"./set_seconds/index.js":473,"./set_year/index.js":474,"./start_of_day/index.js":475,"./start_of_hour/index.js":476,"./start_of_iso_week/index.js":477,"./start_of_iso_year/index.js":478,"./start_of_minute/index.js":479,"./start_of_month/index.js":480,"./start_of_quarter/index.js":481,"./start_of_second/index.js":482,"./start_of_today/index.js":483,"./start_of_tomorrow/index.js":484,"./start_of_week/index.js":485,"./start_of_year/index.js":486,"./start_of_yesterday/index.js":487,"./sub_days/index.js":488,"./sub_hours/index.js":489,"./sub_iso_years/index.js":490,"./sub_milliseconds/index.js":491,"./sub_minutes/index.js":492,"./sub_months/index.js":493,"./sub_quarters/index.js":494,"./sub_seconds/index.js":495,"./sub_weeks/index.js":496,"./sub_years/index.js":497}],408:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Is the first date after the second one?
+ *
+ * @description
+ * Is the first date after the second one?
+ *
+ * @param {Date|String|Number} date - the date that should be after the other one to return true
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @returns {Boolean} the first date is after the second date
+ *
+ * @example
+ * // Is 10 July 1989 after 11 February 1987?
+ * var result = isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))
+ * //=> true
+ */
+function isAfter (dirtyDate, dirtyDateToCompare) {
+  var date = parse(dirtyDate)
+  var dateToCompare = parse(dirtyDateToCompare)
+  return date.getTime() > dateToCompare.getTime()
+}
+
+module.exports = isAfter
+
+},{"../parse/index.js":461}],409:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Is the first date before the second one?
+ *
+ * @description
+ * Is the first date before the second one?
+ *
+ * @param {Date|String|Number} date - the date that should be before the other one to return true
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @returns {Boolean} the first date is before the second date
+ *
+ * @example
+ * // Is 10 July 1989 before 11 February 1987?
+ * var result = isBefore(new Date(1989, 6, 10), new Date(1987, 1, 11))
+ * //=> false
+ */
+function isBefore (dirtyDate, dirtyDateToCompare) {
+  var date = parse(dirtyDate)
+  var dateToCompare = parse(dirtyDateToCompare)
+  return date.getTime() < dateToCompare.getTime()
+}
+
+module.exports = isBefore
+
+},{"../parse/index.js":461}],410:[function(require,module,exports){
+/**
+ * @category Common Helpers
+ * @summary Is the given argument an instance of Date?
+ *
+ * @description
+ * Is the given argument an instance of Date?
+ *
+ * @param {*} argument - the argument to check
+ * @returns {Boolean} the given argument is an instance of Date
+ *
+ * @example
+ * // Is 'mayonnaise' a Date?
+ * var result = isDate('mayonnaise')
+ * //=> false
+ */
+function isDate (argument) {
+  return argument instanceof Date
+}
+
+module.exports = isDate
+
+},{}],411:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Are the given dates equal?
+ *
+ * @description
+ * Are the given dates equal?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Boolean} the dates are equal
+ *
+ * @example
+ * // Are 2 July 2014 06:30:45.000 and 2 July 2014 06:30:45.500 equal?
+ * var result = isEqual(
+ *   new Date(2014, 6, 2, 6, 30, 45, 0)
+ *   new Date(2014, 6, 2, 6, 30, 45, 500)
+ * )
+ * //=> false
+ */
+function isEqual (dirtyLeftDate, dirtyRightDate) {
+  var dateLeft = parse(dirtyLeftDate)
+  var dateRight = parse(dirtyRightDate)
+  return dateLeft.getTime() === dateRight.getTime()
+}
+
+module.exports = isEqual
+
+},{"../parse/index.js":461}],412:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Is the given date the first day of a month?
+ *
+ * @description
+ * Is the given date the first day of a month?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is the first day of a month
+ *
+ * @example
+ * // Is 1 September 2014 the first day of a month?
+ * var result = isFirstDayOfMonth(new Date(2014, 8, 1))
+ * //=> true
+ */
+function isFirstDayOfMonth (dirtyDate) {
+  return parse(dirtyDate).getDate() === 1
+}
+
+module.exports = isFirstDayOfMonth
+
+},{"../parse/index.js":461}],413:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Friday?
+ *
+ * @description
+ * Is the given date Friday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Friday
+ *
+ * @example
+ * // Is 26 September 2014 Friday?
+ * var result = isFriday(new Date(2014, 8, 26))
+ * //=> true
+ */
+function isFriday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 5
+}
+
+module.exports = isFriday
+
+},{"../parse/index.js":461}],414:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Is the given date in the future?
+ *
+ * @description
+ * Is the given date in the future?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in the future
+ *
+ * @example
+ * // If today is 6 October 2014, is 31 December 2014 in the future?
+ * var result = isFuture(new Date(2014, 11, 31))
+ * //=> true
+ */
+function isFuture (dirtyDate) {
+  return parse(dirtyDate).getTime() > new Date().getTime()
+}
+
+module.exports = isFuture
+
+},{"../parse/index.js":461}],415:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var endOfDay = require('../end_of_day/index.js')
+var endOfMonth = require('../end_of_month/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Is the given date the last day of a month?
+ *
+ * @description
+ * Is the given date the last day of a month?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is the last day of a month
+ *
+ * @example
+ * // Is 28 February 2014 the last day of a month?
+ * var result = isLastDayOfMonth(new Date(2014, 1, 28))
+ * //=> true
+ */
+function isLastDayOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  return endOfDay(date).getTime() === endOfMonth(date).getTime()
+}
+
+module.exports = isLastDayOfMonth
+
+},{"../end_of_day/index.js":376,"../end_of_month/index.js":381,"../parse/index.js":461}],416:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Is the given date in the leap year?
+ *
+ * @description
+ * Is the given date in the leap year?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in the leap year
+ *
+ * @example
+ * // Is 1 September 2012 in the leap year?
+ * var result = isLeapYear(new Date(2012, 8, 1))
+ * //=> true
+ */
+function isLeapYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0
+}
+
+module.exports = isLeapYear
+
+},{"../parse/index.js":461}],417:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Monday?
+ *
+ * @description
+ * Is the given date Monday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Monday
+ *
+ * @example
+ * // Is 22 September 2014 Monday?
+ * var result = isMonday(new Date(2014, 8, 22))
+ * //=> true
+ */
+function isMonday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 1
+}
+
+module.exports = isMonday
+
+},{"../parse/index.js":461}],418:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Is the given date in the past?
+ *
+ * @description
+ * Is the given date in the past?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in the past
+ *
+ * @example
+ * // If today is 6 October 2014, is 2 July 2014 in the past?
+ * var result = isPast(new Date(2014, 6, 2))
+ * //=> true
+ */
+function isPast (dirtyDate) {
+  return parse(dirtyDate).getTime() < new Date().getTime()
+}
+
+module.exports = isPast
+
+},{"../parse/index.js":461}],419:[function(require,module,exports){
+var startOfDay = require('../start_of_day/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Are the given dates in the same day?
+ *
+ * @description
+ * Are the given dates in the same day?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same day
+ *
+ * @example
+ * // Are 4 September 06:00:00 and 4 September 18:00:00 in the same day?
+ * var result = isSameDay(
+ *   new Date(2014, 8, 4, 6, 0),
+ *   new Date(2014, 8, 4, 18, 0)
+ * )
+ * //=> true
+ */
+function isSameDay (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfDay = startOfDay(dirtyDateLeft)
+  var dateRightStartOfDay = startOfDay(dirtyDateRight)
+
+  return dateLeftStartOfDay.getTime() === dateRightStartOfDay.getTime()
+}
+
+module.exports = isSameDay
+
+},{"../start_of_day/index.js":475}],420:[function(require,module,exports){
+var startOfHour = require('../start_of_hour/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Are the given dates in the same hour?
+ *
+ * @description
+ * Are the given dates in the same hour?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same hour
+ *
+ * @example
+ * // Are 4 September 2014 06:00:00 and 4 September 06:30:00 in the same hour?
+ * var result = isSameHour(
+ *   new Date(2014, 8, 4, 6, 0),
+ *   new Date(2014, 8, 4, 6, 30)
+ * )
+ * //=> true
+ */
+function isSameHour (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfHour = startOfHour(dirtyDateLeft)
+  var dateRightStartOfHour = startOfHour(dirtyDateRight)
+
+  return dateLeftStartOfHour.getTime() === dateRightStartOfHour.getTime()
+}
+
+module.exports = isSameHour
+
+},{"../start_of_hour/index.js":476}],421:[function(require,module,exports){
+var isSameWeek = require('../is_same_week/index.js')
+
+/**
+ * @category ISO Week Helpers
+ * @summary Are the given dates in the same ISO week?
+ *
+ * @description
+ * Are the given dates in the same ISO week?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same ISO week
+ *
+ * @example
+ * // Are 1 September 2014 and 7 September 2014 in the same ISO week?
+ * var result = isSameISOWeek(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 8, 7)
+ * )
+ * //=> true
+ */
+function isSameISOWeek (dirtyDateLeft, dirtyDateRight) {
+  return isSameWeek(dirtyDateLeft, dirtyDateRight, {weekStartsOn: 1})
+}
+
+module.exports = isSameISOWeek
+
+},{"../is_same_week/index.js":427}],422:[function(require,module,exports){
+var startOfISOYear = require('../start_of_iso_year/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Are the given dates in the same ISO week-numbering year?
+ *
+ * @description
+ * Are the given dates in the same ISO week-numbering year?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same ISO week-numbering year
+ *
+ * @example
+ * // Are 29 December 2003 and 2 January 2005 in the same ISO week-numbering year?
+ * var result = isSameISOYear(
+ *   new Date(2003, 11, 29),
+ *   new Date(2005, 0, 2)
+ * )
+ * //=> true
+ */
+function isSameISOYear (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfYear = startOfISOYear(dirtyDateLeft)
+  var dateRightStartOfYear = startOfISOYear(dirtyDateRight)
+
+  return dateLeftStartOfYear.getTime() === dateRightStartOfYear.getTime()
+}
+
+module.exports = isSameISOYear
+
+},{"../start_of_iso_year/index.js":478}],423:[function(require,module,exports){
+var startOfMinute = require('../start_of_minute/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Are the given dates in the same minute?
+ *
+ * @description
+ * Are the given dates in the same minute?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same minute
+ *
+ * @example
+ * // Are 4 September 2014 06:30:00 and 4 September 2014 06:30:15
+ * // in the same minute?
+ * var result = isSameMinute(
+ *   new Date(2014, 8, 4, 6, 30),
+ *   new Date(2014, 8, 4, 6, 30, 15)
+ * )
+ * //=> true
+ */
+function isSameMinute (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfMinute = startOfMinute(dirtyDateLeft)
+  var dateRightStartOfMinute = startOfMinute(dirtyDateRight)
+
+  return dateLeftStartOfMinute.getTime() === dateRightStartOfMinute.getTime()
+}
+
+module.exports = isSameMinute
+
+},{"../start_of_minute/index.js":479}],424:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Are the given dates in the same month?
+ *
+ * @description
+ * Are the given dates in the same month?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same month
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2014 in the same month?
+ * var result = isSameMonth(
+ *   new Date(2014, 8, 2),
+ *   new Date(2014, 8, 25)
+ * )
+ * //=> true
+ */
+function isSameMonth (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getFullYear() === dateRight.getFullYear() &&
+    dateLeft.getMonth() === dateRight.getMonth()
+}
+
+module.exports = isSameMonth
+
+},{"../parse/index.js":461}],425:[function(require,module,exports){
+var startOfQuarter = require('../start_of_quarter/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Are the given dates in the same year quarter?
+ *
+ * @description
+ * Are the given dates in the same year quarter?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same quarter
+ *
+ * @example
+ * // Are 1 January 2014 and 8 March 2014 in the same quarter?
+ * var result = isSameQuarter(
+ *   new Date(2014, 0, 1),
+ *   new Date(2014, 2, 8)
+ * )
+ * //=> true
+ */
+function isSameQuarter (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfQuarter = startOfQuarter(dirtyDateLeft)
+  var dateRightStartOfQuarter = startOfQuarter(dirtyDateRight)
+
+  return dateLeftStartOfQuarter.getTime() === dateRightStartOfQuarter.getTime()
+}
+
+module.exports = isSameQuarter
+
+},{"../start_of_quarter/index.js":481}],426:[function(require,module,exports){
+var startOfSecond = require('../start_of_second/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Are the given dates in the same second?
+ *
+ * @description
+ * Are the given dates in the same second?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same second
+ *
+ * @example
+ * // Are 4 September 2014 06:30:15.000 and 4 September 2014 06:30.15.500
+ * // in the same second?
+ * var result = isSameSecond(
+ *   new Date(2014, 8, 4, 6, 30, 15),
+ *   new Date(2014, 8, 4, 6, 30, 15, 500)
+ * )
+ * //=> true
+ */
+function isSameSecond (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfSecond = startOfSecond(dirtyDateLeft)
+  var dateRightStartOfSecond = startOfSecond(dirtyDateRight)
+
+  return dateLeftStartOfSecond.getTime() === dateRightStartOfSecond.getTime()
+}
+
+module.exports = isSameSecond
+
+},{"../start_of_second/index.js":482}],427:[function(require,module,exports){
+var startOfWeek = require('../start_of_week/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Are the given dates in the same week?
+ *
+ * @description
+ * Are the given dates in the same week?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Boolean} the dates are in the same week
+ *
+ * @example
+ * // Are 31 August 2014 and 4 September 2014 in the same week?
+ * var result = isSameWeek(
+ *   new Date(2014, 7, 31),
+ *   new Date(2014, 8, 4)
+ * )
+ * //=> true
+ *
+ * @example
+ * // If week starts with Monday,
+ * // are 31 August 2014 and 4 September 2014 in the same week?
+ * var result = isSameWeek(
+ *   new Date(2014, 7, 31),
+ *   new Date(2014, 8, 4),
+ *   {weekStartsOn: 1}
+ * )
+ * //=> false
+ */
+function isSameWeek (dirtyDateLeft, dirtyDateRight, options) {
+  var dateLeftStartOfWeek = startOfWeek(dirtyDateLeft, options)
+  var dateRightStartOfWeek = startOfWeek(dirtyDateRight, options)
+
+  return dateLeftStartOfWeek.getTime() === dateRightStartOfWeek.getTime()
+}
+
+module.exports = isSameWeek
+
+},{"../start_of_week/index.js":485}],428:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Are the given dates in the same year?
+ *
+ * @description
+ * Are the given dates in the same year?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same year
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2014 in the same year?
+ * var result = isSameYear(
+ *   new Date(2014, 8, 2),
+ *   new Date(2014, 8, 25)
+ * )
+ * //=> true
+ */
+function isSameYear (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getFullYear() === dateRight.getFullYear()
+}
+
+module.exports = isSameYear
+
+},{"../parse/index.js":461}],429:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Saturday?
+ *
+ * @description
+ * Is the given date Saturday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Saturday
+ *
+ * @example
+ * // Is 27 September 2014 Saturday?
+ * var result = isSaturday(new Date(2014, 8, 27))
+ * //=> true
+ */
+function isSaturday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 6
+}
+
+module.exports = isSaturday
+
+},{"../parse/index.js":461}],430:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Sunday?
+ *
+ * @description
+ * Is the given date Sunday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Sunday
+ *
+ * @example
+ * // Is 21 September 2014 Sunday?
+ * var result = isSunday(new Date(2014, 8, 21))
+ * //=> true
+ */
+function isSunday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 0
+}
+
+module.exports = isSunday
+
+},{"../parse/index.js":461}],431:[function(require,module,exports){
+var isSameHour = require('../is_same_hour/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Is the given date in the same hour as the current date?
+ *
+ * @description
+ * Is the given date in the same hour as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this hour
+ *
+ * @example
+ * // If now is 25 September 2014 18:30:15.500,
+ * // is 25 September 2014 18:00:00 in this hour?
+ * var result = isThisHour(new Date(2014, 8, 25, 18))
+ * //=> true
+ */
+function isThisHour (dirtyDate) {
+  return isSameHour(new Date(), dirtyDate)
+}
+
+module.exports = isThisHour
+
+},{"../is_same_hour/index.js":420}],432:[function(require,module,exports){
+var isSameISOWeek = require('../is_same_iso_week/index.js')
+
+/**
+ * @category ISO Week Helpers
+ * @summary Is the given date in the same ISO week as the current date?
+ *
+ * @description
+ * Is the given date in the same ISO week as the current date?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this ISO week
+ *
+ * @example
+ * // If today is 25 September 2014, is 22 September 2014 in this ISO week?
+ * var result = isThisISOWeek(new Date(2014, 8, 22))
+ * //=> true
+ */
+function isThisISOWeek (dirtyDate) {
+  return isSameISOWeek(new Date(), dirtyDate)
+}
+
+module.exports = isThisISOWeek
+
+},{"../is_same_iso_week/index.js":421}],433:[function(require,module,exports){
+var isSameISOYear = require('../is_same_iso_year/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Is the given date in the same ISO week-numbering year as the current date?
+ *
+ * @description
+ * Is the given date in the same ISO week-numbering year as the current date?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this ISO week-numbering year
+ *
+ * @example
+ * // If today is 25 September 2014,
+ * // is 30 December 2013 in this ISO week-numbering year?
+ * var result = isThisISOYear(new Date(2013, 11, 30))
+ * //=> true
+ */
+function isThisISOYear (dirtyDate) {
+  return isSameISOYear(new Date(), dirtyDate)
+}
+
+module.exports = isThisISOYear
+
+},{"../is_same_iso_year/index.js":422}],434:[function(require,module,exports){
+var isSameMinute = require('../is_same_minute/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Is the given date in the same minute as the current date?
+ *
+ * @description
+ * Is the given date in the same minute as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this minute
+ *
+ * @example
+ * // If now is 25 September 2014 18:30:15.500,
+ * // is 25 September 2014 18:30:00 in this minute?
+ * var result = isThisMinute(new Date(2014, 8, 25, 18, 30))
+ * //=> true
+ */
+function isThisMinute (dirtyDate) {
+  return isSameMinute(new Date(), dirtyDate)
+}
+
+module.exports = isThisMinute
+
+},{"../is_same_minute/index.js":423}],435:[function(require,module,exports){
+var isSameMonth = require('../is_same_month/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Is the given date in the same month as the current date?
+ *
+ * @description
+ * Is the given date in the same month as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this month
+ *
+ * @example
+ * // If today is 25 September 2014, is 15 September 2014 in this month?
+ * var result = isThisMonth(new Date(2014, 8, 15))
+ * //=> true
+ */
+function isThisMonth (dirtyDate) {
+  return isSameMonth(new Date(), dirtyDate)
+}
+
+module.exports = isThisMonth
+
+},{"../is_same_month/index.js":424}],436:[function(require,module,exports){
+var isSameQuarter = require('../is_same_quarter/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Is the given date in the same quarter as the current date?
+ *
+ * @description
+ * Is the given date in the same quarter as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this quarter
+ *
+ * @example
+ * // If today is 25 September 2014, is 2 July 2014 in this quarter?
+ * var result = isThisQuarter(new Date(2014, 6, 2))
+ * //=> true
+ */
+function isThisQuarter (dirtyDate) {
+  return isSameQuarter(new Date(), dirtyDate)
+}
+
+module.exports = isThisQuarter
+
+},{"../is_same_quarter/index.js":425}],437:[function(require,module,exports){
+var isSameSecond = require('../is_same_second/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Is the given date in the same second as the current date?
+ *
+ * @description
+ * Is the given date in the same second as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this second
+ *
+ * @example
+ * // If now is 25 September 2014 18:30:15.500,
+ * // is 25 September 2014 18:30:15.000 in this second?
+ * var result = isThisSecond(new Date(2014, 8, 25, 18, 30, 15))
+ * //=> true
+ */
+function isThisSecond (dirtyDate) {
+  return isSameSecond(new Date(), dirtyDate)
+}
+
+module.exports = isThisSecond
+
+},{"../is_same_second/index.js":426}],438:[function(require,module,exports){
+var isSameWeek = require('../is_same_week/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Is the given date in the same week as the current date?
+ *
+ * @description
+ * Is the given date in the same week as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Boolean} the date is in this week
+ *
+ * @example
+ * // If today is 25 September 2014, is 21 September 2014 in this week?
+ * var result = isThisWeek(new Date(2014, 8, 21))
+ * //=> true
+ *
+ * @example
+ * // If today is 25 September 2014 and week starts with Monday
+ * // is 21 September 2014 in this week?
+ * var result = isThisWeek(new Date(2014, 8, 21), {weekStartsOn: 1})
+ * //=> false
+ */
+function isThisWeek (dirtyDate, options) {
+  return isSameWeek(new Date(), dirtyDate, options)
+}
+
+module.exports = isThisWeek
+
+},{"../is_same_week/index.js":427}],439:[function(require,module,exports){
+var isSameYear = require('../is_same_year/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Is the given date in the same year as the current date?
+ *
+ * @description
+ * Is the given date in the same year as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this year
+ *
+ * @example
+ * // If today is 25 September 2014, is 2 July 2014 in this year?
+ * var result = isThisYear(new Date(2014, 6, 2))
+ * //=> true
+ */
+function isThisYear (dirtyDate) {
+  return isSameYear(new Date(), dirtyDate)
+}
+
+module.exports = isThisYear
+
+},{"../is_same_year/index.js":428}],440:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Thursday?
+ *
+ * @description
+ * Is the given date Thursday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Thursday
+ *
+ * @example
+ * // Is 25 September 2014 Thursday?
+ * var result = isThursday(new Date(2014, 8, 25))
+ * //=> true
+ */
+function isThursday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 4
+}
+
+module.exports = isThursday
+
+},{"../parse/index.js":461}],441:[function(require,module,exports){
+var startOfDay = require('../start_of_day/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Is the given date today?
+ *
+ * @description
+ * Is the given date today?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is today
+ *
+ * @example
+ * // If today is 6 October 2014, is 6 October 14:00:00 today?
+ * var result = isToday(new Date(2014, 9, 6, 14, 0))
+ * //=> true
+ */
+function isToday (dirtyDate) {
+  return startOfDay(dirtyDate).getTime() === startOfDay(new Date()).getTime()
+}
+
+module.exports = isToday
+
+},{"../start_of_day/index.js":475}],442:[function(require,module,exports){
+var startOfDay = require('../start_of_day/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Is the given date tomorrow?
+ *
+ * @description
+ * Is the given date tomorrow?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is tomorrow
+ *
+ * @example
+ * // If today is 6 October 2014, is 7 October 14:00:00 tomorrow?
+ * var result = isTomorrow(new Date(2014, 9, 7, 14, 0))
+ * //=> true
+ */
+function isTomorrow (dirtyDate) {
+  var tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  return startOfDay(dirtyDate).getTime() === startOfDay(tomorrow).getTime()
+}
+
+module.exports = isTomorrow
+
+},{"../start_of_day/index.js":475}],443:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Tuesday?
+ *
+ * @description
+ * Is the given date Tuesday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Tuesday
+ *
+ * @example
+ * // Is 23 September 2014 Tuesday?
+ * var result = isTuesday(new Date(2014, 8, 23))
+ * //=> true
+ */
+function isTuesday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 2
+}
+
+module.exports = isTuesday
+
+},{"../parse/index.js":461}],444:[function(require,module,exports){
+var isDate = require('../is_date/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Is the given date valid?
+ *
+ * @description
+ * Returns false if argument is Invalid Date and true otherwise.
+ * Invalid Date is a Date, whose time value is NaN.
+ *
+ * Time value of Date: http://es5.github.io/#x15.9.1.1
+ *
+ * @param {Date} date - the date to check
+ * @returns {Boolean} the date is valid
+ * @throws {TypeError} argument must be an instance of Date
+ *
+ * @example
+ * // For the valid date:
+ * var result = isValid(new Date(2014, 1, 31))
+ * //=> true
+ *
+ * @example
+ * // For the invalid date:
+ * var result = isValid(new Date(''))
+ * //=> false
+ */
+function isValid (date) {
+  if (isDate(date)) {
+    return !isNaN(date)
+  } else {
+    throw new TypeError(toString.call(date) + ' is not an instance of Date')
+  }
+}
+
+module.exports = isValid
+
+},{"../is_date/index.js":410}],445:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Wednesday?
+ *
+ * @description
+ * Is the given date Wednesday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Wednesday
+ *
+ * @example
+ * // Is 24 September 2014 Wednesday?
+ * var result = isWednesday(new Date(2014, 8, 24))
+ * //=> true
+ */
+function isWednesday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 3
+}
+
+module.exports = isWednesday
+
+},{"../parse/index.js":461}],446:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Does the given date fall on a weekend?
+ *
+ * @description
+ * Does the given date fall on a weekend?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date falls on a weekend
+ *
+ * @example
+ * // Does 5 October 2014 fall on a weekend?
+ * var result = isWeekend(new Date(2014, 9, 5))
+ * //=> true
+ */
+function isWeekend (dirtyDate) {
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  return day === 0 || day === 6
+}
+
+module.exports = isWeekend
+
+},{"../parse/index.js":461}],447:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Range Helpers
+ * @summary Is the given date within the range?
+ *
+ * @description
+ * Is the given date within the range?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @param {Date|String|Number} startDate - the start of range
+ * @param {Date|String|Number} endDate - the end of range
+ * @returns {Boolean} the date is within the range
+ * @throws {Error} startDate cannot be after endDate
+ *
+ * @example
+ * // For the date within the range:
+ * isWithinRange(
+ *   new Date(2014, 0, 3), new Date(2014, 0, 1), new Date(2014, 0, 7)
+ * )
+ * //=> true
+ *
+ * @example
+ * // For the date outside of the range:
+ * isWithinRange(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 1), new Date(2014, 0, 7)
+ * )
+ * //=> false
+ */
+function isWithinRange (dirtyDate, dirtyStartDate, dirtyEndDate) {
+  var time = parse(dirtyDate).getTime()
+  var startTime = parse(dirtyStartDate).getTime()
+  var endTime = parse(dirtyEndDate).getTime()
+
+  if (startTime > endTime) {
+    throw new Error('The start of the range cannot be after the end of the range')
+  }
+
+  return time >= startTime && time <= endTime
+}
+
+module.exports = isWithinRange
+
+},{"../parse/index.js":461}],448:[function(require,module,exports){
+var startOfDay = require('../start_of_day/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Is the given date yesterday?
+ *
+ * @description
+ * Is the given date yesterday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is yesterday
+ *
+ * @example
+ * // If today is 6 October 2014, is 5 October 14:00:00 yesterday?
+ * var result = isYesterday(new Date(2014, 9, 5, 14, 0))
+ * //=> true
+ */
+function isYesterday (dirtyDate) {
+  var yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return startOfDay(dirtyDate).getTime() === startOfDay(yesterday).getTime()
+}
+
+module.exports = isYesterday
+
+},{"../start_of_day/index.js":475}],449:[function(require,module,exports){
+var lastDayOfWeek = require('../last_day_of_week/index.js')
+
+/**
+ * @category ISO Week Helpers
+ * @summary Return the last day of an ISO week for the given date.
+ *
+ * @description
+ * Return the last day of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of an ISO week
+ *
+ * @example
+ * // The last day of an ISO week for 2 September 2014 11:55:00:
+ * var result = lastDayOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function lastDayOfISOWeek (dirtyDate) {
+  return lastDayOfWeek(dirtyDate, {weekStartsOn: 1})
+}
+
+module.exports = lastDayOfISOWeek
+
+},{"../last_day_of_week/index.js":453}],450:[function(require,module,exports){
+var getISOYear = require('../get_iso_year/index.js')
+var startOfISOWeek = require('../start_of_iso_week/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the last day of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the last day of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an ISO week-numbering year
+ *
+ * @example
+ * // The last day of an ISO week-numbering year for 2 July 2005:
+ * var result = lastDayOfISOYear(new Date(2005, 6, 2))
+ * //=> Sun Jan 01 2006 00:00:00
+ */
+function lastDayOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(year + 1, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuary)
+  date.setDate(date.getDate() - 1)
+  return date
+}
+
+module.exports = lastDayOfISOYear
+
+},{"../get_iso_year/index.js":399,"../start_of_iso_week/index.js":477}],451:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Return the last day of a month for the given date.
+ *
+ * @description
+ * Return the last day of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of a month
+ *
+ * @example
+ * // The last day of a month for 2 September 2014 11:55:00:
+ * var result = lastDayOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function lastDayOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var month = date.getMonth()
+  date.setFullYear(date.getFullYear(), month + 1, 0)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = lastDayOfMonth
+
+},{"../parse/index.js":461}],452:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Return the last day of a year quarter for the given date.
+ *
+ * @description
+ * Return the last day of a year quarter for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of a quarter
+ *
+ * @example
+ * // The last day of a quarter for 2 September 2014 11:55:00:
+ * var result = lastDayOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function lastDayOfQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var currentMonth = date.getMonth()
+  var month = currentMonth - currentMonth % 3 + 3
+  date.setMonth(month, 0)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = lastDayOfQuarter
+
+},{"../parse/index.js":461}],453:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Return the last day of a week for the given date.
+ *
+ * @description
+ * Return the last day of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the last day of a week
+ *
+ * @example
+ * // The last day of a week for 2 September 2014 11:55:00:
+ * var result = lastDayOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sat Sep 06 2014 00:00:00
+ *
+ * @example
+ * // If the week starts on Monday, the last day of the week for 2 September 2014 11:55:00:
+ * var result = lastDayOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function lastDayOfWeek (dirtyDate, options) {
+  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn)
+
+  date.setHours(0, 0, 0, 0)
+  date.setDate(date.getDate() + diff)
+  return date
+}
+
+module.exports = lastDayOfWeek
+
+},{"../parse/index.js":461}],454:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Return the last day of a year for the given date.
+ *
+ * @description
+ * Return the last day of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of a year
+ *
+ * @example
+ * // The last day of a year for 2 September 2014 11:55:00:
+ * var result = lastDayOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Dec 31 2014 00:00:00
+ */
+function lastDayOfYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  date.setFullYear(year + 1, 0, 0)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = lastDayOfYear
+
+},{"../parse/index.js":461}],455:[function(require,module,exports){
+var commonFormatterKeys = [
+  'M', 'MM', 'Q', 'D', 'DD', 'DDD', 'DDDD', 'd',
+  'E', 'W', 'WW', 'YY', 'YYYY', 'GG', 'GGGG',
+  'H', 'HH', 'h', 'hh', 'm', 'mm',
+  's', 'ss', 'S', 'SS', 'SSS',
+  'Z', 'ZZ', 'X', 'x'
+]
+
+function buildFormattingTokensRegExp (formatters) {
+  var formatterKeys = []
+  for (var key in formatters) {
+    if (formatters.hasOwnProperty(key)) {
+      formatterKeys.push(key)
+    }
+  }
+
+  var formattingTokens = commonFormatterKeys
+    .concat(formatterKeys)
+    .sort()
+    .reverse()
+  var formattingTokensRegExp = new RegExp(
+    '(\\[[^\\[]*\\])|(\\\\)?' + '(' + formattingTokens.join('|') + '|.)', 'g'
+  )
+
+  return formattingTokensRegExp
+}
+
+module.exports = buildFormattingTokensRegExp
+
+},{}],456:[function(require,module,exports){
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'less than a second',
+      other: 'less than {{count}} seconds'
+    },
+
+    xSeconds: {
+      one: '1 second',
+      other: '{{count}} seconds'
+    },
+
+    halfAMinute: 'half a minute',
+
+    lessThanXMinutes: {
+      one: 'less than a minute',
+      other: 'less than {{count}} minutes'
+    },
+
+    xMinutes: {
+      one: '1 minute',
+      other: '{{count}} minutes'
+    },
+
+    aboutXHours: {
+      one: 'about 1 hour',
+      other: 'about {{count}} hours'
+    },
+
+    xHours: {
+      one: '1 hour',
+      other: '{{count}} hours'
+    },
+
+    xDays: {
+      one: '1 day',
+      other: '{{count}} days'
+    },
+
+    aboutXMonths: {
+      one: 'about 1 month',
+      other: 'about {{count}} months'
+    },
+
+    xMonths: {
+      one: '1 month',
+      other: '{{count}} months'
+    },
+
+    aboutXYears: {
+      one: 'about 1 year',
+      other: 'about {{count}} years'
+    },
+
+    xYears: {
+      one: '1 year',
+      other: '{{count}} years'
+    },
+
+    overXYears: {
+      one: 'over 1 year',
+      other: 'over {{count}} years'
+    },
+
+    almostXYears: {
+      one: 'almost 1 year',
+      other: 'almost {{count}} years'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'in ' + result
+      } else {
+        return result + ' ago'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+},{}],457:[function(require,module,exports){
+var buildFormattingTokensRegExp = require('../../_lib/build_formatting_tokens_reg_exp/index.js')
+
+function buildFormatLocale () {
+  // Note: in English, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  var monthsFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  var weekdays2char = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+  var weekdays3char = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  var weekdaysFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + 'st'
+      case 2:
+        return number + 'nd'
+      case 3:
+        return number + 'rd'
+    }
+  }
+  return number + 'th'
+}
+
+module.exports = buildFormatLocale
+
+},{"../../_lib/build_formatting_tokens_reg_exp/index.js":455}],458:[function(require,module,exports){
+var buildDistanceInWordsLocale = require('./build_distance_in_words_locale/index.js')
+var buildFormatLocale = require('./build_format_locale/index.js')
+
+/**
+ * @category Locales
+ * @summary English locale.
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+},{"./build_distance_in_words_locale/index.js":456,"./build_format_locale/index.js":457}],459:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Return the latest of the given dates.
+ *
+ * @description
+ * Return the latest of the given dates.
+ *
+ * @param {...(Date|String|Number)} dates - the dates to compare
+ * @returns {Date} the latest of the dates
+ *
+ * @example
+ * // Which of these dates is the latest?
+ * var result = max(
+ *   new Date(1989, 6, 10),
+ *   new Date(1987, 1, 11),
+ *   new Date(1995, 6, 2),
+ *   new Date(1990, 0, 1)
+ * )
+ * //=> Sun Jul 02 1995 00:00:00
+ */
+function max () {
+  var dirtyDates = Array.prototype.slice.call(arguments)
+  var dates = dirtyDates.map(function (dirtyDate) {
+    return parse(dirtyDate)
+  })
+  var latestTimestamp = Math.max.apply(null, dates)
+  return new Date(latestTimestamp)
+}
+
+module.exports = max
+
+},{"../parse/index.js":461}],460:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Common Helpers
+ * @summary Return the earliest of the given dates.
+ *
+ * @description
+ * Return the earliest of the given dates.
+ *
+ * @param {...(Date|String|Number)} dates - the dates to compare
+ * @returns {Date} the earliest of the dates
+ *
+ * @example
+ * // Which of these dates is the earliest?
+ * var result = min(
+ *   new Date(1989, 6, 10),
+ *   new Date(1987, 1, 11),
+ *   new Date(1995, 6, 2),
+ *   new Date(1990, 0, 1)
+ * )
+ * //=> Wed Feb 11 1987 00:00:00
+ */
+function min () {
+  var dirtyDates = Array.prototype.slice.call(arguments)
+  var dates = dirtyDates.map(function (dirtyDate) {
+    return parse(dirtyDate)
+  })
+  var earliestTimestamp = Math.min.apply(null, dates)
+  return new Date(earliestTimestamp)
+}
+
+module.exports = min
+
+},{"../parse/index.js":461}],461:[function(require,module,exports){
+var isDate = require('../is_date/index.js')
+
+var MILLISECONDS_IN_HOUR = 3600000
+var MILLISECONDS_IN_MINUTE = 60000
+var DEFAULT_ADDITIONAL_DIGITS = 2
+
+var parseTokenDateTimeDelimeter = /[T ]/
+var parseTokenPlainTime = /:/
+
+// year tokens
+var parseTokenYY = /^(\d{2})$/
+var parseTokensYYY = [
+  /^([+-]\d{2})$/, // 0 additional digits
+  /^([+-]\d{3})$/, // 1 additional digit
+  /^([+-]\d{4})$/ // 2 additional digits
+]
+
+var parseTokenYYYY = /^(\d{4})/
+var parseTokensYYYYY = [
+  /^([+-]\d{4})/, // 0 additional digits
+  /^([+-]\d{5})/, // 1 additional digit
+  /^([+-]\d{6})/ // 2 additional digits
+]
+
+// date tokens
+var parseTokenMM = /^-(\d{2})$/
+var parseTokenDDD = /^-?(\d{3})$/
+var parseTokenMMDD = /^-?(\d{2})-?(\d{2})$/
+var parseTokenWww = /^-?W(\d{2})$/
+var parseTokenWwwD = /^-?W(\d{2})-?(\d{1})$/
+
+// time tokens
+var parseTokenHH = /^(\d{2}([.,]\d*)?)$/
+var parseTokenHHMM = /^(\d{2}):?(\d{2}([.,]\d*)?)$/
+var parseTokenHHMMSS = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/
+
+// timezone tokens
+var parseTokenTimezone = /([Z+-].*)$/
+var parseTokenTimezoneZ = /^(Z)$/
+var parseTokenTimezoneHH = /^([+-])(\d{2})$/
+var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/
+
+/**
+ * @category Common Helpers
+ * @summary Parse the ISO-8601-formatted date.
+ *
+ * @description
+ * Parse the date string representation.
+ * It accepts complete ISO 8601 formats as well as partial implementations.
+ *
+ * ISO 8601: http://en.wikipedia.org/wiki/ISO_8601
+ *
+ * @param {String} dateString - the ISO 8601 formatted string to parse
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.additionalDigits=2] - the additional number of digits in the extended year format. Options: 0, 1 or 2
+ * @returns {Date} the parsed date in the local time zone
+ *
+ * @example
+ * // Parse string '2014-02-11T11:30:30':
+ * var result = parse('2014-02-11T11:30:30')
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Parse string '+02014101',
+ * // if the additional number of digits in the extended year format is 1:
+ * var result = parse('+02014101', {additionalDigits: 1})
+ * //=> Fri Apr 11 2014 00:00:00
+ */
+function parse (dateString, options) {
+  if (isDate(dateString)) {
+    // Prevent the date to lose the milliseconds when passed to new Date() in IE10
+    return new Date(dateString.getTime())
+  } else if (typeof dateString !== 'string') {
+    return new Date(dateString)
+  }
+
+  options = options || {}
+  var additionalDigits = options.additionalDigits
+  if (additionalDigits == null) {
+    additionalDigits = DEFAULT_ADDITIONAL_DIGITS
+  }
+
+  var dateStrings = splitDateString(dateString)
+
+  var parseYearResult = parseYear(dateStrings.date, additionalDigits)
+  var year = parseYearResult.year
+  var restDateString = parseYearResult.restDateString
+
+  var date = parseDate(restDateString, year)
+
+  if (date) {
+    var timestamp = date.getTime()
+    var time = 0
+    var offset
+
+    if (dateStrings.time) {
+      time = parseTime(dateStrings.time)
+    }
+
+    if (dateStrings.timezone) {
+      offset = parseTimezone(dateStrings.timezone)
+    } else {
+      // get offset accurate to hour in timezones that change offset
+      offset = new Date(timestamp + time).getTimezoneOffset()
+      offset = new Date(timestamp + time + offset * MILLISECONDS_IN_MINUTE).getTimezoneOffset()
+    }
+
+    return new Date(timestamp + time + offset * MILLISECONDS_IN_MINUTE)
+  } else {
+    return new Date(dateString)
+  }
+}
+
+function splitDateString (dateString) {
+  var dateStrings = {}
+  var array = dateString.split(parseTokenDateTimeDelimeter)
+  var timeString
+
+  if (parseTokenPlainTime.test(array[0])) {
+    dateStrings.date = null
+    timeString = array[0]
+  } else {
+    dateStrings.date = array[0]
+    timeString = array[1]
+  }
+
+  if (timeString) {
+    var token = parseTokenTimezone.exec(timeString)
+    if (token) {
+      dateStrings.time = timeString.replace(token[1], '')
+      dateStrings.timezone = token[1]
+    } else {
+      dateStrings.time = timeString
+    }
+  }
+
+  return dateStrings
+}
+
+function parseYear (dateString, additionalDigits) {
+  var parseTokenYYY = parseTokensYYY[additionalDigits]
+  var parseTokenYYYYY = parseTokensYYYYY[additionalDigits]
+
+  var token
+
+  // YYYY or ±YYYYY
+  token = parseTokenYYYY.exec(dateString) || parseTokenYYYYY.exec(dateString)
+  if (token) {
+    var yearString = token[1]
+    return {
+      year: parseInt(yearString, 10),
+      restDateString: dateString.slice(yearString.length)
+    }
+  }
+
+  // YY or ±YYY
+  token = parseTokenYY.exec(dateString) || parseTokenYYY.exec(dateString)
+  if (token) {
+    var centuryString = token[1]
+    return {
+      year: parseInt(centuryString, 10) * 100,
+      restDateString: dateString.slice(centuryString.length)
+    }
+  }
+
+  // Invalid ISO-formatted year
+  return {
+    year: null
+  }
+}
+
+function parseDate (dateString, year) {
+  // Invalid ISO-formatted year
+  if (year === null) {
+    return null
+  }
+
+  var token
+  var date
+  var month
+  var week
+
+  // YYYY
+  if (dateString.length === 0) {
+    date = new Date(0)
+    date.setUTCFullYear(year)
+    return date
+  }
+
+  // YYYY-MM
+  token = parseTokenMM.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    month = parseInt(token[1], 10) - 1
+    date.setUTCFullYear(year, month)
+    return date
+  }
+
+  // YYYY-DDD or YYYYDDD
+  token = parseTokenDDD.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    var dayOfYear = parseInt(token[1], 10)
+    date.setUTCFullYear(year, 0, dayOfYear)
+    return date
+  }
+
+  // YYYY-MM-DD or YYYYMMDD
+  token = parseTokenMMDD.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    month = parseInt(token[1], 10) - 1
+    var day = parseInt(token[2], 10)
+    date.setUTCFullYear(year, month, day)
+    return date
+  }
+
+  // YYYY-Www or YYYYWww
+  token = parseTokenWww.exec(dateString)
+  if (token) {
+    week = parseInt(token[1], 10) - 1
+    return dayOfISOYear(year, week)
+  }
+
+  // YYYY-Www-D or YYYYWwwD
+  token = parseTokenWwwD.exec(dateString)
+  if (token) {
+    week = parseInt(token[1], 10) - 1
+    var dayOfWeek = parseInt(token[2], 10) - 1
+    return dayOfISOYear(year, week, dayOfWeek)
+  }
+
+  // Invalid ISO-formatted date
+  return null
+}
+
+function parseTime (timeString) {
+  var token
+  var hours
+  var minutes
+
+  // hh
+  token = parseTokenHH.exec(timeString)
+  if (token) {
+    hours = parseFloat(token[1].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR
+  }
+
+  // hh:mm or hhmm
+  token = parseTokenHHMM.exec(timeString)
+  if (token) {
+    hours = parseInt(token[1], 10)
+    minutes = parseFloat(token[2].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE
+  }
+
+  // hh:mm:ss or hhmmss
+  token = parseTokenHHMMSS.exec(timeString)
+  if (token) {
+    hours = parseInt(token[1], 10)
+    minutes = parseInt(token[2], 10)
+    var seconds = parseFloat(token[3].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE +
+      seconds * 1000
+  }
+
+  // Invalid ISO-formatted time
+  return null
+}
+
+function parseTimezone (timezoneString) {
+  var token
+  var absoluteOffset
+
+  // Z
+  token = parseTokenTimezoneZ.exec(timezoneString)
+  if (token) {
+    return 0
+  }
+
+  // ±hh
+  token = parseTokenTimezoneHH.exec(timezoneString)
+  if (token) {
+    absoluteOffset = parseInt(token[2], 10) * 60
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
+  }
+
+  // ±hh:mm or ±hhmm
+  token = parseTokenTimezoneHHMM.exec(timezoneString)
+  if (token) {
+    absoluteOffset = parseInt(token[2], 10) * 60 + parseInt(token[3], 10)
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
+  }
+
+  return 0
+}
+
+function dayOfISOYear (isoYear, week, day) {
+  week = week || 0
+  day = day || 0
+  var date = new Date(0)
+  date.setUTCFullYear(isoYear, 0, 4)
+  var fourthOfJanuaryDay = date.getUTCDay() || 7
+  var diff = week * 7 + day + 1 - fourthOfJanuaryDay
+  date.setUTCDate(date.getUTCDate() + diff)
+  return date
+}
+
+module.exports = parse
+
+},{"../is_date/index.js":410}],462:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Set the day of the month to the given date.
+ *
+ * @description
+ * Set the day of the month to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} dayOfMonth - the day of the month of the new date
+ * @returns {Date} the new date with the day of the month setted
+ *
+ * @example
+ * // Set the 30th day of the month to 1 September 2014:
+ * var result = setDate(new Date(2014, 8, 1), 30)
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function setDate (dirtyDate, dayOfMonth) {
+  var date = parse(dirtyDate)
+  date.setDate(dayOfMonth)
+  return date
+}
+
+module.exports = setDate
+
+},{"../parse/index.js":461}],463:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var addDays = require('../add_days/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Set the day of the week to the given date.
+ *
+ * @description
+ * Set the day of the week to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} day - the day of the week of the new date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the new date with the day of the week setted
+ *
+ * @example
+ * // Set Sunday to 1 September 2014:
+ * var result = setDay(new Date(2014, 8, 1), 0)
+ * //=> Sun Aug 31 2014 00:00:00
+ *
+ * @example
+ * // If week starts with Monday, set Sunday to 1 September 2014:
+ * var result = setDay(new Date(2014, 8, 1), 0, {weekStartsOn: 1})
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function setDay (dirtyDate, day, options) {
+  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+  var date = parse(dirtyDate)
+  var currentDay = date.getDay()
+
+  var remainder = day % 7
+  var dayIndex = (remainder + 7) % 7
+
+  var diff = (dayIndex < weekStartsOn ? 7 : 0) + day - currentDay
+  return addDays(date, diff)
+}
+
+module.exports = setDay
+
+},{"../add_days/index.js":340,"../parse/index.js":461}],464:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Set the day of the year to the given date.
+ *
+ * @description
+ * Set the day of the year to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} dayOfYear - the day of the year of the new date
+ * @returns {Date} the new date with the day of the year setted
+ *
+ * @example
+ * // Set the 2nd day of the year to 2 July 2014:
+ * var result = setDayOfYear(new Date(2014, 6, 2), 2)
+ * //=> Thu Jan 02 2014 00:00:00
+ */
+function setDayOfYear (dirtyDate, dayOfYear) {
+  var date = parse(dirtyDate)
+  date.setMonth(0)
+  date.setDate(dayOfYear)
+  return date
+}
+
+module.exports = setDayOfYear
+
+},{"../parse/index.js":461}],465:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Set the hours to the given date.
+ *
+ * @description
+ * Set the hours to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} hours - the hours of the new date
+ * @returns {Date} the new date with the hours setted
+ *
+ * @example
+ * // Set 4 hours to 1 September 2014 11:30:00:
+ * var result = setHours(new Date(2014, 8, 1, 11, 30), 4)
+ * //=> Mon Sep 01 2014 04:30:00
+ */
+function setHours (dirtyDate, hours) {
+  var date = parse(dirtyDate)
+  date.setHours(hours)
+  return date
+}
+
+module.exports = setHours
+
+},{"../parse/index.js":461}],466:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var addDays = require('../add_days/index.js')
+var getISODay = require('../get_iso_day/index.js')
+
+/**
+ * @category Weekday Helpers
+ * @summary Set the day of the ISO week to the given date.
+ *
+ * @description
+ * Set the day of the ISO week to the given date.
+ * ISO week starts with Monday.
+ * 7 is the index of Sunday, 1 is the index of Monday etc.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} day - the day of the ISO week of the new date
+ * @returns {Date} the new date with the day of the ISO week setted
+ *
+ * @example
+ * // Set Sunday to 1 September 2014:
+ * var result = setISODay(new Date(2014, 8, 1), 7)
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function setISODay (dirtyDate, day) {
+  var date = parse(dirtyDate)
+  var currentDay = getISODay(date)
+  var diff = day - currentDay
+  return addDays(date, diff)
+}
+
+module.exports = setISODay
+
+},{"../add_days/index.js":340,"../get_iso_day/index.js":396,"../parse/index.js":461}],467:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var getISOWeek = require('../get_iso_week/index.js')
+
+/**
+ * @category ISO Week Helpers
+ * @summary Set the ISO week to the given date.
+ *
+ * @description
+ * Set the ISO week to the given date, saving the weekday number.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} isoWeek - the ISO week of the new date
+ * @returns {Date} the new date with the ISO week setted
+ *
+ * @example
+ * // Set the 53rd ISO week to 7 August 2004:
+ * var result = setISOWeek(new Date(2004, 7, 7), 53)
+ * //=> Sat Jan 01 2005 00:00:00
+ */
+function setISOWeek (dirtyDate, isoWeek) {
+  var date = parse(dirtyDate)
+  var diff = getISOWeek(date) - isoWeek
+  date.setDate(date.getDate() - diff * 7)
+  return date
+}
+
+module.exports = setISOWeek
+
+},{"../get_iso_week/index.js":397,"../parse/index.js":461}],468:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var startOfISOYear = require('../start_of_iso_year/index.js')
+var differenceInCalendarDays = require('../difference_in_calendar_days/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Set the ISO week-numbering year to the given date.
+ *
+ * @description
+ * Set the ISO week-numbering year to the given date,
+ * saving the week number and the weekday number.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} isoYear - the ISO week-numbering year of the new date
+ * @returns {Date} the new date with the ISO week-numbering year setted
+ *
+ * @example
+ * // Set ISO week-numbering year 2007 to 29 December 2008:
+ * var result = setISOYear(new Date(2008, 11, 29), 2007)
+ * //=> Mon Jan 01 2007 00:00:00
+ */
+function setISOYear (dirtyDate, isoYear) {
+  var date = parse(dirtyDate)
+  var diff = differenceInCalendarDays(date, startOfISOYear(date))
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(isoYear, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  date = startOfISOYear(fourthOfJanuary)
+  date.setDate(date.getDate() + diff)
+  return date
+}
+
+module.exports = setISOYear
+
+},{"../difference_in_calendar_days/index.js":355,"../parse/index.js":461,"../start_of_iso_year/index.js":478}],469:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Millisecond Helpers
+ * @summary Set the milliseconds to the given date.
+ *
+ * @description
+ * Set the milliseconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} milliseconds - the milliseconds of the new date
+ * @returns {Date} the new date with the milliseconds setted
+ *
+ * @example
+ * // Set 300 milliseconds to 1 September 2014 11:30:40.500:
+ * var result = setMilliseconds(new Date(2014, 8, 1, 11, 30, 40, 500), 300)
+ * //=> Mon Sep 01 2014 11:30:40.300
+ */
+function setMilliseconds (dirtyDate, milliseconds) {
+  var date = parse(dirtyDate)
+  date.setMilliseconds(milliseconds)
+  return date
+}
+
+module.exports = setMilliseconds
+
+},{"../parse/index.js":461}],470:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Set the minutes to the given date.
+ *
+ * @description
+ * Set the minutes to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} minutes - the minutes of the new date
+ * @returns {Date} the new date with the minutes setted
+ *
+ * @example
+ * // Set 45 minutes to 1 September 2014 11:30:40:
+ * var result = setMinutes(new Date(2014, 8, 1, 11, 30, 40), 45)
+ * //=> Mon Sep 01 2014 11:45:40
+ */
+function setMinutes (dirtyDate, minutes) {
+  var date = parse(dirtyDate)
+  date.setMinutes(minutes)
+  return date
+}
+
+module.exports = setMinutes
+
+},{"../parse/index.js":461}],471:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var getDaysInMonth = require('../get_days_in_month/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Set the month to the given date.
+ *
+ * @description
+ * Set the month to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} month - the month of the new date
+ * @returns {Date} the new date with the month setted
+ *
+ * @example
+ * // Set February to 1 September 2014:
+ * var result = setMonth(new Date(2014, 8, 1), 1)
+ * //=> Sat Feb 01 2014 00:00:00
+ */
+function setMonth (dirtyDate, month) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  var day = date.getDate()
+
+  var dateWithDesiredMonth = new Date(0)
+  dateWithDesiredMonth.setFullYear(year, month, 15)
+  dateWithDesiredMonth.setHours(0, 0, 0, 0)
+  var daysInMonth = getDaysInMonth(dateWithDesiredMonth)
+  // Set the last day of the new month
+  // if the original date was the last day of the longer month
+  date.setMonth(month, Math.min(day, daysInMonth))
+  return date
+}
+
+module.exports = setMonth
+
+},{"../get_days_in_month/index.js":393,"../parse/index.js":461}],472:[function(require,module,exports){
+var parse = require('../parse/index.js')
+var setMonth = require('../set_month/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Set the year quarter to the given date.
+ *
+ * @description
+ * Set the year quarter to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} quarter - the quarter of the new date
+ * @returns {Date} the new date with the quarter setted
+ *
+ * @example
+ * // Set the 2nd quarter to 2 July 2014:
+ * var result = setQuarter(new Date(2014, 6, 2), 2)
+ * //=> Wed Apr 02 2014 00:00:00
+ */
+function setQuarter (dirtyDate, quarter) {
+  var date = parse(dirtyDate)
+  var oldQuarter = Math.floor(date.getMonth() / 3) + 1
+  var diff = quarter - oldQuarter
+  return setMonth(date, date.getMonth() + diff * 3)
+}
+
+module.exports = setQuarter
+
+},{"../parse/index.js":461,"../set_month/index.js":471}],473:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Set the seconds to the given date.
+ *
+ * @description
+ * Set the seconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} seconds - the seconds of the new date
+ * @returns {Date} the new date with the seconds setted
+ *
+ * @example
+ * // Set 45 seconds to 1 September 2014 11:30:40:
+ * var result = setSeconds(new Date(2014, 8, 1, 11, 30, 40), 45)
+ * //=> Mon Sep 01 2014 11:30:45
+ */
+function setSeconds (dirtyDate, seconds) {
+  var date = parse(dirtyDate)
+  date.setSeconds(seconds)
+  return date
+}
+
+module.exports = setSeconds
+
+},{"../parse/index.js":461}],474:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Set the year to the given date.
+ *
+ * @description
+ * Set the year to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} year - the year of the new date
+ * @returns {Date} the new date with the year setted
+ *
+ * @example
+ * // Set year 2013 to 1 September 2014:
+ * var result = setYear(new Date(2014, 8, 1), 2013)
+ * //=> Sun Sep 01 2013 00:00:00
+ */
+function setYear (dirtyDate, year) {
+  var date = parse(dirtyDate)
+  date.setFullYear(year)
+  return date
+}
+
+module.exports = setYear
+
+},{"../parse/index.js":461}],475:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Return the start of a day for the given date.
+ *
+ * @description
+ * Return the start of a day for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a day
+ *
+ * @example
+ * // The start of a day for 2 September 2014 11:55:00:
+ * var result = startOfDay(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 02 2014 00:00:00
+ */
+function startOfDay (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfDay
+
+},{"../parse/index.js":461}],476:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Return the start of an hour for the given date.
+ *
+ * @description
+ * Return the start of an hour for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an hour
+ *
+ * @example
+ * // The start of an hour for 2 September 2014 11:55:00:
+ * var result = startOfHour(new Date(2014, 8, 2, 11, 55))
+ * //=> Tue Sep 02 2014 11:00:00
+ */
+function startOfHour (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMinutes(0, 0, 0)
+  return date
+}
+
+module.exports = startOfHour
+
+},{"../parse/index.js":461}],477:[function(require,module,exports){
+var startOfWeek = require('../start_of_week/index.js')
+
+/**
+ * @category ISO Week Helpers
+ * @summary Return the start of an ISO week for the given date.
+ *
+ * @description
+ * Return the start of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an ISO week
+ *
+ * @example
+ * // The start of an ISO week for 2 September 2014 11:55:00:
+ * var result = startOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfISOWeek (dirtyDate) {
+  return startOfWeek(dirtyDate, {weekStartsOn: 1})
+}
+
+module.exports = startOfISOWeek
+
+},{"../start_of_week/index.js":485}],478:[function(require,module,exports){
+var getISOYear = require('../get_iso_year/index.js')
+var startOfISOWeek = require('../start_of_iso_week/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the start of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the start of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an ISO year
+ *
+ * @example
+ * // The start of an ISO week-numbering year for 2 July 2005:
+ * var result = startOfISOYear(new Date(2005, 6, 2))
+ * //=> Mon Jan 03 2005 00:00:00
+ */
+function startOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(year, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuary)
+  return date
+}
+
+module.exports = startOfISOYear
+
+},{"../get_iso_year/index.js":399,"../start_of_iso_week/index.js":477}],479:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Return the start of a minute for the given date.
+ *
+ * @description
+ * Return the start of a minute for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a minute
+ *
+ * @example
+ * // The start of a minute for 1 December 2014 22:15:45.400:
+ * var result = startOfMinute(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:00
+ */
+function startOfMinute (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setSeconds(0, 0)
+  return date
+}
+
+module.exports = startOfMinute
+
+},{"../parse/index.js":461}],480:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Return the start of a month for the given date.
+ *
+ * @description
+ * Return the start of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a month
+ *
+ * @example
+ * // The start of a month for 2 September 2014 11:55:00:
+ * var result = startOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setDate(1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfMonth
+
+},{"../parse/index.js":461}],481:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Return the start of a year quarter for the given date.
+ *
+ * @description
+ * Return the start of a year quarter for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a quarter
+ *
+ * @example
+ * // The start of a quarter for 2 September 2014 11:55:00:
+ * var result = startOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Jul 01 2014 00:00:00
+ */
+function startOfQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var currentMonth = date.getMonth()
+  var month = currentMonth - currentMonth % 3
+  date.setMonth(month, 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfQuarter
+
+},{"../parse/index.js":461}],482:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Return the start of a second for the given date.
+ *
+ * @description
+ * Return the start of a second for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a second
+ *
+ * @example
+ * // The start of a second for 1 December 2014 22:15:45.400:
+ * var result = startOfSecond(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:45.000
+ */
+function startOfSecond (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMilliseconds(0)
+  return date
+}
+
+module.exports = startOfSecond
+
+},{"../parse/index.js":461}],483:[function(require,module,exports){
+var startOfDay = require('../start_of_day/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Return the start of today.
+ *
+ * @description
+ * Return the start of today.
+ *
+ * @returns {Date} the start of today
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = startOfToday()
+ * //=> Mon Oct 6 2014 00:00:00
+ */
+function startOfToday () {
+  return startOfDay(new Date())
+}
+
+module.exports = startOfToday
+
+},{"../start_of_day/index.js":475}],484:[function(require,module,exports){
+/**
+ * @category Day Helpers
+ * @summary Return the start of tomorrow.
+ *
+ * @description
+ * Return the start of tomorrow.
+ *
+ * @returns {Date} the start of tomorrow
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = startOfTomorrow()
+ * //=> Tue Oct 7 2014 00:00:00
+ */
+function startOfTomorrow () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day + 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfTomorrow
+
+},{}],485:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Return the start of a week for the given date.
+ *
+ * @description
+ * Return the start of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the start of a week
+ *
+ * @example
+ * // The start of a week for 2 September 2014 11:55:00:
+ * var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Aug 31 2014 00:00:00
+ *
+ * @example
+ * // If the week starts on Monday, the start of the week for 2 September 2014 11:55:00:
+ * var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfWeek (dirtyDate, options) {
+  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn
+
+  date.setDate(date.getDate() - diff)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfWeek
+
+},{"../parse/index.js":461}],486:[function(require,module,exports){
+var parse = require('../parse/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Return the start of a year for the given date.
+ *
+ * @description
+ * Return the start of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a year
+ *
+ * @example
+ * // The start of a year for 2 September 2014 11:55:00:
+ * var result = startOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Jan 01 2014 00:00:00
+ */
+function startOfYear (dirtyDate) {
+  var cleanDate = parse(dirtyDate)
+  var date = new Date(0)
+  date.setFullYear(cleanDate.getFullYear(), 0, 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfYear
+
+},{"../parse/index.js":461}],487:[function(require,module,exports){
+/**
+ * @category Day Helpers
+ * @summary Return the start of yesterday.
+ *
+ * @description
+ * Return the start of yesterday.
+ *
+ * @returns {Date} the start of yesterday
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = startOfYesterday()
+ * //=> Sun Oct 5 2014 00:00:00
+ */
+function startOfYesterday () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day - 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfYesterday
+
+},{}],488:[function(require,module,exports){
+var addDays = require('../add_days/index.js')
+
+/**
+ * @category Day Helpers
+ * @summary Subtract the specified number of days from the given date.
+ *
+ * @description
+ * Subtract the specified number of days from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be subtracted
+ * @returns {Date} the new date with the days subtracted
+ *
+ * @example
+ * // Subtract 10 days from 1 September 2014:
+ * var result = subDays(new Date(2014, 8, 1), 10)
+ * //=> Fri Aug 22 2014 00:00:00
+ */
+function subDays (dirtyDate, amount) {
+  return addDays(dirtyDate, -amount)
+}
+
+module.exports = subDays
+
+},{"../add_days/index.js":340}],489:[function(require,module,exports){
+var addHours = require('../add_hours/index.js')
+
+/**
+ * @category Hour Helpers
+ * @summary Subtract the specified number of hours from the given date.
+ *
+ * @description
+ * Subtract the specified number of hours from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of hours to be subtracted
+ * @returns {Date} the new date with the hours subtracted
+ *
+ * @example
+ * // Subtract 2 hours from 11 July 2014 01:00:00:
+ * var result = subHours(new Date(2014, 6, 11, 1, 0), 2)
+ * //=> Thu Jul 10 2014 23:00:00
+ */
+function subHours (dirtyDate, amount) {
+  return addHours(dirtyDate, -amount)
+}
+
+module.exports = subHours
+
+},{"../add_hours/index.js":341}],490:[function(require,module,exports){
+var addISOYears = require('../add_iso_years/index.js')
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Subtract the specified number of ISO week-numbering years from the given date.
+ *
+ * @description
+ * Subtract the specified number of ISO week-numbering years from the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of ISO week-numbering years to be subtracted
+ * @returns {Date} the new date with the ISO week-numbering years subtracted
+ *
+ * @example
+ * // Subtract 5 ISO week-numbering years from 1 September 2014:
+ * var result = subISOYears(new Date(2014, 8, 1), 5)
+ * //=> Mon Aug 31 2009 00:00:00
+ */
+function subISOYears (dirtyDate, amount) {
+  return addISOYears(dirtyDate, -amount)
+}
+
+module.exports = subISOYears
+
+},{"../add_iso_years/index.js":342}],491:[function(require,module,exports){
+var addMilliseconds = require('../add_milliseconds/index.js')
+
+/**
+ * @category Millisecond Helpers
+ * @summary Subtract the specified number of milliseconds from the given date.
+ *
+ * @description
+ * Subtract the specified number of milliseconds from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be subtracted
+ * @returns {Date} the new date with the milliseconds subtracted
+ *
+ * @example
+ * // Subtract 750 milliseconds from 10 July 2014 12:45:30.000:
+ * var result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:29.250
+ */
+function subMilliseconds (dirtyDate, amount) {
+  return addMilliseconds(dirtyDate, -amount)
+}
+
+module.exports = subMilliseconds
+
+},{"../add_milliseconds/index.js":343}],492:[function(require,module,exports){
+var addMinutes = require('../add_minutes/index.js')
+
+/**
+ * @category Minute Helpers
+ * @summary Subtract the specified number of minutes from the given date.
+ *
+ * @description
+ * Subtract the specified number of minutes from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of minutes to be subtracted
+ * @returns {Date} the new date with the mintues subtracted
+ *
+ * @example
+ * // Subtract 30 minutes from 10 July 2014 12:00:00:
+ * var result = subMinutes(new Date(2014, 6, 10, 12, 0), 30)
+ * //=> Thu Jul 10 2014 11:30:00
+ */
+function subMinutes (dirtyDate, amount) {
+  return addMinutes(dirtyDate, -amount)
+}
+
+module.exports = subMinutes
+
+},{"../add_minutes/index.js":344}],493:[function(require,module,exports){
+var addMonths = require('../add_months/index.js')
+
+/**
+ * @category Month Helpers
+ * @summary Subtract the specified number of months from the given date.
+ *
+ * @description
+ * Subtract the specified number of months from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of months to be subtracted
+ * @returns {Date} the new date with the months subtracted
+ *
+ * @example
+ * // Subtract 5 months from 1 February 2015:
+ * var result = subMonths(new Date(2015, 1, 1), 5)
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function subMonths (dirtyDate, amount) {
+  return addMonths(dirtyDate, -amount)
+}
+
+module.exports = subMonths
+
+},{"../add_months/index.js":345}],494:[function(require,module,exports){
+var addQuarters = require('../add_quarters/index.js')
+
+/**
+ * @category Quarter Helpers
+ * @summary Subtract the specified number of year quarters from the given date.
+ *
+ * @description
+ * Subtract the specified number of year quarters from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of quarters to be subtracted
+ * @returns {Date} the new date with the quarters subtracted
+ *
+ * @example
+ * // Subtract 3 quarters from 1 September 2014:
+ * var result = subQuarters(new Date(2014, 8, 1), 3)
+ * //=> Sun Dec 01 2013 00:00:00
+ */
+function subQuarters (dirtyDate, amount) {
+  return addQuarters(dirtyDate, -amount)
+}
+
+module.exports = subQuarters
+
+},{"../add_quarters/index.js":346}],495:[function(require,module,exports){
+var addSeconds = require('../add_seconds/index.js')
+
+/**
+ * @category Second Helpers
+ * @summary Subtract the specified number of seconds from the given date.
+ *
+ * @description
+ * Subtract the specified number of seconds from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of seconds to be subtracted
+ * @returns {Date} the new date with the seconds subtracted
+ *
+ * @example
+ * // Subtract 30 seconds from 10 July 2014 12:45:00:
+ * var result = subSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
+ * //=> Thu Jul 10 2014 12:44:30
+ */
+function subSeconds (dirtyDate, amount) {
+  return addSeconds(dirtyDate, -amount)
+}
+
+module.exports = subSeconds
+
+},{"../add_seconds/index.js":347}],496:[function(require,module,exports){
+var addWeeks = require('../add_weeks/index.js')
+
+/**
+ * @category Week Helpers
+ * @summary Subtract the specified number of weeks from the given date.
+ *
+ * @description
+ * Subtract the specified number of weeks from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of weeks to be subtracted
+ * @returns {Date} the new date with the weeks subtracted
+ *
+ * @example
+ * // Subtract 4 weeks from 1 September 2014:
+ * var result = subWeeks(new Date(2014, 8, 1), 4)
+ * //=> Mon Aug 04 2014 00:00:00
+ */
+function subWeeks (dirtyDate, amount) {
+  return addWeeks(dirtyDate, -amount)
+}
+
+module.exports = subWeeks
+
+},{"../add_weeks/index.js":348}],497:[function(require,module,exports){
+var addYears = require('../add_years/index.js')
+
+/**
+ * @category Year Helpers
+ * @summary Subtract the specified number of years from the given date.
+ *
+ * @description
+ * Subtract the specified number of years from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of years to be subtracted
+ * @returns {Date} the new date with the years subtracted
+ *
+ * @example
+ * // Subtract 5 years from 1 September 2014:
+ * var result = subYears(new Date(2014, 8, 1), 5)
+ * //=> Tue Sep 01 2009 00:00:00
+ */
+function subYears (dirtyDate, amount) {
+  return addYears(dirtyDate, -amount)
+}
+
+module.exports = subYears
+
+},{"../add_years/index.js":349}],498:[function(require,module,exports){
 module.exports = Date.now || now
 
 function now() {
     return new Date().getTime()
 }
 
-},{}],341:[function(require,module,exports){
+},{}],499:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -49101,7 +55140,7 @@ module.exports = function debounce(func, wait, immediate){
   };
 };
 
-},{"date-now":340}],342:[function(require,module,exports){
+},{"date-now":498}],500:[function(require,module,exports){
 /* eslint-disable guard-for-in */
 'use strict';
 var repeating = require('repeating');
@@ -49223,7 +55262,7 @@ module.exports = function (str) {
 	};
 };
 
-},{"repeating":728}],343:[function(require,module,exports){
+},{"repeating":886}],501:[function(require,module,exports){
 'use strict';
 
 var matchOperatorsRe = /[|\\{}()[\]^$+*?.]/g;
@@ -49236,7 +55275,7 @@ module.exports = function (str) {
 	return str.replace(matchOperatorsRe, '\\$&');
 };
 
-},{}],344:[function(require,module,exports){
+},{}],502:[function(require,module,exports){
 /*
   Copyright (C) 2013 Yusuke Suzuki <utatane.tea@gmail.com>
 
@@ -49382,7 +55421,7 @@ module.exports = function (str) {
 }());
 /* vim: set sw=4 ts=4 et tw=80 : */
 
-},{}],345:[function(require,module,exports){
+},{}],503:[function(require,module,exports){
 /*
   Copyright (C) 2013-2014 Yusuke Suzuki <utatane.tea@gmail.com>
   Copyright (C) 2014 Ivan Nikulin <ifaaan@gmail.com>
@@ -49519,7 +55558,7 @@ module.exports = function (str) {
 }());
 /* vim: set sw=4 ts=4 et tw=80 : */
 
-},{}],346:[function(require,module,exports){
+},{}],504:[function(require,module,exports){
 /*
   Copyright (C) 2013 Yusuke Suzuki <utatane.tea@gmail.com>
 
@@ -49686,7 +55725,7 @@ module.exports = function (str) {
 }());
 /* vim: set sw=4 ts=4 et tw=80 : */
 
-},{"./code":345}],347:[function(require,module,exports){
+},{"./code":503}],505:[function(require,module,exports){
 /*
   Copyright (C) 2013 Yusuke Suzuki <utatane.tea@gmail.com>
 
@@ -49721,7 +55760,7 @@ module.exports = function (str) {
 }());
 /* vim: set sw=4 ts=4 et tw=80 : */
 
-},{"./ast":344,"./code":345,"./keyword":346}],348:[function(require,module,exports){
+},{"./ast":502,"./code":503,"./keyword":504}],506:[function(require,module,exports){
 (function (global){
 ////      ____ _         _
 ////     / ___| |       | |_
@@ -50645,7 +56684,7 @@ module.exports = function (str) {
 }));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"inspect-f":355}],349:[function(require,module,exports){
+},{"inspect-f":513}],507:[function(require,module,exports){
 module.exports={
 	"builtin": {
 		"Array": false,
@@ -51935,16 +57974,16 @@ module.exports={
 	}
 }
 
-},{}],350:[function(require,module,exports){
+},{}],508:[function(require,module,exports){
 module.exports = require('./globals.json');
 
-},{"./globals.json":349}],351:[function(require,module,exports){
+},{"./globals.json":507}],509:[function(require,module,exports){
 'use strict';
 var ansiRegex = require('ansi-regex');
 var re = new RegExp(ansiRegex().source); // remove the `g` flag
 module.exports = re.test.bind(re);
 
-},{"ansi-regex":13}],352:[function(require,module,exports){
+},{"ansi-regex":13}],510:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -52030,7 +58069,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],353:[function(require,module,exports){
+},{}],511:[function(require,module,exports){
 const Immutable = require('immutable')
 const {List, Map} = Immutable
 
@@ -52107,7 +58146,7 @@ Map.prototype.chain = Map.prototype.flatMap
 
 module.exports = Immutable
 
-},{"immutable":354}],354:[function(require,module,exports){
+},{"immutable":512}],512:[function(require,module,exports){
 /**
  *  Copyright (c) 2014-2015, Facebook, Inc.
  *  All rights reserved.
@@ -57087,7 +63126,7 @@ module.exports = Immutable
   return Immutable;
 
 }));
-},{}],355:[function(require,module,exports){
+},{}],513:[function(require,module,exports){
 (function (global){
 (function(global, f){
 
@@ -57173,7 +63212,7 @@ module.exports = Immutable
 }));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],356:[function(require,module,exports){
+},{}],514:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -57228,7 +63267,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":635}],357:[function(require,module,exports){
+},{"_process":793}],515:[function(require,module,exports){
 'use strict';
 var numberIsNan = require('number-is-nan');
 
@@ -57236,14 +63275,14 @@ module.exports = Number.isFinite || function (val) {
 	return !(typeof val !== 'number' || numberIsNan(val) || val === Infinity || val === -Infinity);
 };
 
-},{"number-is-nan":629}],358:[function(require,module,exports){
+},{"number-is-nan":787}],516:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],359:[function(require,module,exports){
+},{}],517:[function(require,module,exports){
 // Copyright 2014, 2015, 2016 Simon Lydell
 // X11 (“MIT”) Licensed. (See LICENSE.)
 
@@ -57264,7 +63303,7 @@ module.exports.matchToToken = function(match) {
   return token
 }
 
-},{}],360:[function(require,module,exports){
+},{}],518:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/jsesc v1.3.0 by @mathias */
 ;(function(root) {
@@ -57613,7 +63652,7 @@ module.exports.matchToToken = function(match) {
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],361:[function(require,module,exports){
+},{}],519:[function(require,module,exports){
 // json5.js
 // Modern JSON. See README.md for details.
 //
@@ -58369,7 +64408,7 @@ JSON5.stringify = function (obj, replacer, space) {
     return internalStringify(topLevelHolder, '', true);
 };
 
-},{}],362:[function(require,module,exports){
+},{}],520:[function(require,module,exports){
 "use strict";
 
 var arbitrary = require("./arbitrary.js");
@@ -58426,7 +64465,7 @@ for (k in generator) {
 }
 module.exports = api;
 
-},{"./arbitrary.js":363,"./bless.js":367,"./generator.js":374,"./primitive.js":378,"./record.js":380,"./recordWithEnv.js":381,"./shrink.js":383,"./small.js":384,"./string.js":385}],363:[function(require,module,exports){
+},{"./arbitrary.js":521,"./bless.js":525,"./generator.js":532,"./primitive.js":536,"./record.js":538,"./recordWithEnv.js":539,"./shrink.js":541,"./small.js":542,"./string.js":543}],521:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -58613,7 +64652,7 @@ module.exports = {
   recursive: recursive,
 };
 
-},{"./arbitraryAssert.js":364,"./arbitraryBless.js":365,"./array.js":366,"./dict.js":368,"./generator.js":374,"./json.js":375,"./pair.js":377,"./show.js":382,"./shrink.js":383,"./utils.js":389,"assert":15}],364:[function(require,module,exports){
+},{"./arbitraryAssert.js":522,"./arbitraryBless.js":523,"./array.js":524,"./dict.js":526,"./generator.js":532,"./json.js":533,"./pair.js":535,"./show.js":540,"./shrink.js":541,"./utils.js":547,"assert":15}],522:[function(require,module,exports){
 "use strict";
 
 var assert = require("assert");
@@ -58630,7 +64669,7 @@ function arbitraryAssert(arb) {
 
 module.exports = arbitraryAssert;
 
-},{"assert":15}],365:[function(require,module,exports){
+},{"assert":15}],523:[function(require,module,exports){
 "use strict";
 
 var show = require("./show.js");
@@ -58689,7 +64728,7 @@ function arbitraryBless(arb) {
 
 module.exports = arbitraryBless;
 
-},{"./show.js":382}],366:[function(require,module,exports){
+},{"./show.js":540}],524:[function(require,module,exports){
 "use strict";
 
 var arbitraryAssert = require("./arbitraryAssert.js");
@@ -58721,7 +64760,7 @@ module.exports = {
   nearray: nearray,
 };
 
-},{"./arbitraryAssert.js":364,"./arbitraryBless.js":365,"./generator.js":374,"./show.js":382,"./shrink.js":383,"./utils.js":389}],367:[function(require,module,exports){
+},{"./arbitraryAssert.js":522,"./arbitraryBless.js":523,"./generator.js":532,"./show.js":540,"./shrink.js":541,"./utils.js":547}],525:[function(require,module,exports){
 "use strict";
 
 var assert = require("assert");
@@ -58773,7 +64812,7 @@ function bless(arb) {
 
 module.exports = bless;
 
-},{"./arbitraryBless.js":365,"./generator.js":374,"./show.js":382,"./shrink.js":383,"assert":15}],368:[function(require,module,exports){
+},{"./arbitraryBless.js":523,"./generator.js":532,"./show.js":540,"./shrink.js":541,"assert":15}],526:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -58805,7 +64844,7 @@ module.exports = {
   dict: dict,
 };
 
-},{"./arbitraryAssert.js":364,"./array.js":366,"./pair.js":377,"./string.js":385,"./utils.js":389}],369:[function(require,module,exports){
+},{"./arbitraryAssert.js":522,"./array.js":524,"./pair.js":535,"./string.js":543,"./utils.js":547}],527:[function(require,module,exports){
 "use strict";
 
 var assert = require("assert");
@@ -58913,7 +64952,7 @@ module.exports = {
   right: right,
 };
 
-},{"assert":15}],370:[function(require,module,exports){
+},{"assert":15}],528:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -58940,7 +64979,7 @@ var environment = utils.merge(primitive, string, {
 
 module.exports = environment;
 
-},{"./arbitrary.js":363,"./fn.js":372,"./primitive.js":378,"./small.js":384,"./string.js":385,"./utils.js":389}],371:[function(require,module,exports){
+},{"./arbitrary.js":521,"./fn.js":530,"./primitive.js":536,"./small.js":542,"./string.js":543,"./utils.js":547}],529:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -58993,7 +65032,7 @@ FMap.prototype.get = function FMapGet(key) { // eslint-disable-line consistent-r
 
 module.exports = FMap;
 
-},{"./utils.js":389}],372:[function(require,module,exports){
+},{"./utils.js":547}],530:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -59045,7 +65084,7 @@ module.exports = {
   fun: fn,
 };
 
-},{"./arbitraryBless.js":365,"./finitemap.js":371,"./generator.js":374,"./json.js":375,"./shrink.js":383,"./utils.js":389}],373:[function(require,module,exports){
+},{"./arbitraryBless.js":523,"./finitemap.js":529,"./generator.js":532,"./json.js":533,"./shrink.js":541,"./utils.js":547}],531:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -59139,7 +65178,7 @@ module.exports = {
   run: run,
 };
 
-},{"trampa":749}],374:[function(require,module,exports){
+},{"trampa":907}],532:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -59419,7 +65458,7 @@ module.exports = {
   recursive: generatorRecursive,
 };
 
-},{"./either.js":369,"./json.js":375,"./random.js":379,"./string.js":385,"./sum.js":387,"./utils.js":389,"assert":15}],375:[function(require,module,exports){
+},{"./either.js":527,"./json.js":533,"./random.js":537,"./string.js":543,"./sum.js":545,"./utils.js":547,"assert":15}],533:[function(require,module,exports){
 "use strict";
 
 var assert = require("assert");
@@ -59483,7 +65522,7 @@ module.exports = {
   json: json,
 };
 
-},{"./arbitraryBless.js":365,"./generator.js":374,"./primitive.js":378,"./show.js":382,"./shrink.js":383,"./string.js":385,"./utils.js":389,"assert":15}],376:[function(require,module,exports){
+},{"./arbitraryBless.js":523,"./generator.js":532,"./primitive.js":536,"./show.js":540,"./shrink.js":541,"./string.js":543,"./utils.js":547,"assert":15}],534:[function(require,module,exports){
 (function (process){
 /* @flow weak */
 /**
@@ -60065,7 +66104,7 @@ module.exports = jsc;
 /// plain ../LICENSE
 
 }).call(this,require('_process'))
-},{"./api.js":362,"./either.js":369,"./environment.js":370,"./finitemap.js":371,"./fn.js":372,"./functor.js":373,"./random.js":379,"./show.js":382,"./shrink.js":383,"./suchthat.js":386,"./sum.js":387,"./typify.js":388,"./utils.js":389,"_process":635,"assert":15,"lazy-seq":390}],377:[function(require,module,exports){
+},{"./api.js":520,"./either.js":527,"./environment.js":528,"./finitemap.js":529,"./fn.js":530,"./functor.js":531,"./random.js":537,"./show.js":540,"./shrink.js":541,"./suchthat.js":544,"./sum.js":545,"./typify.js":546,"./utils.js":547,"_process":793,"assert":15,"lazy-seq":548}],535:[function(require,module,exports){
 "use strict";
 
 var arbitraryAssert = require("./arbitraryAssert.js");
@@ -60093,7 +66132,7 @@ module.exports = {
   pair: pair,
 };
 
-},{"./arbitraryAssert.js":364,"./arbitraryBless.js":365,"./generator.js":374,"./show.js":382,"./shrink.js":383,"./utils.js":389}],378:[function(require,module,exports){
+},{"./arbitraryAssert.js":522,"./arbitraryBless.js":523,"./generator.js":532,"./show.js":540,"./shrink.js":541,"./utils.js":547}],536:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -60385,7 +66424,7 @@ module.exports = {
   datetime: datetime,
 };
 
-},{"./arbitraryBless":365,"./generator.js":374,"./random.js":379,"./show.js":382,"./shrink.js":383,"./utils.js":389,"assert":15}],379:[function(require,module,exports){
+},{"./arbitraryBless":523,"./generator.js":532,"./random.js":537,"./show.js":540,"./shrink.js":541,"./utils.js":547,"assert":15}],537:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -60425,7 +66464,7 @@ randomInteger.setStateString = rc4.setStateString.bind(rc4);
 
 module.exports = randomInteger;
 
-},{"rc4":713}],380:[function(require,module,exports){
+},{"rc4":871}],538:[function(require,module,exports){
 "use strict";
 
 var arbitraryBless = require("./arbitraryBless.js");
@@ -60501,7 +66540,7 @@ module.exports = {
   shrink: shrinkRecord,
 };
 
-},{"./arbitraryBless.js":365,"./generator.js":374,"./shrink.js":383,"./utils.js":389}],381:[function(require,module,exports){
+},{"./arbitraryBless.js":523,"./generator.js":532,"./shrink.js":541,"./utils.js":547}],539:[function(require,module,exports){
 "use strict";
 
 var environment = require("./environment.js");
@@ -60530,7 +66569,7 @@ function recordWithEnv(spec, userenv) {
 
 module.exports = recordWithEnv;
 
-},{"./environment.js":370,"./record.js":380,"./typify.js":388,"./utils.js":389}],382:[function(require,module,exports){
+},{"./environment.js":528,"./record.js":538,"./typify.js":546,"./utils.js":547}],540:[function(require,module,exports){
 
 /* @flow weak */
 "use strict";
@@ -60628,7 +66667,7 @@ module.exports = {
   array: showArray,
 };
 
-},{"./utils.js":389}],383:[function(require,module,exports){
+},{"./utils.js":547}],541:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -60856,7 +66895,7 @@ module.exports = {
   bless: shrinkBless,
 };
 
-},{"./either.js":369,"./sum.js":387,"./utils.js":389,"assert":15,"lazy-seq":390}],384:[function(require,module,exports){
+},{"./either.js":527,"./sum.js":545,"./utils.js":547,"assert":15,"lazy-seq":548}],542:[function(require,module,exports){
 "use strict";
 
 var generator = require("./generator.js");
@@ -60915,7 +66954,7 @@ module.exports = {
   arbitrary: smallArbitrary,
 };
 
-},{"./arbitraryAssert.js":364,"./arbitraryBless.js":365,"./generator.js":374,"./utils.js":389}],385:[function(require,module,exports){
+},{"./arbitraryAssert.js":522,"./arbitraryBless.js":523,"./generator.js":532,"./utils.js":547}],543:[function(require,module,exports){
 "use strict";
 
 var array = require("./array.js");
@@ -60973,7 +67012,7 @@ module.exports = {
   asciinestring: asciinestring,
 };
 
-},{"./array.js":366,"./primitive.js":378,"./utils.js":389}],386:[function(require,module,exports){
+},{"./array.js":524,"./primitive.js":536,"./utils.js":547}],544:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -61028,7 +67067,7 @@ module.exports = {
   suchthat: suchthat,
 };
 
-},{"./arbitraryBless.js":365,"./environment.js":370,"./generator.js":374,"./shrink.js":383,"./typify.js":388,"./utils.js":389}],387:[function(require,module,exports){
+},{"./arbitraryBless.js":523,"./environment.js":528,"./generator.js":532,"./shrink.js":541,"./typify.js":546,"./utils.js":547}],545:[function(require,module,exports){
 "use strict";
 
 var assert = require("assert");
@@ -61065,7 +67104,7 @@ module.exports = {
   addend: addend,
 };
 
-},{"assert":15}],388:[function(require,module,exports){
+},{"assert":15}],546:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -61206,7 +67245,7 @@ module.exports = {
   parseTypify: parseTypify,
 };
 
-},{"./arbitrary.js":363,"./array.js":366,"./fn.js":372,"./record.js":380,"./utils.js":389,"assert":15,"typify-parser":751}],389:[function(require,module,exports){
+},{"./arbitrary.js":521,"./array.js":524,"./fn.js":530,"./record.js":538,"./utils.js":547,"assert":15,"typify-parser":909}],547:[function(require,module,exports){
 /* @flow weak */
 "use strict";
 
@@ -61481,7 +67520,7 @@ module.exports = {
   partition: partition,
 };
 
-},{}],390:[function(require,module,exports){
+},{}],548:[function(require,module,exports){
 /**
   # lazy-seq
 
@@ -61938,7 +67977,7 @@ module.exports = {
 /// plain CHANGELOG.md
 /// plain CONTRIBUTING.md
 
-},{"assert":15}],391:[function(require,module,exports){
+},{"assert":15}],549:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -61947,7 +67986,7 @@ var DataView = getNative(root, 'DataView');
 
 module.exports = DataView;
 
-},{"./_getNative":501,"./_root":546}],392:[function(require,module,exports){
+},{"./_getNative":659,"./_root":704}],550:[function(require,module,exports){
 var hashClear = require('./_hashClear'),
     hashDelete = require('./_hashDelete'),
     hashGet = require('./_hashGet'),
@@ -61981,7 +68020,7 @@ Hash.prototype.set = hashSet;
 
 module.exports = Hash;
 
-},{"./_hashClear":510,"./_hashDelete":511,"./_hashGet":512,"./_hashHas":513,"./_hashSet":514}],393:[function(require,module,exports){
+},{"./_hashClear":668,"./_hashDelete":669,"./_hashGet":670,"./_hashHas":671,"./_hashSet":672}],551:[function(require,module,exports){
 var listCacheClear = require('./_listCacheClear'),
     listCacheDelete = require('./_listCacheDelete'),
     listCacheGet = require('./_listCacheGet'),
@@ -62015,7 +68054,7 @@ ListCache.prototype.set = listCacheSet;
 
 module.exports = ListCache;
 
-},{"./_listCacheClear":526,"./_listCacheDelete":527,"./_listCacheGet":528,"./_listCacheHas":529,"./_listCacheSet":530}],394:[function(require,module,exports){
+},{"./_listCacheClear":684,"./_listCacheDelete":685,"./_listCacheGet":686,"./_listCacheHas":687,"./_listCacheSet":688}],552:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -62024,7 +68063,7 @@ var Map = getNative(root, 'Map');
 
 module.exports = Map;
 
-},{"./_getNative":501,"./_root":546}],395:[function(require,module,exports){
+},{"./_getNative":659,"./_root":704}],553:[function(require,module,exports){
 var mapCacheClear = require('./_mapCacheClear'),
     mapCacheDelete = require('./_mapCacheDelete'),
     mapCacheGet = require('./_mapCacheGet'),
@@ -62058,7 +68097,7 @@ MapCache.prototype.set = mapCacheSet;
 
 module.exports = MapCache;
 
-},{"./_mapCacheClear":531,"./_mapCacheDelete":532,"./_mapCacheGet":533,"./_mapCacheHas":534,"./_mapCacheSet":535}],396:[function(require,module,exports){
+},{"./_mapCacheClear":689,"./_mapCacheDelete":690,"./_mapCacheGet":691,"./_mapCacheHas":692,"./_mapCacheSet":693}],554:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -62067,7 +68106,7 @@ var Promise = getNative(root, 'Promise');
 
 module.exports = Promise;
 
-},{"./_getNative":501,"./_root":546}],397:[function(require,module,exports){
+},{"./_getNative":659,"./_root":704}],555:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -62076,7 +68115,7 @@ var Set = getNative(root, 'Set');
 
 module.exports = Set;
 
-},{"./_getNative":501,"./_root":546}],398:[function(require,module,exports){
+},{"./_getNative":659,"./_root":704}],556:[function(require,module,exports){
 var MapCache = require('./_MapCache'),
     setCacheAdd = require('./_setCacheAdd'),
     setCacheHas = require('./_setCacheHas');
@@ -62105,7 +68144,7 @@ SetCache.prototype.has = setCacheHas;
 
 module.exports = SetCache;
 
-},{"./_MapCache":395,"./_setCacheAdd":547,"./_setCacheHas":548}],399:[function(require,module,exports){
+},{"./_MapCache":553,"./_setCacheAdd":705,"./_setCacheHas":706}],557:[function(require,module,exports){
 var ListCache = require('./_ListCache'),
     stackClear = require('./_stackClear'),
     stackDelete = require('./_stackDelete'),
@@ -62134,7 +68173,7 @@ Stack.prototype.set = stackSet;
 
 module.exports = Stack;
 
-},{"./_ListCache":393,"./_stackClear":552,"./_stackDelete":553,"./_stackGet":554,"./_stackHas":555,"./_stackSet":556}],400:[function(require,module,exports){
+},{"./_ListCache":551,"./_stackClear":710,"./_stackDelete":711,"./_stackGet":712,"./_stackHas":713,"./_stackSet":714}],558:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -62142,7 +68181,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-},{"./_root":546}],401:[function(require,module,exports){
+},{"./_root":704}],559:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -62150,7 +68189,7 @@ var Uint8Array = root.Uint8Array;
 
 module.exports = Uint8Array;
 
-},{"./_root":546}],402:[function(require,module,exports){
+},{"./_root":704}],560:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -62159,7 +68198,7 @@ var WeakMap = getNative(root, 'WeakMap');
 
 module.exports = WeakMap;
 
-},{"./_getNative":501,"./_root":546}],403:[function(require,module,exports){
+},{"./_getNative":659,"./_root":704}],561:[function(require,module,exports){
 /**
  * Adds the key-value `pair` to `map`.
  *
@@ -62176,7 +68215,7 @@ function addMapEntry(map, pair) {
 
 module.exports = addMapEntry;
 
-},{}],404:[function(require,module,exports){
+},{}],562:[function(require,module,exports){
 /**
  * Adds `value` to `set`.
  *
@@ -62193,7 +68232,7 @@ function addSetEntry(set, value) {
 
 module.exports = addSetEntry;
 
-},{}],405:[function(require,module,exports){
+},{}],563:[function(require,module,exports){
 /**
  * A faster alternative to `Function#apply`, this function invokes `func`
  * with the `this` binding of `thisArg` and the arguments of `args`.
@@ -62216,7 +68255,7 @@ function apply(func, thisArg, args) {
 
 module.exports = apply;
 
-},{}],406:[function(require,module,exports){
+},{}],564:[function(require,module,exports){
 /**
  * A specialized version of `_.forEach` for arrays without support for
  * iteratee shorthands.
@@ -62240,7 +68279,7 @@ function arrayEach(array, iteratee) {
 
 module.exports = arrayEach;
 
-},{}],407:[function(require,module,exports){
+},{}],565:[function(require,module,exports){
 var baseIndexOf = require('./_baseIndexOf');
 
 /**
@@ -62259,7 +68298,7 @@ function arrayIncludes(array, value) {
 
 module.exports = arrayIncludes;
 
-},{"./_baseIndexOf":435}],408:[function(require,module,exports){
+},{"./_baseIndexOf":593}],566:[function(require,module,exports){
 /**
  * This function is like `arrayIncludes` except that it accepts a comparator.
  *
@@ -62283,7 +68322,7 @@ function arrayIncludesWith(array, value, comparator) {
 
 module.exports = arrayIncludesWith;
 
-},{}],409:[function(require,module,exports){
+},{}],567:[function(require,module,exports){
 var baseTimes = require('./_baseTimes'),
     isArguments = require('./isArguments'),
     isArray = require('./isArray'),
@@ -62334,7 +68373,7 @@ function arrayLikeKeys(value, inherited) {
 
 module.exports = arrayLikeKeys;
 
-},{"./_baseTimes":462,"./_isIndex":519,"./isArguments":586,"./isArray":587,"./isBuffer":591,"./isTypedArray":602}],410:[function(require,module,exports){
+},{"./_baseTimes":620,"./_isIndex":677,"./isArguments":744,"./isArray":745,"./isBuffer":749,"./isTypedArray":760}],568:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for iteratee
  * shorthands.
@@ -62357,7 +68396,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],411:[function(require,module,exports){
+},{}],569:[function(require,module,exports){
 /**
  * Appends the elements of `values` to `array`.
  *
@@ -62379,7 +68418,7 @@ function arrayPush(array, values) {
 
 module.exports = arrayPush;
 
-},{}],412:[function(require,module,exports){
+},{}],570:[function(require,module,exports){
 /**
  * A specialized version of `_.reduce` for arrays without support for
  * iteratee shorthands.
@@ -62407,7 +68446,7 @@ function arrayReduce(array, iteratee, accumulator, initAccum) {
 
 module.exports = arrayReduce;
 
-},{}],413:[function(require,module,exports){
+},{}],571:[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for iteratee
  * shorthands.
@@ -62432,7 +68471,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-},{}],414:[function(require,module,exports){
+},{}],572:[function(require,module,exports){
 /**
  * Converts an ASCII `string` to an array.
  *
@@ -62446,7 +68485,7 @@ function asciiToArray(string) {
 
 module.exports = asciiToArray;
 
-},{}],415:[function(require,module,exports){
+},{}],573:[function(require,module,exports){
 var eq = require('./eq');
 
 /** Used for built-in method references. */
@@ -62475,7 +68514,7 @@ function assignInDefaults(objValue, srcValue, key, object) {
 
 module.exports = assignInDefaults;
 
-},{"./eq":573}],416:[function(require,module,exports){
+},{"./eq":731}],574:[function(require,module,exports){
 var baseAssignValue = require('./_baseAssignValue'),
     eq = require('./eq');
 
@@ -62497,7 +68536,7 @@ function assignMergeValue(object, key, value) {
 
 module.exports = assignMergeValue;
 
-},{"./_baseAssignValue":421,"./eq":573}],417:[function(require,module,exports){
+},{"./_baseAssignValue":579,"./eq":731}],575:[function(require,module,exports){
 var baseAssignValue = require('./_baseAssignValue'),
     eq = require('./eq');
 
@@ -62527,7 +68566,7 @@ function assignValue(object, key, value) {
 
 module.exports = assignValue;
 
-},{"./_baseAssignValue":421,"./eq":573}],418:[function(require,module,exports){
+},{"./_baseAssignValue":579,"./eq":731}],576:[function(require,module,exports){
 var eq = require('./eq');
 
 /**
@@ -62550,7 +68589,7 @@ function assocIndexOf(array, key) {
 
 module.exports = assocIndexOf;
 
-},{"./eq":573}],419:[function(require,module,exports){
+},{"./eq":731}],577:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     keys = require('./keys');
 
@@ -62569,7 +68608,7 @@ function baseAssign(object, source) {
 
 module.exports = baseAssign;
 
-},{"./_copyObject":483,"./keys":603}],420:[function(require,module,exports){
+},{"./_copyObject":641,"./keys":761}],578:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     keysIn = require('./keysIn');
 
@@ -62588,7 +68627,7 @@ function baseAssignIn(object, source) {
 
 module.exports = baseAssignIn;
 
-},{"./_copyObject":483,"./keysIn":604}],421:[function(require,module,exports){
+},{"./_copyObject":641,"./keysIn":762}],579:[function(require,module,exports){
 var defineProperty = require('./_defineProperty');
 
 /**
@@ -62615,7 +68654,7 @@ function baseAssignValue(object, key, value) {
 
 module.exports = baseAssignValue;
 
-},{"./_defineProperty":492}],422:[function(require,module,exports){
+},{"./_defineProperty":650}],580:[function(require,module,exports){
 /**
  * The base implementation of `_.clamp` which doesn't coerce arguments.
  *
@@ -62639,7 +68678,7 @@ function baseClamp(number, lower, upper) {
 
 module.exports = baseClamp;
 
-},{}],423:[function(require,module,exports){
+},{}],581:[function(require,module,exports){
 var Stack = require('./_Stack'),
     arrayEach = require('./_arrayEach'),
     assignValue = require('./_assignValue'),
@@ -62794,7 +68833,7 @@ function baseClone(value, bitmask, customizer, key, object, stack) {
 
 module.exports = baseClone;
 
-},{"./_Stack":399,"./_arrayEach":406,"./_assignValue":417,"./_baseAssign":419,"./_baseAssignIn":420,"./_cloneBuffer":473,"./_copyArray":482,"./_copySymbols":484,"./_copySymbolsIn":485,"./_getAllKeys":497,"./_getAllKeysIn":498,"./_getTag":506,"./_initCloneArray":515,"./_initCloneByTag":516,"./_initCloneObject":517,"./isArray":587,"./isBuffer":591,"./isObject":596,"./keys":603}],424:[function(require,module,exports){
+},{"./_Stack":557,"./_arrayEach":564,"./_assignValue":575,"./_baseAssign":577,"./_baseAssignIn":578,"./_cloneBuffer":631,"./_copyArray":640,"./_copySymbols":642,"./_copySymbolsIn":643,"./_getAllKeys":655,"./_getAllKeysIn":656,"./_getTag":664,"./_initCloneArray":673,"./_initCloneByTag":674,"./_initCloneObject":675,"./isArray":745,"./isBuffer":749,"./isObject":754,"./keys":761}],582:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** Built-in value references. */
@@ -62826,7 +68865,7 @@ var baseCreate = (function() {
 
 module.exports = baseCreate;
 
-},{"./isObject":596}],425:[function(require,module,exports){
+},{"./isObject":754}],583:[function(require,module,exports){
 var baseForOwn = require('./_baseForOwn'),
     createBaseEach = require('./_createBaseEach');
 
@@ -62842,7 +68881,7 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-},{"./_baseForOwn":429,"./_createBaseEach":488}],426:[function(require,module,exports){
+},{"./_baseForOwn":587,"./_createBaseEach":646}],584:[function(require,module,exports){
 /**
  * The base implementation of `_.findIndex` and `_.findLastIndex` without
  * support for iteratee shorthands.
@@ -62868,7 +68907,7 @@ function baseFindIndex(array, predicate, fromIndex, fromRight) {
 
 module.exports = baseFindIndex;
 
-},{}],427:[function(require,module,exports){
+},{}],585:[function(require,module,exports){
 var arrayPush = require('./_arrayPush'),
     isFlattenable = require('./_isFlattenable');
 
@@ -62908,7 +68947,7 @@ function baseFlatten(array, depth, predicate, isStrict, result) {
 
 module.exports = baseFlatten;
 
-},{"./_arrayPush":411,"./_isFlattenable":518}],428:[function(require,module,exports){
+},{"./_arrayPush":569,"./_isFlattenable":676}],586:[function(require,module,exports){
 var createBaseFor = require('./_createBaseFor');
 
 /**
@@ -62926,7 +68965,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./_createBaseFor":489}],429:[function(require,module,exports){
+},{"./_createBaseFor":647}],587:[function(require,module,exports){
 var baseFor = require('./_baseFor'),
     keys = require('./keys');
 
@@ -62944,7 +68983,7 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-},{"./_baseFor":428,"./keys":603}],430:[function(require,module,exports){
+},{"./_baseFor":586,"./keys":761}],588:[function(require,module,exports){
 var castPath = require('./_castPath'),
     toKey = require('./_toKey');
 
@@ -62970,7 +69009,7 @@ function baseGet(object, path) {
 
 module.exports = baseGet;
 
-},{"./_castPath":469,"./_toKey":560}],431:[function(require,module,exports){
+},{"./_castPath":627,"./_toKey":718}],589:[function(require,module,exports){
 var arrayPush = require('./_arrayPush'),
     isArray = require('./isArray');
 
@@ -62992,7 +69031,7 @@ function baseGetAllKeys(object, keysFunc, symbolsFunc) {
 
 module.exports = baseGetAllKeys;
 
-},{"./_arrayPush":411,"./isArray":587}],432:[function(require,module,exports){
+},{"./_arrayPush":569,"./isArray":745}],590:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     getRawTag = require('./_getRawTag'),
     objectToString = require('./_objectToString');
@@ -63023,7 +69062,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-},{"./_Symbol":400,"./_getRawTag":503,"./_objectToString":543}],433:[function(require,module,exports){
+},{"./_Symbol":558,"./_getRawTag":661,"./_objectToString":701}],591:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -63044,7 +69083,7 @@ function baseHas(object, key) {
 
 module.exports = baseHas;
 
-},{}],434:[function(require,module,exports){
+},{}],592:[function(require,module,exports){
 /**
  * The base implementation of `_.hasIn` without support for deep paths.
  *
@@ -63059,7 +69098,7 @@ function baseHasIn(object, key) {
 
 module.exports = baseHasIn;
 
-},{}],435:[function(require,module,exports){
+},{}],593:[function(require,module,exports){
 var baseFindIndex = require('./_baseFindIndex'),
     baseIsNaN = require('./_baseIsNaN'),
     strictIndexOf = require('./_strictIndexOf');
@@ -63081,7 +69120,7 @@ function baseIndexOf(array, value, fromIndex) {
 
 module.exports = baseIndexOf;
 
-},{"./_baseFindIndex":426,"./_baseIsNaN":441,"./_strictIndexOf":557}],436:[function(require,module,exports){
+},{"./_baseFindIndex":584,"./_baseIsNaN":599,"./_strictIndexOf":715}],594:[function(require,module,exports){
 /**
  * This function is like `baseIndexOf` except that it accepts a comparator.
  *
@@ -63106,7 +69145,7 @@ function baseIndexOfWith(array, value, fromIndex, comparator) {
 
 module.exports = baseIndexOfWith;
 
-},{}],437:[function(require,module,exports){
+},{}],595:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -63126,7 +69165,7 @@ function baseIsArguments(value) {
 
 module.exports = baseIsArguments;
 
-},{"./_baseGetTag":432,"./isObjectLike":597}],438:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isObjectLike":755}],596:[function(require,module,exports){
 var baseIsEqualDeep = require('./_baseIsEqualDeep'),
     isObject = require('./isObject'),
     isObjectLike = require('./isObjectLike');
@@ -63157,7 +69196,7 @@ function baseIsEqual(value, other, bitmask, customizer, stack) {
 
 module.exports = baseIsEqual;
 
-},{"./_baseIsEqualDeep":439,"./isObject":596,"./isObjectLike":597}],439:[function(require,module,exports){
+},{"./_baseIsEqualDeep":597,"./isObject":754,"./isObjectLike":755}],597:[function(require,module,exports){
 var Stack = require('./_Stack'),
     equalArrays = require('./_equalArrays'),
     equalByTag = require('./_equalByTag'),
@@ -63247,7 +69286,7 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
 
 module.exports = baseIsEqualDeep;
 
-},{"./_Stack":399,"./_equalArrays":493,"./_equalByTag":494,"./_equalObjects":495,"./_getTag":506,"./isArray":587,"./isBuffer":591,"./isTypedArray":602}],440:[function(require,module,exports){
+},{"./_Stack":557,"./_equalArrays":651,"./_equalByTag":652,"./_equalObjects":653,"./_getTag":664,"./isArray":745,"./isBuffer":749,"./isTypedArray":760}],598:[function(require,module,exports){
 var Stack = require('./_Stack'),
     baseIsEqual = require('./_baseIsEqual');
 
@@ -63311,7 +69350,7 @@ function baseIsMatch(object, source, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-},{"./_Stack":399,"./_baseIsEqual":438}],441:[function(require,module,exports){
+},{"./_Stack":557,"./_baseIsEqual":596}],599:[function(require,module,exports){
 /**
  * The base implementation of `_.isNaN` without support for number objects.
  *
@@ -63325,7 +69364,7 @@ function baseIsNaN(value) {
 
 module.exports = baseIsNaN;
 
-},{}],442:[function(require,module,exports){
+},{}],600:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isMasked = require('./_isMasked'),
     isObject = require('./isObject'),
@@ -63374,7 +69413,7 @@ function baseIsNative(value) {
 
 module.exports = baseIsNative;
 
-},{"./_isMasked":523,"./_toSource":561,"./isFunction":592,"./isObject":596}],443:[function(require,module,exports){
+},{"./_isMasked":681,"./_toSource":719,"./isFunction":750,"./isObject":754}],601:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -63394,7 +69433,7 @@ function baseIsRegExp(value) {
 
 module.exports = baseIsRegExp;
 
-},{"./_baseGetTag":432,"./isObjectLike":597}],444:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isObjectLike":755}],602:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isLength = require('./isLength'),
     isObjectLike = require('./isObjectLike');
@@ -63456,7 +69495,7 @@ function baseIsTypedArray(value) {
 
 module.exports = baseIsTypedArray;
 
-},{"./_baseGetTag":432,"./isLength":594,"./isObjectLike":597}],445:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isLength":752,"./isObjectLike":755}],603:[function(require,module,exports){
 var baseMatches = require('./_baseMatches'),
     baseMatchesProperty = require('./_baseMatchesProperty'),
     identity = require('./identity'),
@@ -63489,7 +69528,7 @@ function baseIteratee(value) {
 
 module.exports = baseIteratee;
 
-},{"./_baseMatches":449,"./_baseMatchesProperty":450,"./identity":584,"./isArray":587,"./property":609}],446:[function(require,module,exports){
+},{"./_baseMatches":607,"./_baseMatchesProperty":608,"./identity":742,"./isArray":745,"./property":767}],604:[function(require,module,exports){
 var isPrototype = require('./_isPrototype'),
     nativeKeys = require('./_nativeKeys');
 
@@ -63521,7 +69560,7 @@ function baseKeys(object) {
 
 module.exports = baseKeys;
 
-},{"./_isPrototype":524,"./_nativeKeys":540}],447:[function(require,module,exports){
+},{"./_isPrototype":682,"./_nativeKeys":698}],605:[function(require,module,exports){
 var isObject = require('./isObject'),
     isPrototype = require('./_isPrototype'),
     nativeKeysIn = require('./_nativeKeysIn');
@@ -63556,7 +69595,7 @@ function baseKeysIn(object) {
 
 module.exports = baseKeysIn;
 
-},{"./_isPrototype":524,"./_nativeKeysIn":541,"./isObject":596}],448:[function(require,module,exports){
+},{"./_isPrototype":682,"./_nativeKeysIn":699,"./isObject":754}],606:[function(require,module,exports){
 var baseEach = require('./_baseEach'),
     isArrayLike = require('./isArrayLike');
 
@@ -63580,7 +69619,7 @@ function baseMap(collection, iteratee) {
 
 module.exports = baseMap;
 
-},{"./_baseEach":425,"./isArrayLike":588}],449:[function(require,module,exports){
+},{"./_baseEach":583,"./isArrayLike":746}],607:[function(require,module,exports){
 var baseIsMatch = require('./_baseIsMatch'),
     getMatchData = require('./_getMatchData'),
     matchesStrictComparable = require('./_matchesStrictComparable');
@@ -63604,7 +69643,7 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-},{"./_baseIsMatch":440,"./_getMatchData":500,"./_matchesStrictComparable":537}],450:[function(require,module,exports){
+},{"./_baseIsMatch":598,"./_getMatchData":658,"./_matchesStrictComparable":695}],608:[function(require,module,exports){
 var baseIsEqual = require('./_baseIsEqual'),
     get = require('./get'),
     hasIn = require('./hasIn'),
@@ -63639,7 +69678,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-},{"./_baseIsEqual":438,"./_isKey":521,"./_isStrictComparable":525,"./_matchesStrictComparable":537,"./_toKey":560,"./get":581,"./hasIn":583}],451:[function(require,module,exports){
+},{"./_baseIsEqual":596,"./_isKey":679,"./_isStrictComparable":683,"./_matchesStrictComparable":695,"./_toKey":718,"./get":739,"./hasIn":741}],609:[function(require,module,exports){
 var Stack = require('./_Stack'),
     assignMergeValue = require('./_assignMergeValue'),
     baseFor = require('./_baseFor'),
@@ -63682,7 +69721,7 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
 
 module.exports = baseMerge;
 
-},{"./_Stack":399,"./_assignMergeValue":416,"./_baseFor":428,"./_baseMergeDeep":452,"./isObject":596,"./keysIn":604}],452:[function(require,module,exports){
+},{"./_Stack":557,"./_assignMergeValue":574,"./_baseFor":586,"./_baseMergeDeep":610,"./isObject":754,"./keysIn":762}],610:[function(require,module,exports){
 var assignMergeValue = require('./_assignMergeValue'),
     cloneBuffer = require('./_cloneBuffer'),
     cloneTypedArray = require('./_cloneTypedArray'),
@@ -63777,7 +69816,7 @@ function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, sta
 
 module.exports = baseMergeDeep;
 
-},{"./_assignMergeValue":416,"./_cloneBuffer":473,"./_cloneTypedArray":479,"./_copyArray":482,"./_initCloneObject":517,"./isArguments":586,"./isArray":587,"./isArrayLikeObject":589,"./isBuffer":591,"./isFunction":592,"./isObject":596,"./isPlainObject":598,"./isTypedArray":602,"./toPlainObject":620}],453:[function(require,module,exports){
+},{"./_assignMergeValue":574,"./_cloneBuffer":631,"./_cloneTypedArray":637,"./_copyArray":640,"./_initCloneObject":675,"./isArguments":744,"./isArray":745,"./isArrayLikeObject":747,"./isBuffer":749,"./isFunction":750,"./isObject":754,"./isPlainObject":756,"./isTypedArray":760,"./toPlainObject":778}],611:[function(require,module,exports){
 var arrayMap = require('./_arrayMap'),
     baseIteratee = require('./_baseIteratee'),
     baseMap = require('./_baseMap'),
@@ -63813,7 +69852,7 @@ function baseOrderBy(collection, iteratees, orders) {
 
 module.exports = baseOrderBy;
 
-},{"./_arrayMap":410,"./_baseIteratee":445,"./_baseMap":448,"./_baseSortBy":461,"./_baseUnary":464,"./_compareMultiple":481,"./identity":584}],454:[function(require,module,exports){
+},{"./_arrayMap":568,"./_baseIteratee":603,"./_baseMap":606,"./_baseSortBy":619,"./_baseUnary":622,"./_compareMultiple":639,"./identity":742}],612:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -63829,7 +69868,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{}],455:[function(require,module,exports){
+},{}],613:[function(require,module,exports){
 var baseGet = require('./_baseGet');
 
 /**
@@ -63847,7 +69886,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-},{"./_baseGet":430}],456:[function(require,module,exports){
+},{"./_baseGet":588}],614:[function(require,module,exports){
 var arrayMap = require('./_arrayMap'),
     baseIndexOf = require('./_baseIndexOf'),
     baseIndexOfWith = require('./_baseIndexOfWith'),
@@ -63900,7 +69939,7 @@ function basePullAll(array, values, iteratee, comparator) {
 
 module.exports = basePullAll;
 
-},{"./_arrayMap":410,"./_baseIndexOf":435,"./_baseIndexOfWith":436,"./_baseUnary":464,"./_copyArray":482}],457:[function(require,module,exports){
+},{"./_arrayMap":568,"./_baseIndexOf":593,"./_baseIndexOfWith":594,"./_baseUnary":622,"./_copyArray":640}],615:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -63937,7 +69976,7 @@ function baseRepeat(string, n) {
 
 module.exports = baseRepeat;
 
-},{}],458:[function(require,module,exports){
+},{}],616:[function(require,module,exports){
 var identity = require('./identity'),
     overRest = require('./_overRest'),
     setToString = require('./_setToString');
@@ -63956,7 +69995,7 @@ function baseRest(func, start) {
 
 module.exports = baseRest;
 
-},{"./_overRest":545,"./_setToString":550,"./identity":584}],459:[function(require,module,exports){
+},{"./_overRest":703,"./_setToString":708,"./identity":742}],617:[function(require,module,exports){
 var constant = require('./constant'),
     defineProperty = require('./_defineProperty'),
     identity = require('./identity');
@@ -63980,7 +70019,7 @@ var baseSetToString = !defineProperty ? identity : function(func, string) {
 
 module.exports = baseSetToString;
 
-},{"./_defineProperty":492,"./constant":570,"./identity":584}],460:[function(require,module,exports){
+},{"./_defineProperty":650,"./constant":728,"./identity":742}],618:[function(require,module,exports){
 /**
  * The base implementation of `_.slice` without an iteratee call guard.
  *
@@ -64013,7 +70052,7 @@ function baseSlice(array, start, end) {
 
 module.exports = baseSlice;
 
-},{}],461:[function(require,module,exports){
+},{}],619:[function(require,module,exports){
 /**
  * The base implementation of `_.sortBy` which uses `comparer` to define the
  * sort order of `array` and replaces criteria objects with their corresponding
@@ -64036,7 +70075,7 @@ function baseSortBy(array, comparer) {
 
 module.exports = baseSortBy;
 
-},{}],462:[function(require,module,exports){
+},{}],620:[function(require,module,exports){
 /**
  * The base implementation of `_.times` without support for iteratee shorthands
  * or max array length checks.
@@ -64058,7 +70097,7 @@ function baseTimes(n, iteratee) {
 
 module.exports = baseTimes;
 
-},{}],463:[function(require,module,exports){
+},{}],621:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     arrayMap = require('./_arrayMap'),
     isArray = require('./isArray'),
@@ -64097,7 +70136,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{"./_Symbol":400,"./_arrayMap":410,"./isArray":587,"./isSymbol":601}],464:[function(require,module,exports){
+},{"./_Symbol":558,"./_arrayMap":568,"./isArray":745,"./isSymbol":759}],622:[function(require,module,exports){
 /**
  * The base implementation of `_.unary` without support for storing metadata.
  *
@@ -64113,7 +70152,7 @@ function baseUnary(func) {
 
 module.exports = baseUnary;
 
-},{}],465:[function(require,module,exports){
+},{}],623:[function(require,module,exports){
 var SetCache = require('./_SetCache'),
     arrayIncludes = require('./_arrayIncludes'),
     arrayIncludesWith = require('./_arrayIncludesWith'),
@@ -64187,7 +70226,7 @@ function baseUniq(array, iteratee, comparator) {
 
 module.exports = baseUniq;
 
-},{"./_SetCache":398,"./_arrayIncludes":407,"./_arrayIncludesWith":408,"./_cacheHas":467,"./_createSet":491,"./_setToArray":549}],466:[function(require,module,exports){
+},{"./_SetCache":556,"./_arrayIncludes":565,"./_arrayIncludesWith":566,"./_cacheHas":625,"./_createSet":649,"./_setToArray":707}],624:[function(require,module,exports){
 var arrayMap = require('./_arrayMap');
 
 /**
@@ -64208,7 +70247,7 @@ function baseValues(object, props) {
 
 module.exports = baseValues;
 
-},{"./_arrayMap":410}],467:[function(require,module,exports){
+},{"./_arrayMap":568}],625:[function(require,module,exports){
 /**
  * Checks if a `cache` value for `key` exists.
  *
@@ -64223,7 +70262,7 @@ function cacheHas(cache, key) {
 
 module.exports = cacheHas;
 
-},{}],468:[function(require,module,exports){
+},{}],626:[function(require,module,exports){
 var identity = require('./identity');
 
 /**
@@ -64239,7 +70278,7 @@ function castFunction(value) {
 
 module.exports = castFunction;
 
-},{"./identity":584}],469:[function(require,module,exports){
+},{"./identity":742}],627:[function(require,module,exports){
 var isArray = require('./isArray'),
     isKey = require('./_isKey'),
     stringToPath = require('./_stringToPath'),
@@ -64262,7 +70301,7 @@ function castPath(value, object) {
 
 module.exports = castPath;
 
-},{"./_isKey":521,"./_stringToPath":559,"./isArray":587,"./toString":621}],470:[function(require,module,exports){
+},{"./_isKey":679,"./_stringToPath":717,"./isArray":745,"./toString":779}],628:[function(require,module,exports){
 var baseSlice = require('./_baseSlice');
 
 /**
@@ -64282,7 +70321,7 @@ function castSlice(array, start, end) {
 
 module.exports = castSlice;
 
-},{"./_baseSlice":460}],471:[function(require,module,exports){
+},{"./_baseSlice":618}],629:[function(require,module,exports){
 var baseIndexOf = require('./_baseIndexOf');
 
 /**
@@ -64303,7 +70342,7 @@ function charsEndIndex(strSymbols, chrSymbols) {
 
 module.exports = charsEndIndex;
 
-},{"./_baseIndexOf":435}],472:[function(require,module,exports){
+},{"./_baseIndexOf":593}],630:[function(require,module,exports){
 var Uint8Array = require('./_Uint8Array');
 
 /**
@@ -64321,7 +70360,7 @@ function cloneArrayBuffer(arrayBuffer) {
 
 module.exports = cloneArrayBuffer;
 
-},{"./_Uint8Array":401}],473:[function(require,module,exports){
+},{"./_Uint8Array":559}],631:[function(require,module,exports){
 var root = require('./_root');
 
 /** Detect free variable `exports`. */
@@ -64358,7 +70397,7 @@ function cloneBuffer(buffer, isDeep) {
 
 module.exports = cloneBuffer;
 
-},{"./_root":546}],474:[function(require,module,exports){
+},{"./_root":704}],632:[function(require,module,exports){
 var cloneArrayBuffer = require('./_cloneArrayBuffer');
 
 /**
@@ -64376,7 +70415,7 @@ function cloneDataView(dataView, isDeep) {
 
 module.exports = cloneDataView;
 
-},{"./_cloneArrayBuffer":472}],475:[function(require,module,exports){
+},{"./_cloneArrayBuffer":630}],633:[function(require,module,exports){
 var addMapEntry = require('./_addMapEntry'),
     arrayReduce = require('./_arrayReduce'),
     mapToArray = require('./_mapToArray');
@@ -64400,7 +70439,7 @@ function cloneMap(map, isDeep, cloneFunc) {
 
 module.exports = cloneMap;
 
-},{"./_addMapEntry":403,"./_arrayReduce":412,"./_mapToArray":536}],476:[function(require,module,exports){
+},{"./_addMapEntry":561,"./_arrayReduce":570,"./_mapToArray":694}],634:[function(require,module,exports){
 /** Used to match `RegExp` flags from their coerced string values. */
 var reFlags = /\w*$/;
 
@@ -64419,7 +70458,7 @@ function cloneRegExp(regexp) {
 
 module.exports = cloneRegExp;
 
-},{}],477:[function(require,module,exports){
+},{}],635:[function(require,module,exports){
 var addSetEntry = require('./_addSetEntry'),
     arrayReduce = require('./_arrayReduce'),
     setToArray = require('./_setToArray');
@@ -64443,7 +70482,7 @@ function cloneSet(set, isDeep, cloneFunc) {
 
 module.exports = cloneSet;
 
-},{"./_addSetEntry":404,"./_arrayReduce":412,"./_setToArray":549}],478:[function(require,module,exports){
+},{"./_addSetEntry":562,"./_arrayReduce":570,"./_setToArray":707}],636:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used to convert symbols to primitives and strings. */
@@ -64463,7 +70502,7 @@ function cloneSymbol(symbol) {
 
 module.exports = cloneSymbol;
 
-},{"./_Symbol":400}],479:[function(require,module,exports){
+},{"./_Symbol":558}],637:[function(require,module,exports){
 var cloneArrayBuffer = require('./_cloneArrayBuffer');
 
 /**
@@ -64481,7 +70520,7 @@ function cloneTypedArray(typedArray, isDeep) {
 
 module.exports = cloneTypedArray;
 
-},{"./_cloneArrayBuffer":472}],480:[function(require,module,exports){
+},{"./_cloneArrayBuffer":630}],638:[function(require,module,exports){
 var isSymbol = require('./isSymbol');
 
 /**
@@ -64524,7 +70563,7 @@ function compareAscending(value, other) {
 
 module.exports = compareAscending;
 
-},{"./isSymbol":601}],481:[function(require,module,exports){
+},{"./isSymbol":759}],639:[function(require,module,exports){
 var compareAscending = require('./_compareAscending');
 
 /**
@@ -64570,7 +70609,7 @@ function compareMultiple(object, other, orders) {
 
 module.exports = compareMultiple;
 
-},{"./_compareAscending":480}],482:[function(require,module,exports){
+},{"./_compareAscending":638}],640:[function(require,module,exports){
 /**
  * Copies the values of `source` to `array`.
  *
@@ -64592,7 +70631,7 @@ function copyArray(source, array) {
 
 module.exports = copyArray;
 
-},{}],483:[function(require,module,exports){
+},{}],641:[function(require,module,exports){
 var assignValue = require('./_assignValue'),
     baseAssignValue = require('./_baseAssignValue');
 
@@ -64634,7 +70673,7 @@ function copyObject(source, props, object, customizer) {
 
 module.exports = copyObject;
 
-},{"./_assignValue":417,"./_baseAssignValue":421}],484:[function(require,module,exports){
+},{"./_assignValue":575,"./_baseAssignValue":579}],642:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     getSymbols = require('./_getSymbols');
 
@@ -64652,7 +70691,7 @@ function copySymbols(source, object) {
 
 module.exports = copySymbols;
 
-},{"./_copyObject":483,"./_getSymbols":504}],485:[function(require,module,exports){
+},{"./_copyObject":641,"./_getSymbols":662}],643:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     getSymbolsIn = require('./_getSymbolsIn');
 
@@ -64670,7 +70709,7 @@ function copySymbolsIn(source, object) {
 
 module.exports = copySymbolsIn;
 
-},{"./_copyObject":483,"./_getSymbolsIn":505}],486:[function(require,module,exports){
+},{"./_copyObject":641,"./_getSymbolsIn":663}],644:[function(require,module,exports){
 var root = require('./_root');
 
 /** Used to detect overreaching core-js shims. */
@@ -64678,7 +70717,7 @@ var coreJsData = root['__core-js_shared__'];
 
 module.exports = coreJsData;
 
-},{"./_root":546}],487:[function(require,module,exports){
+},{"./_root":704}],645:[function(require,module,exports){
 var baseRest = require('./_baseRest'),
     isIterateeCall = require('./_isIterateeCall');
 
@@ -64717,7 +70756,7 @@ function createAssigner(assigner) {
 
 module.exports = createAssigner;
 
-},{"./_baseRest":458,"./_isIterateeCall":520}],488:[function(require,module,exports){
+},{"./_baseRest":616,"./_isIterateeCall":678}],646:[function(require,module,exports){
 var isArrayLike = require('./isArrayLike');
 
 /**
@@ -64751,7 +70790,7 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-},{"./isArrayLike":588}],489:[function(require,module,exports){
+},{"./isArrayLike":746}],647:[function(require,module,exports){
 /**
  * Creates a base function for methods like `_.forIn` and `_.forOwn`.
  *
@@ -64778,7 +70817,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{}],490:[function(require,module,exports){
+},{}],648:[function(require,module,exports){
 var baseIteratee = require('./_baseIteratee'),
     isArrayLike = require('./isArrayLike'),
     keys = require('./keys');
@@ -64805,7 +70844,7 @@ function createFind(findIndexFunc) {
 
 module.exports = createFind;
 
-},{"./_baseIteratee":445,"./isArrayLike":588,"./keys":603}],491:[function(require,module,exports){
+},{"./_baseIteratee":603,"./isArrayLike":746,"./keys":761}],649:[function(require,module,exports){
 var Set = require('./_Set'),
     noop = require('./noop'),
     setToArray = require('./_setToArray');
@@ -64826,7 +70865,7 @@ var createSet = !(Set && (1 / setToArray(new Set([,-0]))[1]) == INFINITY) ? noop
 
 module.exports = createSet;
 
-},{"./_Set":397,"./_setToArray":549,"./noop":608}],492:[function(require,module,exports){
+},{"./_Set":555,"./_setToArray":707,"./noop":766}],650:[function(require,module,exports){
 var getNative = require('./_getNative');
 
 var defineProperty = (function() {
@@ -64839,7 +70878,7 @@ var defineProperty = (function() {
 
 module.exports = defineProperty;
 
-},{"./_getNative":501}],493:[function(require,module,exports){
+},{"./_getNative":659}],651:[function(require,module,exports){
 var SetCache = require('./_SetCache'),
     arraySome = require('./_arraySome'),
     cacheHas = require('./_cacheHas');
@@ -64924,7 +70963,7 @@ function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
 
 module.exports = equalArrays;
 
-},{"./_SetCache":398,"./_arraySome":413,"./_cacheHas":467}],494:[function(require,module,exports){
+},{"./_SetCache":556,"./_arraySome":571,"./_cacheHas":625}],652:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     Uint8Array = require('./_Uint8Array'),
     eq = require('./eq'),
@@ -65038,7 +71077,7 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
 
 module.exports = equalByTag;
 
-},{"./_Symbol":400,"./_Uint8Array":401,"./_equalArrays":493,"./_mapToArray":536,"./_setToArray":549,"./eq":573}],495:[function(require,module,exports){
+},{"./_Symbol":558,"./_Uint8Array":559,"./_equalArrays":651,"./_mapToArray":694,"./_setToArray":707,"./eq":731}],653:[function(require,module,exports){
 var keys = require('./keys');
 
 /** Used to compose bitmasks for value comparisons. */
@@ -65129,7 +71168,7 @@ function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
 
 module.exports = equalObjects;
 
-},{"./keys":603}],496:[function(require,module,exports){
+},{"./keys":761}],654:[function(require,module,exports){
 (function (global){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -65137,7 +71176,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 module.exports = freeGlobal;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],497:[function(require,module,exports){
+},{}],655:[function(require,module,exports){
 var baseGetAllKeys = require('./_baseGetAllKeys'),
     getSymbols = require('./_getSymbols'),
     keys = require('./keys');
@@ -65155,7 +71194,7 @@ function getAllKeys(object) {
 
 module.exports = getAllKeys;
 
-},{"./_baseGetAllKeys":431,"./_getSymbols":504,"./keys":603}],498:[function(require,module,exports){
+},{"./_baseGetAllKeys":589,"./_getSymbols":662,"./keys":761}],656:[function(require,module,exports){
 var baseGetAllKeys = require('./_baseGetAllKeys'),
     getSymbolsIn = require('./_getSymbolsIn'),
     keysIn = require('./keysIn');
@@ -65174,7 +71213,7 @@ function getAllKeysIn(object) {
 
 module.exports = getAllKeysIn;
 
-},{"./_baseGetAllKeys":431,"./_getSymbolsIn":505,"./keysIn":604}],499:[function(require,module,exports){
+},{"./_baseGetAllKeys":589,"./_getSymbolsIn":663,"./keysIn":762}],657:[function(require,module,exports){
 var isKeyable = require('./_isKeyable');
 
 /**
@@ -65194,7 +71233,7 @@ function getMapData(map, key) {
 
 module.exports = getMapData;
 
-},{"./_isKeyable":522}],500:[function(require,module,exports){
+},{"./_isKeyable":680}],658:[function(require,module,exports){
 var isStrictComparable = require('./_isStrictComparable'),
     keys = require('./keys');
 
@@ -65220,7 +71259,7 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-},{"./_isStrictComparable":525,"./keys":603}],501:[function(require,module,exports){
+},{"./_isStrictComparable":683,"./keys":761}],659:[function(require,module,exports){
 var baseIsNative = require('./_baseIsNative'),
     getValue = require('./_getValue');
 
@@ -65239,7 +71278,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"./_baseIsNative":442,"./_getValue":507}],502:[function(require,module,exports){
+},{"./_baseIsNative":600,"./_getValue":665}],660:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /** Built-in value references. */
@@ -65247,7 +71286,7 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 module.exports = getPrototype;
 
-},{"./_overArg":544}],503:[function(require,module,exports){
+},{"./_overArg":702}],661:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used for built-in method references. */
@@ -65295,7 +71334,7 @@ function getRawTag(value) {
 
 module.exports = getRawTag;
 
-},{"./_Symbol":400}],504:[function(require,module,exports){
+},{"./_Symbol":558}],662:[function(require,module,exports){
 var overArg = require('./_overArg'),
     stubArray = require('./stubArray');
 
@@ -65313,7 +71352,7 @@ var getSymbols = nativeGetSymbols ? overArg(nativeGetSymbols, Object) : stubArra
 
 module.exports = getSymbols;
 
-},{"./_overArg":544,"./stubArray":615}],505:[function(require,module,exports){
+},{"./_overArg":702,"./stubArray":773}],663:[function(require,module,exports){
 var arrayPush = require('./_arrayPush'),
     getPrototype = require('./_getPrototype'),
     getSymbols = require('./_getSymbols'),
@@ -65340,7 +71379,7 @@ var getSymbolsIn = !nativeGetSymbols ? stubArray : function(object) {
 
 module.exports = getSymbolsIn;
 
-},{"./_arrayPush":411,"./_getPrototype":502,"./_getSymbols":504,"./stubArray":615}],506:[function(require,module,exports){
+},{"./_arrayPush":569,"./_getPrototype":660,"./_getSymbols":662,"./stubArray":773}],664:[function(require,module,exports){
 var DataView = require('./_DataView'),
     Map = require('./_Map'),
     Promise = require('./_Promise'),
@@ -65400,7 +71439,7 @@ if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
 
 module.exports = getTag;
 
-},{"./_DataView":391,"./_Map":394,"./_Promise":396,"./_Set":397,"./_WeakMap":402,"./_baseGetTag":432,"./_toSource":561}],507:[function(require,module,exports){
+},{"./_DataView":549,"./_Map":552,"./_Promise":554,"./_Set":555,"./_WeakMap":560,"./_baseGetTag":590,"./_toSource":719}],665:[function(require,module,exports){
 /**
  * Gets the value at `key` of `object`.
  *
@@ -65415,7 +71454,7 @@ function getValue(object, key) {
 
 module.exports = getValue;
 
-},{}],508:[function(require,module,exports){
+},{}],666:[function(require,module,exports){
 var castPath = require('./_castPath'),
     isArguments = require('./isArguments'),
     isArray = require('./isArray'),
@@ -65456,7 +71495,7 @@ function hasPath(object, path, hasFunc) {
 
 module.exports = hasPath;
 
-},{"./_castPath":469,"./_isIndex":519,"./_toKey":560,"./isArguments":586,"./isArray":587,"./isLength":594}],509:[function(require,module,exports){
+},{"./_castPath":627,"./_isIndex":677,"./_toKey":718,"./isArguments":744,"./isArray":745,"./isLength":752}],667:[function(require,module,exports){
 /** Used to compose unicode character classes. */
 var rsAstralRange = '\\ud800-\\udfff',
     rsComboMarksRange = '\\u0300-\\u036f',
@@ -65484,7 +71523,7 @@ function hasUnicode(string) {
 
 module.exports = hasUnicode;
 
-},{}],510:[function(require,module,exports){
+},{}],668:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /**
@@ -65501,7 +71540,7 @@ function hashClear() {
 
 module.exports = hashClear;
 
-},{"./_nativeCreate":539}],511:[function(require,module,exports){
+},{"./_nativeCreate":697}],669:[function(require,module,exports){
 /**
  * Removes `key` and its value from the hash.
  *
@@ -65520,7 +71559,7 @@ function hashDelete(key) {
 
 module.exports = hashDelete;
 
-},{}],512:[function(require,module,exports){
+},{}],670:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -65552,7 +71591,7 @@ function hashGet(key) {
 
 module.exports = hashGet;
 
-},{"./_nativeCreate":539}],513:[function(require,module,exports){
+},{"./_nativeCreate":697}],671:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used for built-in method references. */
@@ -65577,7 +71616,7 @@ function hashHas(key) {
 
 module.exports = hashHas;
 
-},{"./_nativeCreate":539}],514:[function(require,module,exports){
+},{"./_nativeCreate":697}],672:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -65602,7 +71641,7 @@ function hashSet(key, value) {
 
 module.exports = hashSet;
 
-},{"./_nativeCreate":539}],515:[function(require,module,exports){
+},{"./_nativeCreate":697}],673:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -65630,7 +71669,7 @@ function initCloneArray(array) {
 
 module.exports = initCloneArray;
 
-},{}],516:[function(require,module,exports){
+},{}],674:[function(require,module,exports){
 var cloneArrayBuffer = require('./_cloneArrayBuffer'),
     cloneDataView = require('./_cloneDataView'),
     cloneMap = require('./_cloneMap'),
@@ -65712,7 +71751,7 @@ function initCloneByTag(object, tag, cloneFunc, isDeep) {
 
 module.exports = initCloneByTag;
 
-},{"./_cloneArrayBuffer":472,"./_cloneDataView":474,"./_cloneMap":475,"./_cloneRegExp":476,"./_cloneSet":477,"./_cloneSymbol":478,"./_cloneTypedArray":479}],517:[function(require,module,exports){
+},{"./_cloneArrayBuffer":630,"./_cloneDataView":632,"./_cloneMap":633,"./_cloneRegExp":634,"./_cloneSet":635,"./_cloneSymbol":636,"./_cloneTypedArray":637}],675:[function(require,module,exports){
 var baseCreate = require('./_baseCreate'),
     getPrototype = require('./_getPrototype'),
     isPrototype = require('./_isPrototype');
@@ -65732,7 +71771,7 @@ function initCloneObject(object) {
 
 module.exports = initCloneObject;
 
-},{"./_baseCreate":424,"./_getPrototype":502,"./_isPrototype":524}],518:[function(require,module,exports){
+},{"./_baseCreate":582,"./_getPrototype":660,"./_isPrototype":682}],676:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     isArguments = require('./isArguments'),
     isArray = require('./isArray');
@@ -65754,7 +71793,7 @@ function isFlattenable(value) {
 
 module.exports = isFlattenable;
 
-},{"./_Symbol":400,"./isArguments":586,"./isArray":587}],519:[function(require,module,exports){
+},{"./_Symbol":558,"./isArguments":744,"./isArray":745}],677:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -65778,7 +71817,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],520:[function(require,module,exports){
+},{}],678:[function(require,module,exports){
 var eq = require('./eq'),
     isArrayLike = require('./isArrayLike'),
     isIndex = require('./_isIndex'),
@@ -65810,7 +71849,7 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
-},{"./_isIndex":519,"./eq":573,"./isArrayLike":588,"./isObject":596}],521:[function(require,module,exports){
+},{"./_isIndex":677,"./eq":731,"./isArrayLike":746,"./isObject":754}],679:[function(require,module,exports){
 var isArray = require('./isArray'),
     isSymbol = require('./isSymbol');
 
@@ -65841,7 +71880,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"./isArray":587,"./isSymbol":601}],522:[function(require,module,exports){
+},{"./isArray":745,"./isSymbol":759}],680:[function(require,module,exports){
 /**
  * Checks if `value` is suitable for use as unique object key.
  *
@@ -65858,7 +71897,7 @@ function isKeyable(value) {
 
 module.exports = isKeyable;
 
-},{}],523:[function(require,module,exports){
+},{}],681:[function(require,module,exports){
 var coreJsData = require('./_coreJsData');
 
 /** Used to detect methods masquerading as native. */
@@ -65880,7 +71919,7 @@ function isMasked(func) {
 
 module.exports = isMasked;
 
-},{"./_coreJsData":486}],524:[function(require,module,exports){
+},{"./_coreJsData":644}],682:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -65900,7 +71939,7 @@ function isPrototype(value) {
 
 module.exports = isPrototype;
 
-},{}],525:[function(require,module,exports){
+},{}],683:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /**
@@ -65917,7 +71956,7 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-},{"./isObject":596}],526:[function(require,module,exports){
+},{"./isObject":754}],684:[function(require,module,exports){
 /**
  * Removes all key-value entries from the list cache.
  *
@@ -65932,7 +71971,7 @@ function listCacheClear() {
 
 module.exports = listCacheClear;
 
-},{}],527:[function(require,module,exports){
+},{}],685:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /** Used for built-in method references. */
@@ -65969,7 +72008,7 @@ function listCacheDelete(key) {
 
 module.exports = listCacheDelete;
 
-},{"./_assocIndexOf":418}],528:[function(require,module,exports){
+},{"./_assocIndexOf":576}],686:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -65990,7 +72029,7 @@ function listCacheGet(key) {
 
 module.exports = listCacheGet;
 
-},{"./_assocIndexOf":418}],529:[function(require,module,exports){
+},{"./_assocIndexOf":576}],687:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -66008,7 +72047,7 @@ function listCacheHas(key) {
 
 module.exports = listCacheHas;
 
-},{"./_assocIndexOf":418}],530:[function(require,module,exports){
+},{"./_assocIndexOf":576}],688:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -66036,7 +72075,7 @@ function listCacheSet(key, value) {
 
 module.exports = listCacheSet;
 
-},{"./_assocIndexOf":418}],531:[function(require,module,exports){
+},{"./_assocIndexOf":576}],689:[function(require,module,exports){
 var Hash = require('./_Hash'),
     ListCache = require('./_ListCache'),
     Map = require('./_Map');
@@ -66059,7 +72098,7 @@ function mapCacheClear() {
 
 module.exports = mapCacheClear;
 
-},{"./_Hash":392,"./_ListCache":393,"./_Map":394}],532:[function(require,module,exports){
+},{"./_Hash":550,"./_ListCache":551,"./_Map":552}],690:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66079,7 +72118,7 @@ function mapCacheDelete(key) {
 
 module.exports = mapCacheDelete;
 
-},{"./_getMapData":499}],533:[function(require,module,exports){
+},{"./_getMapData":657}],691:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66097,7 +72136,7 @@ function mapCacheGet(key) {
 
 module.exports = mapCacheGet;
 
-},{"./_getMapData":499}],534:[function(require,module,exports){
+},{"./_getMapData":657}],692:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66115,7 +72154,7 @@ function mapCacheHas(key) {
 
 module.exports = mapCacheHas;
 
-},{"./_getMapData":499}],535:[function(require,module,exports){
+},{"./_getMapData":657}],693:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66139,7 +72178,7 @@ function mapCacheSet(key, value) {
 
 module.exports = mapCacheSet;
 
-},{"./_getMapData":499}],536:[function(require,module,exports){
+},{"./_getMapData":657}],694:[function(require,module,exports){
 /**
  * Converts `map` to its key-value pairs.
  *
@@ -66159,7 +72198,7 @@ function mapToArray(map) {
 
 module.exports = mapToArray;
 
-},{}],537:[function(require,module,exports){
+},{}],695:[function(require,module,exports){
 /**
  * A specialized version of `matchesProperty` for source values suitable
  * for strict equality comparisons, i.e. `===`.
@@ -66181,7 +72220,7 @@ function matchesStrictComparable(key, srcValue) {
 
 module.exports = matchesStrictComparable;
 
-},{}],538:[function(require,module,exports){
+},{}],696:[function(require,module,exports){
 var memoize = require('./memoize');
 
 /** Used as the maximum memoize cache size. */
@@ -66209,7 +72248,7 @@ function memoizeCapped(func) {
 
 module.exports = memoizeCapped;
 
-},{"./memoize":606}],539:[function(require,module,exports){
+},{"./memoize":764}],697:[function(require,module,exports){
 var getNative = require('./_getNative');
 
 /* Built-in method references that are verified to be native. */
@@ -66217,7 +72256,7 @@ var nativeCreate = getNative(Object, 'create');
 
 module.exports = nativeCreate;
 
-},{"./_getNative":501}],540:[function(require,module,exports){
+},{"./_getNative":659}],698:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -66225,7 +72264,7 @@ var nativeKeys = overArg(Object.keys, Object);
 
 module.exports = nativeKeys;
 
-},{"./_overArg":544}],541:[function(require,module,exports){
+},{"./_overArg":702}],699:[function(require,module,exports){
 /**
  * This function is like
  * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
@@ -66247,7 +72286,7 @@ function nativeKeysIn(object) {
 
 module.exports = nativeKeysIn;
 
-},{}],542:[function(require,module,exports){
+},{}],700:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `exports`. */
@@ -66271,7 +72310,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-},{"./_freeGlobal":496}],543:[function(require,module,exports){
+},{"./_freeGlobal":654}],701:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -66295,7 +72334,7 @@ function objectToString(value) {
 
 module.exports = objectToString;
 
-},{}],544:[function(require,module,exports){
+},{}],702:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -66312,7 +72351,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-},{}],545:[function(require,module,exports){
+},{}],703:[function(require,module,exports){
 var apply = require('./_apply');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -66350,7 +72389,7 @@ function overRest(func, start, transform) {
 
 module.exports = overRest;
 
-},{"./_apply":405}],546:[function(require,module,exports){
+},{"./_apply":563}],704:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -66361,7 +72400,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-},{"./_freeGlobal":496}],547:[function(require,module,exports){
+},{"./_freeGlobal":654}],705:[function(require,module,exports){
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
 
@@ -66382,7 +72421,7 @@ function setCacheAdd(value) {
 
 module.exports = setCacheAdd;
 
-},{}],548:[function(require,module,exports){
+},{}],706:[function(require,module,exports){
 /**
  * Checks if `value` is in the array cache.
  *
@@ -66398,7 +72437,7 @@ function setCacheHas(value) {
 
 module.exports = setCacheHas;
 
-},{}],549:[function(require,module,exports){
+},{}],707:[function(require,module,exports){
 /**
  * Converts `set` to an array of its values.
  *
@@ -66418,7 +72457,7 @@ function setToArray(set) {
 
 module.exports = setToArray;
 
-},{}],550:[function(require,module,exports){
+},{}],708:[function(require,module,exports){
 var baseSetToString = require('./_baseSetToString'),
     shortOut = require('./_shortOut');
 
@@ -66434,7 +72473,7 @@ var setToString = shortOut(baseSetToString);
 
 module.exports = setToString;
 
-},{"./_baseSetToString":459,"./_shortOut":551}],551:[function(require,module,exports){
+},{"./_baseSetToString":617,"./_shortOut":709}],709:[function(require,module,exports){
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
 var HOT_COUNT = 800,
     HOT_SPAN = 16;
@@ -66473,7 +72512,7 @@ function shortOut(func) {
 
 module.exports = shortOut;
 
-},{}],552:[function(require,module,exports){
+},{}],710:[function(require,module,exports){
 var ListCache = require('./_ListCache');
 
 /**
@@ -66490,7 +72529,7 @@ function stackClear() {
 
 module.exports = stackClear;
 
-},{"./_ListCache":393}],553:[function(require,module,exports){
+},{"./_ListCache":551}],711:[function(require,module,exports){
 /**
  * Removes `key` and its value from the stack.
  *
@@ -66510,7 +72549,7 @@ function stackDelete(key) {
 
 module.exports = stackDelete;
 
-},{}],554:[function(require,module,exports){
+},{}],712:[function(require,module,exports){
 /**
  * Gets the stack value for `key`.
  *
@@ -66526,7 +72565,7 @@ function stackGet(key) {
 
 module.exports = stackGet;
 
-},{}],555:[function(require,module,exports){
+},{}],713:[function(require,module,exports){
 /**
  * Checks if a stack value for `key` exists.
  *
@@ -66542,7 +72581,7 @@ function stackHas(key) {
 
 module.exports = stackHas;
 
-},{}],556:[function(require,module,exports){
+},{}],714:[function(require,module,exports){
 var ListCache = require('./_ListCache'),
     Map = require('./_Map'),
     MapCache = require('./_MapCache');
@@ -66578,7 +72617,7 @@ function stackSet(key, value) {
 
 module.exports = stackSet;
 
-},{"./_ListCache":393,"./_Map":394,"./_MapCache":395}],557:[function(require,module,exports){
+},{"./_ListCache":551,"./_Map":552,"./_MapCache":553}],715:[function(require,module,exports){
 /**
  * A specialized version of `_.indexOf` which performs strict equality
  * comparisons of values, i.e. `===`.
@@ -66603,7 +72642,7 @@ function strictIndexOf(array, value, fromIndex) {
 
 module.exports = strictIndexOf;
 
-},{}],558:[function(require,module,exports){
+},{}],716:[function(require,module,exports){
 var asciiToArray = require('./_asciiToArray'),
     hasUnicode = require('./_hasUnicode'),
     unicodeToArray = require('./_unicodeToArray');
@@ -66623,7 +72662,7 @@ function stringToArray(string) {
 
 module.exports = stringToArray;
 
-},{"./_asciiToArray":414,"./_hasUnicode":509,"./_unicodeToArray":562}],559:[function(require,module,exports){
+},{"./_asciiToArray":572,"./_hasUnicode":667,"./_unicodeToArray":720}],717:[function(require,module,exports){
 var memoizeCapped = require('./_memoizeCapped');
 
 /** Used to match property names within property paths. */
@@ -66653,7 +72692,7 @@ var stringToPath = memoizeCapped(function(string) {
 
 module.exports = stringToPath;
 
-},{"./_memoizeCapped":538}],560:[function(require,module,exports){
+},{"./_memoizeCapped":696}],718:[function(require,module,exports){
 var isSymbol = require('./isSymbol');
 
 /** Used as references for various `Number` constants. */
@@ -66676,7 +72715,7 @@ function toKey(value) {
 
 module.exports = toKey;
 
-},{"./isSymbol":601}],561:[function(require,module,exports){
+},{"./isSymbol":759}],719:[function(require,module,exports){
 /** Used for built-in method references. */
 var funcProto = Function.prototype;
 
@@ -66704,7 +72743,7 @@ function toSource(func) {
 
 module.exports = toSource;
 
-},{}],562:[function(require,module,exports){
+},{}],720:[function(require,module,exports){
 /** Used to compose unicode character classes. */
 var rsAstralRange = '\\ud800-\\udfff',
     rsComboMarksRange = '\\u0300-\\u036f',
@@ -66746,7 +72785,7 @@ function unicodeToArray(string) {
 
 module.exports = unicodeToArray;
 
-},{}],563:[function(require,module,exports){
+},{}],721:[function(require,module,exports){
 var assignValue = require('./_assignValue'),
     copyObject = require('./_copyObject'),
     createAssigner = require('./_createAssigner'),
@@ -66806,7 +72845,7 @@ var assign = createAssigner(function(object, source) {
 
 module.exports = assign;
 
-},{"./_assignValue":417,"./_copyObject":483,"./_createAssigner":487,"./_isPrototype":524,"./isArrayLike":588,"./keys":603}],564:[function(require,module,exports){
+},{"./_assignValue":575,"./_copyObject":641,"./_createAssigner":645,"./_isPrototype":682,"./isArrayLike":746,"./keys":761}],722:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     createAssigner = require('./_createAssigner'),
     keysIn = require('./keysIn');
@@ -66848,7 +72887,7 @@ var assignIn = createAssigner(function(object, source) {
 
 module.exports = assignIn;
 
-},{"./_copyObject":483,"./_createAssigner":487,"./keysIn":604}],565:[function(require,module,exports){
+},{"./_copyObject":641,"./_createAssigner":645,"./keysIn":762}],723:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     createAssigner = require('./_createAssigner'),
     keysIn = require('./keysIn');
@@ -66888,7 +72927,7 @@ var assignInWith = createAssigner(function(object, source, srcIndex, customizer)
 
 module.exports = assignInWith;
 
-},{"./_copyObject":483,"./_createAssigner":487,"./keysIn":604}],566:[function(require,module,exports){
+},{"./_copyObject":641,"./_createAssigner":645,"./keysIn":762}],724:[function(require,module,exports){
 var baseClone = require('./_baseClone');
 
 /** Used to compose bitmasks for cloning. */
@@ -66926,7 +72965,7 @@ function clone(value) {
 
 module.exports = clone;
 
-},{"./_baseClone":423}],567:[function(require,module,exports){
+},{"./_baseClone":581}],725:[function(require,module,exports){
 var baseClone = require('./_baseClone');
 
 /** Used to compose bitmasks for cloning. */
@@ -66957,7 +72996,7 @@ function cloneDeep(value) {
 
 module.exports = cloneDeep;
 
-},{"./_baseClone":423}],568:[function(require,module,exports){
+},{"./_baseClone":581}],726:[function(require,module,exports){
 var baseClone = require('./_baseClone');
 
 /** Used to compose bitmasks for cloning. */
@@ -66999,7 +73038,7 @@ function cloneDeepWith(value, customizer) {
 
 module.exports = cloneDeepWith;
 
-},{"./_baseClone":423}],569:[function(require,module,exports){
+},{"./_baseClone":581}],727:[function(require,module,exports){
 /**
  * Creates an array with all falsey values removed. The values `false`, `null`,
  * `0`, `""`, `undefined`, and `NaN` are falsey.
@@ -67032,7 +73071,7 @@ function compact(array) {
 
 module.exports = compact;
 
-},{}],570:[function(require,module,exports){
+},{}],728:[function(require,module,exports){
 /**
  * Creates a function that returns `value`.
  *
@@ -67060,7 +73099,7 @@ function constant(value) {
 
 module.exports = constant;
 
-},{}],571:[function(require,module,exports){
+},{}],729:[function(require,module,exports){
 var apply = require('./_apply'),
     assignInDefaults = require('./_assignInDefaults'),
     assignInWith = require('./assignInWith'),
@@ -67094,10 +73133,10 @@ var defaults = baseRest(function(args) {
 
 module.exports = defaults;
 
-},{"./_apply":405,"./_assignInDefaults":415,"./_baseRest":458,"./assignInWith":565}],572:[function(require,module,exports){
+},{"./_apply":563,"./_assignInDefaults":573,"./_baseRest":616,"./assignInWith":723}],730:[function(require,module,exports){
 module.exports = require('./forEach');
 
-},{"./forEach":580}],573:[function(require,module,exports){
+},{"./forEach":738}],731:[function(require,module,exports){
 /**
  * Performs a
  * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
@@ -67136,7 +73175,7 @@ function eq(value, other) {
 
 module.exports = eq;
 
-},{}],574:[function(require,module,exports){
+},{}],732:[function(require,module,exports){
 var toString = require('./toString');
 
 /**
@@ -67170,10 +73209,10 @@ function escapeRegExp(string) {
 
 module.exports = escapeRegExp;
 
-},{"./toString":621}],575:[function(require,module,exports){
+},{"./toString":779}],733:[function(require,module,exports){
 module.exports = require('./assignIn');
 
-},{"./assignIn":564}],576:[function(require,module,exports){
+},{"./assignIn":722}],734:[function(require,module,exports){
 var createFind = require('./_createFind'),
     findIndex = require('./findIndex');
 
@@ -67217,7 +73256,7 @@ var find = createFind(findIndex);
 
 module.exports = find;
 
-},{"./_createFind":490,"./findIndex":577}],577:[function(require,module,exports){
+},{"./_createFind":648,"./findIndex":735}],735:[function(require,module,exports){
 var baseFindIndex = require('./_baseFindIndex'),
     baseIteratee = require('./_baseIteratee'),
     toInteger = require('./toInteger');
@@ -67274,7 +73313,7 @@ function findIndex(array, predicate, fromIndex) {
 
 module.exports = findIndex;
 
-},{"./_baseFindIndex":426,"./_baseIteratee":445,"./toInteger":618}],578:[function(require,module,exports){
+},{"./_baseFindIndex":584,"./_baseIteratee":603,"./toInteger":776}],736:[function(require,module,exports){
 var createFind = require('./_createFind'),
     findLastIndex = require('./findLastIndex');
 
@@ -67301,7 +73340,7 @@ var findLast = createFind(findLastIndex);
 
 module.exports = findLast;
 
-},{"./_createFind":490,"./findLastIndex":579}],579:[function(require,module,exports){
+},{"./_createFind":648,"./findLastIndex":737}],737:[function(require,module,exports){
 var baseFindIndex = require('./_baseFindIndex'),
     baseIteratee = require('./_baseIteratee'),
     toInteger = require('./toInteger');
@@ -67362,7 +73401,7 @@ function findLastIndex(array, predicate, fromIndex) {
 
 module.exports = findLastIndex;
 
-},{"./_baseFindIndex":426,"./_baseIteratee":445,"./toInteger":618}],580:[function(require,module,exports){
+},{"./_baseFindIndex":584,"./_baseIteratee":603,"./toInteger":776}],738:[function(require,module,exports){
 var arrayEach = require('./_arrayEach'),
     baseEach = require('./_baseEach'),
     castFunction = require('./_castFunction'),
@@ -67405,7 +73444,7 @@ function forEach(collection, iteratee) {
 
 module.exports = forEach;
 
-},{"./_arrayEach":406,"./_baseEach":425,"./_castFunction":468,"./isArray":587}],581:[function(require,module,exports){
+},{"./_arrayEach":564,"./_baseEach":583,"./_castFunction":626,"./isArray":745}],739:[function(require,module,exports){
 var baseGet = require('./_baseGet');
 
 /**
@@ -67440,7 +73479,7 @@ function get(object, path, defaultValue) {
 
 module.exports = get;
 
-},{"./_baseGet":430}],582:[function(require,module,exports){
+},{"./_baseGet":588}],740:[function(require,module,exports){
 var baseHas = require('./_baseHas'),
     hasPath = require('./_hasPath');
 
@@ -67477,7 +73516,7 @@ function has(object, path) {
 
 module.exports = has;
 
-},{"./_baseHas":433,"./_hasPath":508}],583:[function(require,module,exports){
+},{"./_baseHas":591,"./_hasPath":666}],741:[function(require,module,exports){
 var baseHasIn = require('./_baseHasIn'),
     hasPath = require('./_hasPath');
 
@@ -67513,7 +73552,7 @@ function hasIn(object, path) {
 
 module.exports = hasIn;
 
-},{"./_baseHasIn":434,"./_hasPath":508}],584:[function(require,module,exports){
+},{"./_baseHasIn":592,"./_hasPath":666}],742:[function(require,module,exports){
 /**
  * This method returns the first argument it receives.
  *
@@ -67536,7 +73575,7 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],585:[function(require,module,exports){
+},{}],743:[function(require,module,exports){
 var baseIndexOf = require('./_baseIndexOf'),
     isArrayLike = require('./isArrayLike'),
     isString = require('./isString'),
@@ -67591,7 +73630,7 @@ function includes(collection, value, fromIndex, guard) {
 
 module.exports = includes;
 
-},{"./_baseIndexOf":435,"./isArrayLike":588,"./isString":600,"./toInteger":618,"./values":624}],586:[function(require,module,exports){
+},{"./_baseIndexOf":593,"./isArrayLike":746,"./isString":758,"./toInteger":776,"./values":782}],744:[function(require,module,exports){
 var baseIsArguments = require('./_baseIsArguments'),
     isObjectLike = require('./isObjectLike');
 
@@ -67629,7 +73668,7 @@ var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsAr
 
 module.exports = isArguments;
 
-},{"./_baseIsArguments":437,"./isObjectLike":597}],587:[function(require,module,exports){
+},{"./_baseIsArguments":595,"./isObjectLike":755}],745:[function(require,module,exports){
 /**
  * Checks if `value` is classified as an `Array` object.
  *
@@ -67657,7 +73696,7 @@ var isArray = Array.isArray;
 
 module.exports = isArray;
 
-},{}],588:[function(require,module,exports){
+},{}],746:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isLength = require('./isLength');
 
@@ -67692,7 +73731,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./isFunction":592,"./isLength":594}],589:[function(require,module,exports){
+},{"./isFunction":750,"./isLength":752}],747:[function(require,module,exports){
 var isArrayLike = require('./isArrayLike'),
     isObjectLike = require('./isObjectLike');
 
@@ -67727,7 +73766,7 @@ function isArrayLikeObject(value) {
 
 module.exports = isArrayLikeObject;
 
-},{"./isArrayLike":588,"./isObjectLike":597}],590:[function(require,module,exports){
+},{"./isArrayLike":746,"./isObjectLike":755}],748:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -67758,7 +73797,7 @@ function isBoolean(value) {
 
 module.exports = isBoolean;
 
-},{"./_baseGetTag":432,"./isObjectLike":597}],591:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isObjectLike":755}],749:[function(require,module,exports){
 var root = require('./_root'),
     stubFalse = require('./stubFalse');
 
@@ -67798,7 +73837,7 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-},{"./_root":546,"./stubFalse":616}],592:[function(require,module,exports){
+},{"./_root":704,"./stubFalse":774}],750:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObject = require('./isObject');
 
@@ -67837,7 +73876,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./_baseGetTag":432,"./isObject":596}],593:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isObject":754}],751:[function(require,module,exports){
 var toInteger = require('./toInteger');
 
 /**
@@ -67872,7 +73911,7 @@ function isInteger(value) {
 
 module.exports = isInteger;
 
-},{"./toInteger":618}],594:[function(require,module,exports){
+},{"./toInteger":776}],752:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -67909,7 +73948,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],595:[function(require,module,exports){
+},{}],753:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -67949,7 +73988,7 @@ function isNumber(value) {
 
 module.exports = isNumber;
 
-},{"./_baseGetTag":432,"./isObjectLike":597}],596:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isObjectLike":755}],754:[function(require,module,exports){
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -67982,7 +74021,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],597:[function(require,module,exports){
+},{}],755:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -68013,7 +74052,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],598:[function(require,module,exports){
+},{}],756:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     getPrototype = require('./_getPrototype'),
     isObjectLike = require('./isObjectLike');
@@ -68077,7 +74116,7 @@ function isPlainObject(value) {
 
 module.exports = isPlainObject;
 
-},{"./_baseGetTag":432,"./_getPrototype":502,"./isObjectLike":597}],599:[function(require,module,exports){
+},{"./_baseGetTag":590,"./_getPrototype":660,"./isObjectLike":755}],757:[function(require,module,exports){
 var baseIsRegExp = require('./_baseIsRegExp'),
     baseUnary = require('./_baseUnary'),
     nodeUtil = require('./_nodeUtil');
@@ -68106,7 +74145,7 @@ var isRegExp = nodeIsRegExp ? baseUnary(nodeIsRegExp) : baseIsRegExp;
 
 module.exports = isRegExp;
 
-},{"./_baseIsRegExp":443,"./_baseUnary":464,"./_nodeUtil":542}],600:[function(require,module,exports){
+},{"./_baseIsRegExp":601,"./_baseUnary":622,"./_nodeUtil":700}],758:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isArray = require('./isArray'),
     isObjectLike = require('./isObjectLike');
@@ -68138,7 +74177,7 @@ function isString(value) {
 
 module.exports = isString;
 
-},{"./_baseGetTag":432,"./isArray":587,"./isObjectLike":597}],601:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isArray":745,"./isObjectLike":755}],759:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -68169,7 +74208,7 @@ function isSymbol(value) {
 
 module.exports = isSymbol;
 
-},{"./_baseGetTag":432,"./isObjectLike":597}],602:[function(require,module,exports){
+},{"./_baseGetTag":590,"./isObjectLike":755}],760:[function(require,module,exports){
 var baseIsTypedArray = require('./_baseIsTypedArray'),
     baseUnary = require('./_baseUnary'),
     nodeUtil = require('./_nodeUtil');
@@ -68198,7 +74237,7 @@ var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedA
 
 module.exports = isTypedArray;
 
-},{"./_baseIsTypedArray":444,"./_baseUnary":464,"./_nodeUtil":542}],603:[function(require,module,exports){
+},{"./_baseIsTypedArray":602,"./_baseUnary":622,"./_nodeUtil":700}],761:[function(require,module,exports){
 var arrayLikeKeys = require('./_arrayLikeKeys'),
     baseKeys = require('./_baseKeys'),
     isArrayLike = require('./isArrayLike');
@@ -68237,7 +74276,7 @@ function keys(object) {
 
 module.exports = keys;
 
-},{"./_arrayLikeKeys":409,"./_baseKeys":446,"./isArrayLike":588}],604:[function(require,module,exports){
+},{"./_arrayLikeKeys":567,"./_baseKeys":604,"./isArrayLike":746}],762:[function(require,module,exports){
 var arrayLikeKeys = require('./_arrayLikeKeys'),
     baseKeysIn = require('./_baseKeysIn'),
     isArrayLike = require('./isArrayLike');
@@ -68271,7 +74310,7 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-},{"./_arrayLikeKeys":409,"./_baseKeysIn":447,"./isArrayLike":588}],605:[function(require,module,exports){
+},{"./_arrayLikeKeys":567,"./_baseKeysIn":605,"./isArrayLike":746}],763:[function(require,module,exports){
 var arrayMap = require('./_arrayMap'),
     baseIteratee = require('./_baseIteratee'),
     baseMap = require('./_baseMap'),
@@ -68326,7 +74365,7 @@ function map(collection, iteratee) {
 
 module.exports = map;
 
-},{"./_arrayMap":410,"./_baseIteratee":445,"./_baseMap":448,"./isArray":587}],606:[function(require,module,exports){
+},{"./_arrayMap":568,"./_baseIteratee":603,"./_baseMap":606,"./isArray":745}],764:[function(require,module,exports){
 var MapCache = require('./_MapCache');
 
 /** Error message constants. */
@@ -68401,7 +74440,7 @@ memoize.Cache = MapCache;
 
 module.exports = memoize;
 
-},{"./_MapCache":395}],607:[function(require,module,exports){
+},{"./_MapCache":553}],765:[function(require,module,exports){
 var baseMerge = require('./_baseMerge'),
     createAssigner = require('./_createAssigner');
 
@@ -68442,7 +74481,7 @@ var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
 
 module.exports = mergeWith;
 
-},{"./_baseMerge":451,"./_createAssigner":487}],608:[function(require,module,exports){
+},{"./_baseMerge":609,"./_createAssigner":645}],766:[function(require,module,exports){
 /**
  * This method returns `undefined`.
  *
@@ -68461,7 +74500,7 @@ function noop() {
 
 module.exports = noop;
 
-},{}],609:[function(require,module,exports){
+},{}],767:[function(require,module,exports){
 var baseProperty = require('./_baseProperty'),
     basePropertyDeep = require('./_basePropertyDeep'),
     isKey = require('./_isKey'),
@@ -68495,7 +74534,7 @@ function property(path) {
 
 module.exports = property;
 
-},{"./_baseProperty":454,"./_basePropertyDeep":455,"./_isKey":521,"./_toKey":560}],610:[function(require,module,exports){
+},{"./_baseProperty":612,"./_basePropertyDeep":613,"./_isKey":679,"./_toKey":718}],768:[function(require,module,exports){
 var baseRest = require('./_baseRest'),
     pullAll = require('./pullAll');
 
@@ -68526,7 +74565,7 @@ var pull = baseRest(pullAll);
 
 module.exports = pull;
 
-},{"./_baseRest":458,"./pullAll":611}],611:[function(require,module,exports){
+},{"./_baseRest":616,"./pullAll":769}],769:[function(require,module,exports){
 var basePullAll = require('./_basePullAll');
 
 /**
@@ -68557,7 +74596,7 @@ function pullAll(array, values) {
 
 module.exports = pullAll;
 
-},{"./_basePullAll":456}],612:[function(require,module,exports){
+},{"./_basePullAll":614}],770:[function(require,module,exports){
 var baseRepeat = require('./_baseRepeat'),
     isIterateeCall = require('./_isIterateeCall'),
     toInteger = require('./toInteger'),
@@ -68596,7 +74635,7 @@ function repeat(string, n, guard) {
 
 module.exports = repeat;
 
-},{"./_baseRepeat":457,"./_isIterateeCall":520,"./toInteger":618,"./toString":621}],613:[function(require,module,exports){
+},{"./_baseRepeat":615,"./_isIterateeCall":678,"./toInteger":776,"./toString":779}],771:[function(require,module,exports){
 var baseFlatten = require('./_baseFlatten'),
     baseOrderBy = require('./_baseOrderBy'),
     baseRest = require('./_baseRest'),
@@ -68646,7 +74685,7 @@ var sortBy = baseRest(function(collection, iteratees) {
 
 module.exports = sortBy;
 
-},{"./_baseFlatten":427,"./_baseOrderBy":453,"./_baseRest":458,"./_isIterateeCall":520}],614:[function(require,module,exports){
+},{"./_baseFlatten":585,"./_baseOrderBy":611,"./_baseRest":616,"./_isIterateeCall":678}],772:[function(require,module,exports){
 var baseClamp = require('./_baseClamp'),
     baseToString = require('./_baseToString'),
     toInteger = require('./toInteger'),
@@ -68684,7 +74723,7 @@ function startsWith(string, target, position) {
 
 module.exports = startsWith;
 
-},{"./_baseClamp":422,"./_baseToString":463,"./toInteger":618,"./toString":621}],615:[function(require,module,exports){
+},{"./_baseClamp":580,"./_baseToString":621,"./toInteger":776,"./toString":779}],773:[function(require,module,exports){
 /**
  * This method returns a new empty array.
  *
@@ -68709,7 +74748,7 @@ function stubArray() {
 
 module.exports = stubArray;
 
-},{}],616:[function(require,module,exports){
+},{}],774:[function(require,module,exports){
 /**
  * This method returns `false`.
  *
@@ -68729,7 +74768,7 @@ function stubFalse() {
 
 module.exports = stubFalse;
 
-},{}],617:[function(require,module,exports){
+},{}],775:[function(require,module,exports){
 var toNumber = require('./toNumber');
 
 /** Used as references for various `Number` constants. */
@@ -68773,7 +74812,7 @@ function toFinite(value) {
 
 module.exports = toFinite;
 
-},{"./toNumber":619}],618:[function(require,module,exports){
+},{"./toNumber":777}],776:[function(require,module,exports){
 var toFinite = require('./toFinite');
 
 /**
@@ -68811,7 +74850,7 @@ function toInteger(value) {
 
 module.exports = toInteger;
 
-},{"./toFinite":617}],619:[function(require,module,exports){
+},{"./toFinite":775}],777:[function(require,module,exports){
 var isObject = require('./isObject'),
     isSymbol = require('./isSymbol');
 
@@ -68879,7 +74918,7 @@ function toNumber(value) {
 
 module.exports = toNumber;
 
-},{"./isObject":596,"./isSymbol":601}],620:[function(require,module,exports){
+},{"./isObject":754,"./isSymbol":759}],778:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     keysIn = require('./keysIn');
 
@@ -68913,7 +74952,7 @@ function toPlainObject(value) {
 
 module.exports = toPlainObject;
 
-},{"./_copyObject":483,"./keysIn":604}],621:[function(require,module,exports){
+},{"./_copyObject":641,"./keysIn":762}],779:[function(require,module,exports){
 var baseToString = require('./_baseToString');
 
 /**
@@ -68943,7 +74982,7 @@ function toString(value) {
 
 module.exports = toString;
 
-},{"./_baseToString":463}],622:[function(require,module,exports){
+},{"./_baseToString":621}],780:[function(require,module,exports){
 var baseToString = require('./_baseToString'),
     castSlice = require('./_castSlice'),
     charsEndIndex = require('./_charsEndIndex'),
@@ -68988,7 +75027,7 @@ function trimEnd(string, chars, guard) {
 
 module.exports = trimEnd;
 
-},{"./_baseToString":463,"./_castSlice":470,"./_charsEndIndex":471,"./_stringToArray":558,"./toString":621}],623:[function(require,module,exports){
+},{"./_baseToString":621,"./_castSlice":628,"./_charsEndIndex":629,"./_stringToArray":716,"./toString":779}],781:[function(require,module,exports){
 var baseUniq = require('./_baseUniq');
 
 /**
@@ -69015,7 +75054,7 @@ function uniq(array) {
 
 module.exports = uniq;
 
-},{"./_baseUniq":465}],624:[function(require,module,exports){
+},{"./_baseUniq":623}],782:[function(require,module,exports){
 var baseValues = require('./_baseValues'),
     keys = require('./keys');
 
@@ -69051,7 +75090,7 @@ function values(object) {
 
 module.exports = values;
 
-},{"./_baseValues":466,"./keys":603}],625:[function(require,module,exports){
+},{"./_baseValues":624,"./keys":761}],783:[function(require,module,exports){
 module.exports = minimatch
 minimatch.Minimatch = Minimatch
 
@@ -69976,7 +76015,7 @@ function regExpEscape (s) {
   return s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 }
 
-},{"brace-expansion":220,"path":630}],626:[function(require,module,exports){
+},{"brace-expansion":220,"path":788}],784:[function(require,module,exports){
 //  Ramda v0.14.0
 //  https://github.com/ramda/ramda
 //  (c) 2013-2015 Scott Sauyet, Michael Hurley, and David Chambers
@@ -77489,7 +83528,7 @@ function regExpEscape (s) {
 
 }.call(this));
 
-},{}],627:[function(require,module,exports){
+},{}],785:[function(require,module,exports){
 'use strict';
 
 
@@ -77522,7 +83561,7 @@ module.exports = {
   getFn: getFn
 };
 
-},{"ramda":626}],628:[function(require,module,exports){
+},{"ramda":784}],786:[function(require,module,exports){
 'use strict';
 
 var R = require('ramda');
@@ -77582,13 +83621,13 @@ module.exports = {
   applyWith : applyWith
 };
 
-},{"./binary":627,"ramda":626}],629:[function(require,module,exports){
+},{"./binary":785,"ramda":784}],787:[function(require,module,exports){
 'use strict';
 module.exports = Number.isNaN || function (x) {
 	return x !== x;
 };
 
-},{}],630:[function(require,module,exports){
+},{}],788:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -77816,7 +83855,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":635}],631:[function(require,module,exports){
+},{"_process":793}],789:[function(require,module,exports){
 'use strict';
 var fs = require('fs')
 
@@ -77839,7 +83878,7 @@ module.exports.sync = function (pth) {
 	}
 };
 
-},{"fs":221}],632:[function(require,module,exports){
+},{"fs":221}],790:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -77863,7 +83902,7 @@ module.exports.posix = posix;
 module.exports.win32 = win32;
 
 }).call(this,require('_process'))
-},{"_process":635}],633:[function(require,module,exports){
+},{"_process":793}],791:[function(require,module,exports){
 /**
  * JavaScript beautifier
  *
@@ -79389,7 +85428,7 @@ module.exports.win32 = win32;
 }));
 // fid-umd post-end
 
-},{"complexion":231,"complexion-js":230}],634:[function(require,module,exports){
+},{"complexion":231,"complexion-js":230}],792:[function(require,module,exports){
 "use strict";
 
 var originalObject = Object;
@@ -79520,7 +85559,7 @@ function makeAccessor(secretCreatorFn) {
 
 defProp(exports, "makeAccessor", makeAccessor);
 
-},{}],635:[function(require,module,exports){
+},{}],793:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -79702,7 +85741,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],636:[function(require,module,exports){
+},{}],794:[function(require,module,exports){
 module.exports = {
   Either: require('./src/Either'),
   Future: require('./src/Future'),
@@ -79716,7 +85755,7 @@ module.exports = {
   Tuple: require('./src/Tuple')
 };
 
-},{"./src/Either":637,"./src/Future":638,"./src/IO":639,"./src/Identity":640,"./src/Maybe":641,"./src/Reader":642,"./src/State":643,"./src/Tuple":644,"./src/lift2":646,"./src/lift3":647}],637:[function(require,module,exports){
+},{"./src/Either":795,"./src/Future":796,"./src/IO":797,"./src/Identity":798,"./src/Maybe":799,"./src/Reader":800,"./src/State":801,"./src/Tuple":802,"./src/lift2":804,"./src/lift3":805}],795:[function(require,module,exports){
 var curry = require('ramda/src/curry');
 var toString = require('ramda/src/toString');
 
@@ -79847,7 +85886,7 @@ Either.Left = function(value) {
 
 module.exports = Either;
 
-},{"./internal/util":645,"ramda/src/curry":663,"ramda/src/toString":711}],638:[function(require,module,exports){
+},{"./internal/util":803,"ramda/src/curry":821,"ramda/src/toString":869}],796:[function(require,module,exports){
 var once = require('ramda/src/once');
 var forEach = require('ramda/src/forEach');
 var toString = require('ramda/src/toString');
@@ -80055,7 +86094,7 @@ Future.cache = function(f) {
 
 module.exports = Future;
 
-},{"./internal/util":645,"ramda/src/curry":663,"ramda/src/forEach":667,"ramda/src/once":704,"ramda/src/toString":711}],639:[function(require,module,exports){
+},{"./internal/util":803,"ramda/src/curry":821,"ramda/src/forEach":825,"ramda/src/once":862,"ramda/src/toString":869}],797:[function(require,module,exports){
 var compose = require('ramda/src/compose');
 var toString = require('ramda/src/toString');
 
@@ -80123,7 +86162,7 @@ IO.prototype.toString = function() {
   return 'IO(' + toString(this.fn) + ')';
 };
 
-},{"./internal/util":645,"ramda/src/compose":662,"ramda/src/toString":711}],640:[function(require,module,exports){
+},{"./internal/util":803,"ramda/src/compose":820,"ramda/src/toString":869}],798:[function(require,module,exports){
 var toString = require('ramda/src/toString');
 
 var util = require('./internal/util');
@@ -80222,7 +86261,7 @@ Identity.prototype.toString = function() {
 
 module.exports = Identity;
 
-},{"./internal/util":645,"ramda/src/toString":711}],641:[function(require,module,exports){
+},{"./internal/util":803,"ramda/src/toString":869}],799:[function(require,module,exports){
 var toString = require('ramda/src/toString');
 var curry = require('ramda/src/curry');
 
@@ -80369,7 +86408,7 @@ Nothing.prototype.toString = function() {
 
 module.exports = Maybe;
 
-},{"./internal/util.js":645,"ramda/src/curry":663,"ramda/src/toString":711}],642:[function(require,module,exports){
+},{"./internal/util.js":803,"ramda/src/curry":821,"ramda/src/toString":869}],800:[function(require,module,exports){
 var compose = require('ramda/src/compose');
 var identity = require('ramda/src/identity');
 var toString = require('ramda/src/toString');
@@ -80471,7 +86510,7 @@ Reader.T = function(M) {
 
 module.exports = Reader;
 
-},{"ramda/src/always":660,"ramda/src/compose":662,"ramda/src/identity":669,"ramda/src/toString":711}],643:[function(require,module,exports){
+},{"ramda/src/always":818,"ramda/src/compose":820,"ramda/src/identity":827,"ramda/src/toString":869}],801:[function(require,module,exports){
 var curry = require('ramda/src/curry');
 
 var Identity = require('./Identity');
@@ -80559,7 +86598,7 @@ State.prototype.run = function(s) {
 
 module.exports = State;
 
-},{"./Identity":640,"./Tuple":644,"./internal/util":645,"ramda/src/curry":663}],644:[function(require,module,exports){
+},{"./Identity":798,"./Tuple":802,"./internal/util":803,"ramda/src/curry":821}],802:[function(require,module,exports){
 var toString = require('ramda/src/toString');
 var equals = require('ramda/src/equals');
 
@@ -80629,7 +86668,7 @@ _Tuple.prototype.toString = function() {
 
 module.exports = Tuple;
 
-},{"ramda/src/equals":665,"ramda/src/toString":711}],645:[function(require,module,exports){
+},{"ramda/src/equals":823,"ramda/src/toString":869}],803:[function(require,module,exports){
 var _equals = require('ramda/src/equals');
 
 
@@ -80698,21 +86737,21 @@ module.exports = {
 
 };
 
-},{"ramda/src/equals":665}],646:[function(require,module,exports){
+},{"ramda/src/equals":823}],804:[function(require,module,exports){
 var curryN = require('ramda/src/curryN');
 
 module.exports = curryN(3, function lift2(f, a1, a2) {
   return a1.map(f).ap(a2);
 });
 
-},{"ramda/src/curryN":664}],647:[function(require,module,exports){
+},{"ramda/src/curryN":822}],805:[function(require,module,exports){
 var curryN = require('ramda/src/curryN');
 
 module.exports = curryN(4, function lift3(f, a1, a2, a3) {
   return a1.map(f).ap(a2).ap(a3);
 });
 
-},{"ramda/src/curryN":664}],648:[function(require,module,exports){
+},{"ramda/src/curryN":822}],806:[function(require,module,exports){
 var R = require('ramda')
 
 module.exports = R.mergeAll([
@@ -80722,7 +86761,7 @@ module.exports = R.mergeAll([
   require('./src/traversals')
 ])
 
-},{"./src/folds":650,"./src/isos":654,"./src/lens":655,"./src/traversals":657,"ramda":649}],649:[function(require,module,exports){
+},{"./src/folds":808,"./src/isos":812,"./src/lens":813,"./src/traversals":815,"ramda":807}],807:[function(require,module,exports){
 //  Ramda v0.19.1
 //  https://github.com/ramda/ramda
 //  (c) 2013-2016 Scott Sauyet, Michael Hurley, and David Chambers
@@ -89170,7 +95209,7 @@ module.exports = R.mergeAll([
 
 }.call(this));
 
-},{}],650:[function(require,module,exports){
+},{}],808:[function(require,module,exports){
 var R = require('ramda')
 var curry = R.curry
 var compose = R.compose
@@ -89202,7 +95241,7 @@ module.exports = {
   sumOf: sumOf
 }
 
-},{"./internal/_const":651,"./internal/_monoids":653,"ramda":649}],651:[function(require,module,exports){
+},{"./internal/_const":809,"./internal/_monoids":811,"ramda":807}],809:[function(require,module,exports){
 module.exports = function _Const(empty) {
   function Const(x) {
     return {
@@ -89222,7 +95261,7 @@ module.exports = function _Const(empty) {
   return Const
 }
 
-},{}],652:[function(require,module,exports){
+},{}],810:[function(require,module,exports){
 function Identity(x) {
   return {
     type: 'Identity',
@@ -89239,7 +95278,7 @@ Identity.of = Identity
 
 module.exports = Identity
 
-},{}],653:[function(require,module,exports){
+},{}],811:[function(require,module,exports){
 function Sum(x) {
   return {
     type: 'Sum',
@@ -89260,7 +95299,7 @@ Any.empty = function() {return Any(false) }
 
 module.exports = {Sum: Sum, Any: Any}
 
-},{}],654:[function(require,module,exports){
+},{}],812:[function(require,module,exports){
 var R = require('ramda')
 var curry = R.curry
 var map = R.map
@@ -89306,7 +95345,7 @@ module.exports = {
   objIpair: objIpair
 }
 
-},{"ramda":649}],655:[function(require,module,exports){
+},{"ramda":807}],813:[function(require,module,exports){
 var R = require('ramda')
 var set = R.set
 var lens = R.lens
@@ -89319,7 +95358,7 @@ module.exports = {
   over: require('./over')
 }
 
-},{"./over":656,"./view":658,"ramda":649}],656:[function(require,module,exports){
+},{"./over":814,"./view":816,"ramda":807}],814:[function(require,module,exports){
 var R = require('ramda')
 var curry = R.curry
 var Identity = require('./internal/_identity')
@@ -89353,7 +95392,7 @@ module.exports = curry(function over(lens, f, x) {
   })(x).value;
 });
 
-},{"./internal/_identity":652,"ramda":649}],657:[function(require,module,exports){
+},{"./internal/_identity":810,"ramda":807}],815:[function(require,module,exports){
 var R = require('ramda')
 var curry = R.curry
 var compose = R.compose
@@ -89376,7 +95415,7 @@ module.exports = {
   traversed: traversed
 }
 
-},{"./internal/_identity":652,"ramda":649}],658:[function(require,module,exports){
+},{"./internal/_identity":810,"ramda":807}],816:[function(require,module,exports){
 var R = require('ramda')
 var curry = R.curry
 var Const = require('./internal/_const')([])
@@ -89409,7 +95448,7 @@ module.exports = curry(function view(lens, x) {
   })(x).value[0]
 });
 
-},{"./internal/_const":651,"ramda":649}],659:[function(require,module,exports){
+},{"./internal/_const":809,"ramda":807}],817:[function(require,module,exports){
 //  Ramda v0.22.1
 //  https://github.com/ramda/ramda
 //  (c) 2013-2016 Scott Sauyet, Michael Hurley, and David Chambers
@@ -98242,7 +104281,7 @@ module.exports = curry(function view(lens, x) {
 
 }.call(this));
 
-},{}],660:[function(require,module,exports){
+},{}],818:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 
 
@@ -98271,7 +104310,7 @@ module.exports = _curry1(function always(val) {
   };
 });
 
-},{"./internal/_curry1":675}],661:[function(require,module,exports){
+},{"./internal/_curry1":833}],819:[function(require,module,exports){
 var _arity = require('./internal/_arity');
 var _curry2 = require('./internal/_curry2');
 
@@ -98303,7 +104342,7 @@ module.exports = _curry2(function bind(fn, thisObj) {
   });
 });
 
-},{"./internal/_arity":670,"./internal/_curry2":676}],662:[function(require,module,exports){
+},{"./internal/_arity":828,"./internal/_curry2":834}],820:[function(require,module,exports){
 var pipe = require('./pipe');
 var reverse = require('./reverse');
 
@@ -98335,7 +104374,7 @@ module.exports = function compose() {
   return pipe.apply(this, reverse(arguments));
 };
 
-},{"./pipe":705,"./reverse":708}],663:[function(require,module,exports){
+},{"./pipe":863,"./reverse":866}],821:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 var curryN = require('./curryN');
 
@@ -98385,7 +104424,7 @@ module.exports = _curry1(function curry(fn) {
   return curryN(fn.length, fn);
 });
 
-},{"./curryN":664,"./internal/_curry1":675}],664:[function(require,module,exports){
+},{"./curryN":822,"./internal/_curry1":833}],822:[function(require,module,exports){
 var _arity = require('./internal/_arity');
 var _curry1 = require('./internal/_curry1');
 var _curry2 = require('./internal/_curry2');
@@ -98441,7 +104480,7 @@ module.exports = _curry2(function curryN(length, fn) {
   return _arity(length, _curryN(length, [], fn));
 });
 
-},{"./internal/_arity":670,"./internal/_curry1":675,"./internal/_curry2":676,"./internal/_curryN":678}],665:[function(require,module,exports){
+},{"./internal/_arity":828,"./internal/_curry1":833,"./internal/_curry2":834,"./internal/_curryN":836}],823:[function(require,module,exports){
 var _curry2 = require('./internal/_curry2');
 var _equals = require('./internal/_equals');
 
@@ -98475,7 +104514,7 @@ module.exports = _curry2(function equals(a, b) {
   return _equals(a, b, [], []);
 });
 
-},{"./internal/_curry2":676,"./internal/_equals":680}],666:[function(require,module,exports){
+},{"./internal/_curry2":834,"./internal/_equals":838}],824:[function(require,module,exports){
 var _curry2 = require('./internal/_curry2');
 var _dispatchable = require('./internal/_dispatchable');
 var _filter = require('./internal/_filter');
@@ -98525,7 +104564,7 @@ module.exports = _curry2(_dispatchable('filter', _xfilter, function(pred, filter
   );
 }));
 
-},{"./internal/_curry2":676,"./internal/_dispatchable":679,"./internal/_filter":681,"./internal/_isObject":688,"./internal/_reduce":695,"./internal/_xfilter":700,"./keys":703}],667:[function(require,module,exports){
+},{"./internal/_curry2":834,"./internal/_dispatchable":837,"./internal/_filter":839,"./internal/_isObject":846,"./internal/_reduce":853,"./internal/_xfilter":858,"./keys":861}],825:[function(require,module,exports){
 var _checkForMethod = require('./internal/_checkForMethod');
 var _curry2 = require('./internal/_curry2');
 
@@ -98573,7 +104612,7 @@ module.exports = _curry2(_checkForMethod('forEach', function forEach(fn, list) {
   return list;
 }));
 
-},{"./internal/_checkForMethod":672,"./internal/_curry2":676}],668:[function(require,module,exports){
+},{"./internal/_checkForMethod":830,"./internal/_curry2":834}],826:[function(require,module,exports){
 var _curry2 = require('./internal/_curry2');
 
 
@@ -98611,7 +104650,7 @@ module.exports = _curry2(function identical(a, b) {
   }
 });
 
-},{"./internal/_curry2":676}],669:[function(require,module,exports){
+},{"./internal/_curry2":834}],827:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 var _identity = require('./internal/_identity');
 
@@ -98636,7 +104675,7 @@ var _identity = require('./internal/_identity');
  */
 module.exports = _curry1(_identity);
 
-},{"./internal/_curry1":675,"./internal/_identity":684}],670:[function(require,module,exports){
+},{"./internal/_curry1":833,"./internal/_identity":842}],828:[function(require,module,exports){
 module.exports = function _arity(n, fn) {
   /* eslint-disable no-unused-vars */
   switch (n) {
@@ -98655,7 +104694,7 @@ module.exports = function _arity(n, fn) {
   }
 };
 
-},{}],671:[function(require,module,exports){
+},{}],829:[function(require,module,exports){
 module.exports = function _arrayFromIterator(iter) {
   var list = [];
   var next;
@@ -98665,7 +104704,7 @@ module.exports = function _arrayFromIterator(iter) {
   return list;
 };
 
-},{}],672:[function(require,module,exports){
+},{}],830:[function(require,module,exports){
 var _isArray = require('./_isArray');
 var _slice = require('./_slice');
 
@@ -98693,14 +104732,14 @@ module.exports = function _checkForMethod(methodname, fn) {
   };
 };
 
-},{"./_isArray":687,"./_slice":696}],673:[function(require,module,exports){
+},{"./_isArray":845,"./_slice":854}],831:[function(require,module,exports){
 module.exports = function _complement(f) {
   return function() {
     return !f.apply(this, arguments);
   };
 };
 
-},{}],674:[function(require,module,exports){
+},{}],832:[function(require,module,exports){
 var _indexOf = require('./_indexOf');
 
 
@@ -98708,7 +104747,7 @@ module.exports = function _contains(a, list) {
   return _indexOf(list, a, 0) >= 0;
 };
 
-},{"./_indexOf":685}],675:[function(require,module,exports){
+},{"./_indexOf":843}],833:[function(require,module,exports){
 var _isPlaceholder = require('./_isPlaceholder');
 
 
@@ -98730,7 +104769,7 @@ module.exports = function _curry1(fn) {
   };
 };
 
-},{"./_isPlaceholder":689}],676:[function(require,module,exports){
+},{"./_isPlaceholder":847}],834:[function(require,module,exports){
 var _curry1 = require('./_curry1');
 var _isPlaceholder = require('./_isPlaceholder');
 
@@ -98760,7 +104799,7 @@ module.exports = function _curry2(fn) {
   };
 };
 
-},{"./_curry1":675,"./_isPlaceholder":689}],677:[function(require,module,exports){
+},{"./_curry1":833,"./_isPlaceholder":847}],835:[function(require,module,exports){
 var _curry1 = require('./_curry1');
 var _curry2 = require('./_curry2');
 var _isPlaceholder = require('./_isPlaceholder');
@@ -98800,7 +104839,7 @@ module.exports = function _curry3(fn) {
   };
 };
 
-},{"./_curry1":675,"./_curry2":676,"./_isPlaceholder":689}],678:[function(require,module,exports){
+},{"./_curry1":833,"./_curry2":834,"./_isPlaceholder":847}],836:[function(require,module,exports){
 var _arity = require('./_arity');
 var _isPlaceholder = require('./_isPlaceholder');
 
@@ -98842,7 +104881,7 @@ module.exports = function _curryN(length, received, fn) {
   };
 };
 
-},{"./_arity":670,"./_isPlaceholder":689}],679:[function(require,module,exports){
+},{"./_arity":828,"./_isPlaceholder":847}],837:[function(require,module,exports){
 var _isArray = require('./_isArray');
 var _isTransformer = require('./_isTransformer');
 var _slice = require('./_slice');
@@ -98883,7 +104922,7 @@ module.exports = function _dispatchable(methodname, xf, fn) {
   };
 };
 
-},{"./_isArray":687,"./_isTransformer":691,"./_slice":696}],680:[function(require,module,exports){
+},{"./_isArray":845,"./_isTransformer":849,"./_slice":854}],838:[function(require,module,exports){
 var _arrayFromIterator = require('./_arrayFromIterator');
 var _functionName = require('./_functionName');
 var _has = require('./_has');
@@ -98994,7 +105033,7 @@ module.exports = function _equals(a, b, stackA, stackB) {
   return true;
 };
 
-},{"../identical":668,"../keys":703,"../type":712,"./_arrayFromIterator":671,"./_functionName":682,"./_has":683}],681:[function(require,module,exports){
+},{"../identical":826,"../keys":861,"../type":870,"./_arrayFromIterator":829,"./_functionName":840,"./_has":841}],839:[function(require,module,exports){
 module.exports = function _filter(fn, list) {
   var idx = 0;
   var len = list.length;
@@ -99009,22 +105048,22 @@ module.exports = function _filter(fn, list) {
   return result;
 };
 
-},{}],682:[function(require,module,exports){
+},{}],840:[function(require,module,exports){
 module.exports = function _functionName(f) {
   // String(x => x) evaluates to "x => x", so the pattern may not match.
   var match = String(f).match(/^function (\w*)/);
   return match == null ? '' : match[1];
 };
 
-},{}],683:[function(require,module,exports){
+},{}],841:[function(require,module,exports){
 module.exports = function _has(prop, obj) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 };
 
-},{}],684:[function(require,module,exports){
+},{}],842:[function(require,module,exports){
 module.exports = function _identity(x) { return x; };
 
-},{}],685:[function(require,module,exports){
+},{}],843:[function(require,module,exports){
 var equals = require('../equals');
 
 
@@ -99083,7 +105122,7 @@ module.exports = function _indexOf(list, a, idx) {
   return -1;
 };
 
-},{"../equals":665}],686:[function(require,module,exports){
+},{"../equals":823}],844:[function(require,module,exports){
 var _has = require('./_has');
 
 
@@ -99094,7 +105133,7 @@ module.exports = (function() {
     function _isArguments(x) { return _has('callee', x); };
 }());
 
-},{"./_has":683}],687:[function(require,module,exports){
+},{"./_has":841}],845:[function(require,module,exports){
 /**
  * Tests whether or not an object is an array.
  *
@@ -99113,29 +105152,29 @@ module.exports = Array.isArray || function _isArray(val) {
           Object.prototype.toString.call(val) === '[object Array]');
 };
 
-},{}],688:[function(require,module,exports){
+},{}],846:[function(require,module,exports){
 module.exports = function _isObject(x) {
   return Object.prototype.toString.call(x) === '[object Object]';
 };
 
-},{}],689:[function(require,module,exports){
+},{}],847:[function(require,module,exports){
 module.exports = function _isPlaceholder(a) {
   return a != null &&
          typeof a === 'object' &&
          a['@@functional/placeholder'] === true;
 };
 
-},{}],690:[function(require,module,exports){
+},{}],848:[function(require,module,exports){
 module.exports = function _isString(x) {
   return Object.prototype.toString.call(x) === '[object String]';
 };
 
-},{}],691:[function(require,module,exports){
+},{}],849:[function(require,module,exports){
 module.exports = function _isTransformer(obj) {
   return typeof obj['@@transducer/step'] === 'function';
 };
 
-},{}],692:[function(require,module,exports){
+},{}],850:[function(require,module,exports){
 module.exports = function _map(fn, functor) {
   var idx = 0;
   var len = functor.length;
@@ -99147,14 +105186,14 @@ module.exports = function _map(fn, functor) {
   return result;
 };
 
-},{}],693:[function(require,module,exports){
+},{}],851:[function(require,module,exports){
 module.exports = function _pipe(f, g) {
   return function() {
     return g.call(this, f.apply(this, arguments));
   };
 };
 
-},{}],694:[function(require,module,exports){
+},{}],852:[function(require,module,exports){
 module.exports = function _quote(s) {
   var escaped = s
     .replace(/\\/g, '\\\\')
@@ -99169,7 +105208,7 @@ module.exports = function _quote(s) {
   return '"' + escaped.replace(/"/g, '\\"') + '"';
 };
 
-},{}],695:[function(require,module,exports){
+},{}],853:[function(require,module,exports){
 var _xwrap = require('./_xwrap');
 var bind = require('../bind');
 var isArrayLike = require('../isArrayLike');
@@ -99228,7 +105267,7 @@ module.exports = (function() {
   };
 }());
 
-},{"../bind":661,"../isArrayLike":702,"./_xwrap":701}],696:[function(require,module,exports){
+},{"../bind":819,"../isArrayLike":860,"./_xwrap":859}],854:[function(require,module,exports){
 /**
  * An optimized, private array `slice` implementation.
  *
@@ -99262,7 +105301,7 @@ module.exports = function _slice(args, from, to) {
   }
 };
 
-},{}],697:[function(require,module,exports){
+},{}],855:[function(require,module,exports){
 /**
  * Polyfill from <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString>.
  */
@@ -99286,7 +105325,7 @@ module.exports = (function() {
     };
 }());
 
-},{}],698:[function(require,module,exports){
+},{}],856:[function(require,module,exports){
 var _contains = require('./_contains');
 var _map = require('./_map');
 var _quote = require('./_quote');
@@ -99334,7 +105373,7 @@ module.exports = function _toString(x, seen) {
   }
 };
 
-},{"../keys":703,"../reject":707,"./_contains":674,"./_map":692,"./_quote":694,"./_toISOString":697}],699:[function(require,module,exports){
+},{"../keys":861,"../reject":865,"./_contains":832,"./_map":850,"./_quote":852,"./_toISOString":855}],857:[function(require,module,exports){
 module.exports = {
   init: function() {
     return this.xf['@@transducer/init']();
@@ -99344,7 +105383,7 @@ module.exports = {
   }
 };
 
-},{}],700:[function(require,module,exports){
+},{}],858:[function(require,module,exports){
 var _curry2 = require('./_curry2');
 var _xfBase = require('./_xfBase');
 
@@ -99363,7 +105402,7 @@ module.exports = (function() {
   return _curry2(function _xfilter(f, xf) { return new XFilter(f, xf); });
 }());
 
-},{"./_curry2":676,"./_xfBase":699}],701:[function(require,module,exports){
+},{"./_curry2":834,"./_xfBase":857}],859:[function(require,module,exports){
 module.exports = (function() {
   function XWrap(fn) {
     this.f = fn;
@@ -99379,7 +105418,7 @@ module.exports = (function() {
   return function _xwrap(fn) { return new XWrap(fn); };
 }());
 
-},{}],702:[function(require,module,exports){
+},{}],860:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 var _isArray = require('./internal/_isArray');
 var _isString = require('./internal/_isString');
@@ -99417,7 +105456,7 @@ module.exports = _curry1(function isArrayLike(x) {
   return false;
 });
 
-},{"./internal/_curry1":675,"./internal/_isArray":687,"./internal/_isString":690}],703:[function(require,module,exports){
+},{"./internal/_curry1":833,"./internal/_isArray":845,"./internal/_isString":848}],861:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 var _has = require('./internal/_has');
 var _isArguments = require('./internal/_isArguments');
@@ -99492,7 +105531,7 @@ module.exports = (function() {
     });
 }());
 
-},{"./internal/_curry1":675,"./internal/_has":683,"./internal/_isArguments":686}],704:[function(require,module,exports){
+},{"./internal/_curry1":833,"./internal/_has":841,"./internal/_isArguments":844}],862:[function(require,module,exports){
 var _arity = require('./internal/_arity');
 var _curry1 = require('./internal/_curry1');
 
@@ -99529,7 +105568,7 @@ module.exports = _curry1(function once(fn) {
   });
 });
 
-},{"./internal/_arity":670,"./internal/_curry1":675}],705:[function(require,module,exports){
+},{"./internal/_arity":828,"./internal/_curry1":833}],863:[function(require,module,exports){
 var _arity = require('./internal/_arity');
 var _pipe = require('./internal/_pipe');
 var reduce = require('./reduce');
@@ -99566,7 +105605,7 @@ module.exports = function pipe() {
                 reduce(_pipe, arguments[0], tail(arguments)));
 };
 
-},{"./internal/_arity":670,"./internal/_pipe":693,"./reduce":706,"./tail":710}],706:[function(require,module,exports){
+},{"./internal/_arity":828,"./internal/_pipe":851,"./reduce":864,"./tail":868}],864:[function(require,module,exports){
 var _curry3 = require('./internal/_curry3');
 var _reduce = require('./internal/_reduce');
 
@@ -99606,7 +105645,7 @@ var _reduce = require('./internal/_reduce');
  */
 module.exports = _curry3(_reduce);
 
-},{"./internal/_curry3":677,"./internal/_reduce":695}],707:[function(require,module,exports){
+},{"./internal/_curry3":835,"./internal/_reduce":853}],865:[function(require,module,exports){
 var _complement = require('./internal/_complement');
 var _curry2 = require('./internal/_curry2');
 var filter = require('./filter');
@@ -99638,7 +105677,7 @@ module.exports = _curry2(function reject(pred, filterable) {
   return filter(_complement(pred), filterable);
 });
 
-},{"./filter":666,"./internal/_complement":673,"./internal/_curry2":676}],708:[function(require,module,exports){
+},{"./filter":824,"./internal/_complement":831,"./internal/_curry2":834}],866:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 var _isString = require('./internal/_isString');
 var _slice = require('./internal/_slice');
@@ -99673,7 +105712,7 @@ module.exports = _curry1(function reverse(list) {
                            _slice(list).reverse();
 });
 
-},{"./internal/_curry1":675,"./internal/_isString":690,"./internal/_slice":696}],709:[function(require,module,exports){
+},{"./internal/_curry1":833,"./internal/_isString":848,"./internal/_slice":854}],867:[function(require,module,exports){
 var _checkForMethod = require('./internal/_checkForMethod');
 var _curry3 = require('./internal/_curry3');
 
@@ -99706,7 +105745,7 @@ module.exports = _curry3(_checkForMethod('slice', function slice(fromIndex, toIn
   return Array.prototype.slice.call(list, fromIndex, toIndex);
 }));
 
-},{"./internal/_checkForMethod":672,"./internal/_curry3":677}],710:[function(require,module,exports){
+},{"./internal/_checkForMethod":830,"./internal/_curry3":835}],868:[function(require,module,exports){
 var _checkForMethod = require('./internal/_checkForMethod');
 var slice = require('./slice');
 
@@ -99740,7 +105779,7 @@ var slice = require('./slice');
  */
 module.exports = _checkForMethod('tail', slice(1, Infinity));
 
-},{"./internal/_checkForMethod":672,"./slice":709}],711:[function(require,module,exports){
+},{"./internal/_checkForMethod":830,"./slice":867}],869:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 var _toString = require('./internal/_toString');
 
@@ -99783,7 +105822,7 @@ var _toString = require('./internal/_toString');
  */
 module.exports = _curry1(function toString(val) { return _toString(val, []); });
 
-},{"./internal/_curry1":675,"./internal/_toString":698}],712:[function(require,module,exports){
+},{"./internal/_curry1":833,"./internal/_toString":856}],870:[function(require,module,exports){
 var _curry1 = require('./internal/_curry1');
 
 
@@ -99816,7 +105855,7 @@ module.exports = _curry1(function type(val) {
          Object.prototype.toString.call(val).slice(8, -1);
 });
 
-},{"./internal/_curry1":675}],713:[function(require,module,exports){
+},{"./internal/_curry1":833}],871:[function(require,module,exports){
 "use strict";
 
 // Based on RC4 algorithm, as described in
@@ -100022,7 +106061,7 @@ RC4.RC4small = RC4small;
 
 module.exports = RC4;
 
-},{}],714:[function(require,module,exports){
+},{}],872:[function(require,module,exports){
 (function (global){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.rdom = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 module.exports = [
@@ -100129,7 +106168,7 @@ module.exports = rdom;
 },{"./tags":1}]},{},[])("/src/rdom")
 });
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],715:[function(require,module,exports){
+},{}],873:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/regenerate v1.3.2 by @mathias | MIT license */
 ;(function(root) {
@@ -101332,7 +107371,7 @@ module.exports = rdom;
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],716:[function(require,module,exports){
+},{}],874:[function(require,module,exports){
 "use strict";
 
 var _typeof2 = require("babel-runtime/helpers/typeof");
@@ -102373,7 +108412,7 @@ Ep.explodeExpression = function (path, ignoreResult) {
 
   if ((typeof _ret3 === "undefined" ? "undefined" : (0, _typeof3.default)(_ret3)) === "object") return _ret3.v;
 };
-},{"./leap":719,"./meta":720,"./util":721,"assert":15,"babel-runtime/core-js/json/stringify":137,"babel-runtime/helpers/typeof":153,"babel-types":194}],717:[function(require,module,exports){
+},{"./leap":877,"./meta":878,"./util":879,"assert":15,"babel-runtime/core-js/json/stringify":137,"babel-runtime/helpers/typeof":153,"babel-types":194}],875:[function(require,module,exports){
 "use strict";
 
 var _keys = require("babel-runtime/core-js/object/keys");
@@ -102521,7 +108560,7 @@ exports.hoist = function (funPath) {
 
   return t.variableDeclaration("var", declarations);
 };
-},{"babel-runtime/core-js/object/keys":143,"babel-types":194}],718:[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":143,"babel-types":194}],876:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -102529,7 +108568,7 @@ exports.__esModule = true;
 exports.default = function () {
   return require("./visit");
 };
-},{"./visit":722}],719:[function(require,module,exports){
+},{"./visit":880}],877:[function(require,module,exports){
 "use strict";
 
 var _assert = require("assert");
@@ -102713,7 +108752,7 @@ LMp.getBreakLoc = function (label) {
 LMp.getContinueLoc = function (label) {
   return this._findLeapLocation("continueLoc", label);
 };
-},{"./emit":716,"assert":15,"babel-types":194,"util":754}],720:[function(require,module,exports){
+},{"./emit":874,"assert":15,"babel-types":194,"util":912}],878:[function(require,module,exports){
 "use strict";
 
 var _assert = require("assert");
@@ -102825,7 +108864,7 @@ for (var type in leapTypes) {
 
 exports.hasSideEffects = makePredicate("hasSideEffects", sideEffectTypes);
 exports.containsLeap = makePredicate("containsLeap", leapTypes);
-},{"assert":15,"babel-types":194,"private":634}],721:[function(require,module,exports){
+},{"assert":15,"babel-types":194,"private":792}],879:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -102853,7 +108892,7 @@ function runtimeProperty(name) {
 function isReference(path) {
   return path.isReferenced() || path.parentPath.isAssignmentExpression({ left: path.node });
 }
-},{"babel-types":194}],722:[function(require,module,exports){
+},{"babel-types":194}],880:[function(require,module,exports){
 "use strict";
 
 var _assert = require("assert");
@@ -103122,7 +109161,7 @@ var awaitVisitor = {
     path.replaceWith(t.yieldExpression(t.callExpression(util.runtimeProperty("awrap"), [argument]), false));
   }
 };
-},{"./emit":716,"./hoist":717,"./util":721,"assert":15,"babel-types":194,"private":634}],723:[function(require,module,exports){
+},{"./emit":874,"./hoist":875,"./util":879,"assert":15,"babel-types":194,"private":792}],881:[function(require,module,exports){
 // Generated by `/scripts/character-class-escape-sets.js`. Do not edit.
 var regenerate = require('regenerate');
 
@@ -103225,7 +109264,7 @@ exports.UNICODE_IGNORE_CASE = {
 		.addRange(0x7B, 0x10FFFF)
 };
 
-},{"regenerate":715}],724:[function(require,module,exports){
+},{"regenerate":873}],882:[function(require,module,exports){
 module.exports={
 	"75": 8490,
 	"83": 383,
@@ -103523,7 +109562,7 @@ module.exports={
 	"71903": 71871
 }
 
-},{}],725:[function(require,module,exports){
+},{}],883:[function(require,module,exports){
 var generate = require('regjsgen').generate;
 var parse = require('regjsparser').parse;
 var regenerate = require('regenerate');
@@ -103718,7 +109757,7 @@ module.exports = function(pattern, flags) {
 	return generate(tree);
 };
 
-},{"./data/character-class-escape-sets.js":723,"./data/iu-mappings.json":724,"regenerate":715,"regjsgen":726,"regjsparser":727}],726:[function(require,module,exports){
+},{"./data/character-class-escape-sets.js":881,"./data/iu-mappings.json":882,"regenerate":873,"regjsgen":884,"regjsparser":885}],884:[function(require,module,exports){
 (function (global){
 /*!
  * RegJSGen
@@ -104130,7 +110169,7 @@ module.exports = function(pattern, flags) {
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],727:[function(require,module,exports){
+},{}],885:[function(require,module,exports){
 // regjsparser
 //
 // ==================================================================
@@ -105094,7 +111133,7 @@ module.exports = function(pattern, flags) {
 
 }());
 
-},{}],728:[function(require,module,exports){
+},{}],886:[function(require,module,exports){
 'use strict';
 var isFinite = require('is-finite');
 
@@ -105120,7 +111159,7 @@ module.exports = function (str, n) {
 	return ret;
 };
 
-},{"is-finite":357}],729:[function(require,module,exports){
+},{"is-finite":515}],887:[function(require,module,exports){
 (function(f) {
 
   'use strict';
@@ -106710,7 +112749,7 @@ module.exports = function (str, n) {
 
 }));
 
-},{}],730:[function(require,module,exports){
+},{}],888:[function(require,module,exports){
 /*    #######
    ####     ####
  ####   ###   ####
@@ -110238,7 +116277,7 @@ module.exports = function (str, n) {
 //. [sanctuary-def]:  https://github.com/sanctuary-js/sanctuary-def
 //. [thrush]:         https://github.com/raganwald-deprecated/homoiconic/blob/master/2008-10-30/thrush.markdown
 
-},{"ramda":731,"sanctuary-def":732}],731:[function(require,module,exports){
+},{"ramda":889,"sanctuary-def":890}],889:[function(require,module,exports){
 //  Ramda v0.21.0
 //  https://github.com/ramda/ramda
 //  (c) 2013-2016 Scott Sauyet, Michael Hurley, and David Chambers
@@ -119024,7 +125063,7 @@ module.exports = function (str, n) {
 
 }.call(this));
 
-},{}],732:[function(require,module,exports){
+},{}],890:[function(require,module,exports){
 (function(f) {
 
   'use strict';
@@ -120521,7 +126560,7 @@ module.exports = function (str, n) {
 
 }));
 
-},{}],733:[function(require,module,exports){
+},{}],891:[function(require,module,exports){
 (function (process,global){
 (function() {
   "use strict";
@@ -121192,11 +127231,11 @@ module.exports = function (str, n) {
 })();
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":635}],734:[function(require,module,exports){
+},{"_process":793}],892:[function(require,module,exports){
 'use strict';
 module.exports = /^#!.*/;
 
-},{}],735:[function(require,module,exports){
+},{}],893:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	var isExtendedLengthPath = /^\\\\\?\\/.test(str);
@@ -121209,7 +127248,7 @@ module.exports = function (str) {
 	return str.replace(/\\/g, '/');
 };
 
-},{}],736:[function(require,module,exports){
+},{}],894:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -121315,7 +127354,7 @@ ArraySet.prototype.toArray = function ArraySet_toArray() {
 
 exports.ArraySet = ArraySet;
 
-},{"./util":745}],737:[function(require,module,exports){
+},{"./util":903}],895:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -121457,7 +127496,7 @@ exports.decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
   aOutParam.rest = aIndex;
 };
 
-},{"./base64":738}],738:[function(require,module,exports){
+},{"./base64":896}],896:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -121526,7 +127565,7 @@ exports.decode = function (charCode) {
   return -1;
 };
 
-},{}],739:[function(require,module,exports){
+},{}],897:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -121639,7 +127678,7 @@ exports.search = function search(aNeedle, aHaystack, aCompare, aBias) {
   return index;
 };
 
-},{}],740:[function(require,module,exports){
+},{}],898:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2014 Mozilla Foundation and contributors
@@ -121720,7 +127759,7 @@ MappingList.prototype.toArray = function MappingList_toArray() {
 
 exports.MappingList = MappingList;
 
-},{"./util":745}],741:[function(require,module,exports){
+},{"./util":903}],899:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -121836,7 +127875,7 @@ exports.quickSort = function (ary, comparator) {
   doQuickSort(ary, comparator, 0, ary.length - 1);
 };
 
-},{}],742:[function(require,module,exports){
+},{}],900:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -122920,7 +128959,7 @@ IndexedSourceMapConsumer.prototype._parseMappings =
 
 exports.IndexedSourceMapConsumer = IndexedSourceMapConsumer;
 
-},{"./array-set":736,"./base64-vlq":737,"./binary-search":739,"./quick-sort":741,"./util":745}],743:[function(require,module,exports){
+},{"./array-set":894,"./base64-vlq":895,"./binary-search":897,"./quick-sort":899,"./util":903}],901:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -123326,7 +129365,7 @@ SourceMapGenerator.prototype.toString =
 
 exports.SourceMapGenerator = SourceMapGenerator;
 
-},{"./array-set":736,"./base64-vlq":737,"./mapping-list":740,"./util":745}],744:[function(require,module,exports){
+},{"./array-set":894,"./base64-vlq":895,"./mapping-list":898,"./util":903}],902:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -123735,7 +129774,7 @@ SourceNode.prototype.toStringWithSourceMap = function SourceNode_toStringWithSou
 
 exports.SourceNode = SourceNode;
 
-},{"./source-map-generator":743,"./util":745}],745:[function(require,module,exports){
+},{"./source-map-generator":901,"./util":903}],903:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -124154,7 +130193,7 @@ function compareByGeneratedPositionsInflated(mappingA, mappingB) {
 }
 exports.compareByGeneratedPositionsInflated = compareByGeneratedPositionsInflated;
 
-},{}],746:[function(require,module,exports){
+},{}],904:[function(require,module,exports){
 /*
  * Copyright 2009-2011 Mozilla Foundation and contributors
  * Licensed under the New BSD license. See LICENSE.txt or:
@@ -124164,7 +130203,7 @@ exports.SourceMapGenerator = require('./lib/source-map-generator').SourceMapGene
 exports.SourceMapConsumer = require('./lib/source-map-consumer').SourceMapConsumer;
 exports.SourceNode = require('./lib/source-node').SourceNode;
 
-},{"./lib/source-map-consumer":742,"./lib/source-map-generator":743,"./lib/source-node":744}],747:[function(require,module,exports){
+},{"./lib/source-map-consumer":900,"./lib/source-map-generator":901,"./lib/source-node":902}],905:[function(require,module,exports){
 'use strict';
 var ansiRegex = require('ansi-regex')();
 
@@ -124172,7 +130211,7 @@ module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
 };
 
-},{"ansi-regex":13}],748:[function(require,module,exports){
+},{"ansi-regex":13}],906:[function(require,module,exports){
 'use strict';
 module.exports = function toFastProperties(obj) {
 	function f() {}
@@ -124182,7 +130221,7 @@ module.exports = function toFastProperties(obj) {
 	eval(obj);
 };
 
-},{}],749:[function(require,module,exports){
+},{}],907:[function(require,module,exports){
 "use strict";
 
 /**
@@ -124307,7 +130346,7 @@ module.exports = {
 - **1.0.0** &mdash; *2015-07-14* &mdash; Initial release
 */
 
-},{"assert":15}],750:[function(require,module,exports){
+},{"assert":15}],908:[function(require,module,exports){
 exports.isatty = function () { return false; };
 
 function ReadStream() {
@@ -124320,7 +130359,7 @@ function WriteStream() {
 }
 exports.WriteStream = WriteStream;
 
-},{}],751:[function(require,module,exports){
+},{}],909:[function(require,module,exports){
 /**
   # typify type parser
 
@@ -124801,7 +130840,7 @@ parse.freeVars = freeVars;
 
 module.exports = parse;
 
-},{}],752:[function(require,module,exports){
+},{}],910:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -124826,14 +130865,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],753:[function(require,module,exports){
+},{}],911:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],754:[function(require,module,exports){
+},{}],912:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -125423,4 +131462,4 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":753,"_process":635,"inherits":752}]},{},[8,11]);
+},{"./support/isBuffer":911,"_process":793,"inherits":910}]},{},[8,11]);
