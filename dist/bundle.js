@@ -337,10 +337,6 @@ exports.default = reporter;
 },{"ramda":877}],8:[function(require,module,exports){
 'use strict';
 
-var _z = require('z');
-
-var _z2 = _interopRequireDefault(_z);
-
 var _monoid = require('monoid');
 
 var _monoid2 = _interopRequireDefault(_monoid);
@@ -385,6 +381,10 @@ var _seamlessImmutable = require('seamless-immutable');
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
+var _z = require('z');
+
+var _z2 = _interopRequireDefault(_z);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _sanctuaryDef2.default;
@@ -398,7 +398,8 @@ window.Map = _immutableExt2.default.Map;
 window.List = _immutableExt2.default.List;
 
 window.V = _jsverify2.default;
-window.match = _z2.default;
+window.z = _z2.default;
+window.matches = _z2.default;
 
 window.cliquer = _cliquer2.default;
 window.Future = _fluture2.default;
