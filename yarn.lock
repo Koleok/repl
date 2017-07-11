@@ -2135,6 +2135,12 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+flat@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-2.0.1.tgz#70e29188a74be0c3c89409eed1fa9577907ae32f"
+  dependencies:
+    is-buffer "~1.1.2"
+
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
@@ -2667,7 +2673,7 @@ is-binary-path@^1.0.0:
   dependencies:
     binary-extensions "^1.0.0"
 
-is-buffer@^1.1.0, is-buffer@^1.1.5:
+is-buffer@^1.1.0, is-buffer@^1.1.5, is-buffer@~1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.5.tgz#1f3b26ef613b214b88cbca23cc6c01d87961eecc"
 
@@ -5298,10 +5304,11 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-z@^1.0.1:
+z@z-pattern-matching/z:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/z/-/z-1.0.1.tgz#b74dafb5245261836baa2f9987986b1be128225f"
+  resolved "https://codeload.github.com/z-pattern-matching/z/tar.gz/b53e35ccb7977a05af6fb1700d5d2a7f9bad0926"
   dependencies:
     deep-equal "^1.0.1"
+    flat "^2.0.1"
     install "^0.10.0"
     js-function-reflector "git+https://github.com/leonardiwagner/js-function-reflector.git"
