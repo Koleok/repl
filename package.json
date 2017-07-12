@@ -27,7 +27,7 @@
     "seamless-immutable": "^7.0.1",
     "through2": "2.0.1",
     "vinyl-fs": "2.4.3",
-    "z": "z-pattern-matching/z"
+    "z": "koleok/z"
   },
   "license": "MIT",
   "private": true,
